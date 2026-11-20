@@ -166,7 +166,7 @@ Leaderboard data checked on 2026-11-18. Refreshed automatically every week — t
 
 ## Documentation
 
-| | |
+| Guide | What's inside |
 |---|---|
 | [Getting started](docs/getting-started.md) | Install, connect an API, first image and edit |
 | [How it works](docs/how-it-works.md) | The pipeline and why raw API images look worse |
