@@ -30,7 +30,7 @@
 
 It works with **any image-generation API** — vendors, gateways, self-hosted endpoints or MCP tools — and decides **by itself** which model to use.
 
-> **Default model: GPT Image 2.6 Sunburst** — for both generation and editing. When another model takes a clear lead on the blind-preference leaderboards, Unrendered switches to it automatically.
+> **Default model: GPT Image 2.6 Sunburst** — for both generation and editing. Every 14 days, at the next image request, Unrendered re-checks the blind-preference leaderboards and switches automatically if another model has taken a clear lead.
 
 <details>
 <summary><strong>Contents</strong></summary>
