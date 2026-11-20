@@ -1,0 +1,501 @@
+{
+  "schema_version": 2,
+  "last_checked": "2026-11-18",
+  "refresh_interval_days": 14,
+  "default": {
+    "generate": "gpt-image-2.6-sunburst",
+    "edit": "gpt-image-2.6-sunburst"
+  },
+  "selected": {
+    "generate": "gpt-image-2.6-sunburst",
+    "edit": "gpt-image-2.6-sunburst"
+  },
+  "ranking": {
+    "generate": [
+      "gpt-image-2.6-sunburst",
+      "gpt-image-2.5-sunburst",
+      "gpt-image-2.6-flare",
+      "mai-image-2.7",
+      "gpt-image-2.5-flare",
+      "gpt-image-2",
+      "kling-image-4.0",
+      "nano-banana-2.1",
+      "mai-image-2-6",
+      "grok-imagine-image-2-0",
+      "mai-image-2-7-flash",
+      "canva-craft"
+    ],
+    "edit": [
+      "gpt-image-2.6-sunburst",
+      "mai-image-2.7",
+      "gpt-image-2.6-flare",
+      "gpt-image-2.5-sunburst",
+      "gpt-image-2.5-flare",
+      "kling-image-4.0"
+    ]
+  },
+  "selection_policy": "Automated by scripts/model_select.py. Separate tracks for generate and edit. Primary: Artificial Analysis arena (most photo-specific category available, else Overall). Secondary: LMArena/arena.ai. Switch only on a statistically separated lead (margin > combined 95% CI), or margin >= 25 Elo with secondary agreement, or a local photoreal duel when tied. Then use the highest-ranked model that a configured provider actually serves.",
+  "duels": {},
+  "models": [
+    {
+      "id": "gpt-image-2.6-sunburst",
+      "vendor": "OpenAI",
+      "released": "2026-11",
+      "onboarded": true,
+      "aliases": [
+        "GPT Image 2.6 Sunburst",
+        "gpt-image-2.6-sunburst",
+        "GPTImage-2.6-Sunburst",
+        "openai/gpt-image-2.6/sunburst",
+        "openai:gpt-image@2.6-sunburst",
+        "gpt-image-2.6-sunburst-medium",
+        "gpt-image-2-6-sunburst"
+      ],
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1261,
+          "ci95": 14,
+          "config": "max",
+          "rank": 1,
+          "date": "2026-11-18"
+        },
+        "lmarena_generate_overall": {
+          "elo": 1409,
+          "ci95": 13,
+          "config": "medium",
+          "rank": 2,
+          "date": "2026-11-02"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1211,
+          "ci95": 13,
+          "config": "max",
+          "rank": 2,
+          "date": "2026-11-18"
+        }
+      },
+      "capabilities": {
+        "generate": true,
+        "edit": true,
+        "max_reference_images": 16,
+        "mask": true,
+        "markup_edit": true,
+        "negative_prompt_param": false,
+        "seed": false,
+        "transparent_background": true,
+        "native_max_stable_px": "2560x1440",
+        "max_px": "edge <= 3840, total <= 8294400, multiples of 16, ratio <= 3:1"
+      },
+      "settings": {
+        "quality_values": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "auto"
+        ],
+        "complexity_values": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "candidate": {
+          "quality": "high",
+          "complexity": "high"
+        },
+        "final": {
+          "quality": "max",
+          "complexity": "high"
+        },
+        "edit": {
+          "quality": "high",
+          "complexity": "low"
+        },
+        "edit_final": {
+          "quality": "max",
+          "complexity": "low"
+        },
+        "preferred_sizes": {
+          "3:2": "1536x1024",
+          "2:3": "1024x1536",
+          "1:1": "1024x1024",
+          "4:3": "1536x1152",
+          "3:4": "1152x1536",
+          "16:9": "2048x1152",
+          "9:16": "1152x2048",
+          "4:5": "1024x1280",
+          "2K 3:2": "2400x1600"
+        }
+      },
+      "prompt_dialect": "natural-language labeled sections, 120-250 words; avoid-list as plain sentences (no negative_prompt field); exact text in double quotes",
+      "known_weaknesses": [
+        "drifts to clean/commercial gloss unless told otherwise",
+        "slight warm cast and shallow-DOF bokeh by default",
+        "fine organic repeating textures (foliage, fur, fog, crowds) can show cellular/noise artifacts",
+        "sizes above 2560x1440 are experimental: more artifacts/composition shifts",
+        "high complexity on edits changes areas outside the instruction"
+      ]
+    },
+    {
+      "id": "gpt-image-2.5-sunburst",
+      "vendor": "OpenAI",
+      "released": "2026-09",
+      "onboarded": true,
+      "aliases": [
+        "GPT Image 2.5 Sunburst",
+        "gpt-image-2.5-sunburst",
+        "openai/gpt-image-2.5/sunburst"
+      ],
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1229,
+          "ci95": 10,
+          "config": "max",
+          "rank": 2,
+          "date": "2026-11-18"
+        },
+        "lmarena_generate_overall": {
+          "elo": 1427,
+          "ci95": 5,
+          "config": "",
+          "rank": 1,
+          "date": "2026-11-02"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1202,
+          "ci95": 11,
+          "config": "max",
+          "rank": 4,
+          "date": "2026-11-18"
+        }
+      },
+      "settings": {
+        "candidate": {
+          "quality": "high"
+        },
+        "final": {
+          "quality": "max"
+        },
+        "edit": {
+          "quality": "high"
+        }
+      },
+      "prompt_dialect": "same as gpt-image-2.6-sunburst",
+      "known_weaknesses": [
+        "same family weaknesses as 2.6; slightly lower arena score"
+      ]
+    },
+    {
+      "id": "gpt-image-2.6-flare",
+      "vendor": "OpenAI",
+      "released": "2026-11",
+      "onboarded": true,
+      "aliases": [
+        "GPT Image 2.6 Flare",
+        "gpt-image-2.6-flare",
+        "gpt-image-2.6-flare-medium",
+        "openai/gpt-image-2.6/flare"
+      ],
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1227,
+          "ci95": 12,
+          "config": "max",
+          "rank": 3,
+          "date": "2026-11-18"
+        },
+        "lmarena_generate_overall": {
+          "elo": 1384,
+          "ci95": 13,
+          "config": "medium",
+          "rank": 4,
+          "date": "2026-11-02"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1205,
+          "ci95": 13,
+          "config": "max",
+          "rank": 3,
+          "date": "2026-11-18"
+        }
+      },
+      "settings": {
+        "candidate": {
+          "quality": "high",
+          "complexity": "high"
+        },
+        "final": {
+          "quality": "max",
+          "complexity": "high"
+        },
+        "edit": {
+          "quality": "high",
+          "complexity": "low"
+        }
+      },
+      "prompt_dialect": "same as gpt-image-2.6-sunburst",
+      "known_weaknesses": [
+        "speed-optimised sibling: less fine detail than Sunburst"
+      ]
+    },
+    {
+      "id": "gpt-image-2.5-flare",
+      "vendor": "OpenAI",
+      "released": "2026-09",
+      "onboarded": true,
+      "aliases": [
+        "GPT Image 2.5 Flare",
+        "gpt-image-2.5-flare"
+      ],
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1210,
+          "ci95": 10,
+          "config": "max",
+          "rank": 5,
+          "date": "2026-11-18"
+        },
+        "lmarena_generate_overall": {
+          "elo": 1399,
+          "ci95": 5,
+          "config": "",
+          "rank": 3,
+          "date": "2026-11-02"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1185,
+          "ci95": 11,
+          "config": "max",
+          "rank": 5,
+          "date": "2026-11-18"
+        }
+      },
+      "settings": {
+        "candidate": {
+          "quality": "high"
+        },
+        "final": {
+          "quality": "max"
+        },
+        "edit": {
+          "quality": "high"
+        }
+      },
+      "prompt_dialect": "same as gpt-image-2.6-sunburst"
+    },
+    {
+      "id": "gpt-image-2",
+      "vendor": "OpenAI",
+      "released": "2026-04",
+      "onboarded": true,
+      "aliases": [
+        "GPT Image 2",
+        "gpt-image-2",
+        "gpt-image-2-medium"
+      ],
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1192,
+          "ci95": 11,
+          "config": "high",
+          "rank": 6,
+          "date": "2026-11-18"
+        },
+        "lmarena_generate_overall": {
+          "elo": 1382,
+          "ci95": 4,
+          "config": "medium",
+          "rank": 5,
+          "date": "2026-11-02"
+        }
+      },
+      "settings": {
+        "quality_values": [
+          "low",
+          "medium",
+          "high",
+          "auto"
+        ],
+        "candidate": {
+          "quality": "high"
+        },
+        "final": {
+          "quality": "high"
+        },
+        "edit": {
+          "quality": "high"
+        }
+      },
+      "prompt_dialect": "same as gpt-image-2.6-sunburst (no complexity parameter)"
+    },
+    {
+      "id": "mai-image-2.7",
+      "vendor": "Microsoft AI",
+      "released": "2026-11",
+      "onboarded": false,
+      "aliases": [
+        "MAI-Image-2.7",
+        "mai-image-2.7"
+      ],
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1214,
+          "ci95": 14,
+          "config": "",
+          "rank": 4,
+          "date": "2026-11-18"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1215,
+          "ci95": 14,
+          "config": "",
+          "rank": 1,
+          "date": "2026-11-18"
+        }
+      },
+      "prompt_dialect": "natural language (verify in vendor docs during onboarding)"
+    },
+    {
+      "id": "kling-image-4.0",
+      "vendor": "KlingAI",
+      "released": "2026-11",
+      "onboarded": false,
+      "aliases": [
+        "Kling Image 4.0",
+        "kling-image-4.0"
+      ],
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1180,
+          "ci95": 13,
+          "config": "",
+          "rank": 7,
+          "date": "2026-11-18"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1183,
+          "ci95": 14,
+          "config": "",
+          "rank": 6,
+          "date": "2026-11-18"
+        }
+      }
+    },
+    {
+      "id": "nano-banana-2.1",
+      "vendor": "Google",
+      "released": "2026-10",
+      "onboarded": false,
+      "aliases": [
+        "Nano Banana 2.1",
+        "gemini-nano-banana-2.1",
+        "nano-banana-2.1"
+      ],
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1176,
+          "ci95": 12,
+          "config": "",
+          "rank": 8,
+          "date": "2026-11-18"
+        },
+        "lmarena_generate_overall": {
+          "elo": 1325,
+          "ci95": 9,
+          "config": "",
+          "rank": 7,
+          "date": "2026-11-02"
+        }
+      }
+    },
+    {
+      "id": "mai-image-2-6",
+      "aliases": [
+        "MAI-Image-2.6"
+      ],
+      "vendor": "Microsoft AI",
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1168,
+          "ci95": 12,
+          "config": "",
+          "rank": 9,
+          "date": "2026-11-18"
+        },
+        "lmarena_generate_overall": {
+          "elo": 1331,
+          "ci95": 5,
+          "config": "",
+          "rank": 6,
+          "date": "2026-11-02"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "grok-imagine-image-2-0",
+      "aliases": [
+        "Grok Imagine Image 2.0"
+      ],
+      "vendor": "SpaceXAI",
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1167,
+          "ci95": 12,
+          "config": "",
+          "rank": 10,
+          "date": "2026-11-18"
+        },
+        "lmarena_generate_overall": {
+          "elo": 1317,
+          "ci95": 7,
+          "config": "",
+          "rank": 8,
+          "date": "2026-11-02"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "mai-image-2-7-flash",
+      "aliases": [
+        "MAI-Image-2.7-Flash"
+      ],
+      "vendor": "Microsoft AI",
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1158,
+          "ci95": 12,
+          "config": "",
+          "rank": 11,
+          "date": "2026-11-18"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "canva-craft",
+      "aliases": [
+        "Canva Craft"
+      ],
+      "vendor": "Canva",
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1158,
+          "ci95": 13,
+          "config": "",
+          "rank": 12,
+          "date": "2026-11-18"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    }
+  ],
+  "history": [],
+  "last_decided": "2026-11-18"
+}

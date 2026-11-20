@@ -1,0 +1,82 @@
+{
+  "source": "artificial_analysis",
+  "track": "generate",
+  "category": "overall",
+  "rank": "primary",
+  "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+  "fetched": "2026-11-18",
+  "rows": [
+    {
+      "name": "GPT Image 2.6 Sunburst (max)",
+      "elo": 1261,
+      "ci": 14,
+      "vendor": "OpenAI"
+    },
+    {
+      "name": "GPT Image 2.5 Sunburst (max)",
+      "elo": 1229,
+      "ci": 10,
+      "vendor": "OpenAI"
+    },
+    {
+      "name": "GPT Image 2.6 Flare (max)",
+      "elo": 1227,
+      "ci": 12,
+      "vendor": "OpenAI"
+    },
+    {
+      "name": "MAI-Image-2.7",
+      "elo": 1214,
+      "ci": 14,
+      "vendor": "Microsoft AI"
+    },
+    {
+      "name": "GPT Image 2.5 Flare (max)",
+      "elo": 1210,
+      "ci": 10,
+      "vendor": "OpenAI"
+    },
+    {
+      "name": "GPT Image 2 (high)",
+      "elo": 1192,
+      "ci": 11,
+      "vendor": "OpenAI"
+    },
+    {
+      "name": "Kling Image 4.0",
+      "elo": 1180,
+      "ci": 13,
+      "vendor": "KlingAI"
+    },
+    {
+      "name": "Nano Banana 2.1",
+      "elo": 1176,
+      "ci": 12,
+      "vendor": "Google"
+    },
+    {
+      "name": "MAI-Image-2.6",
+      "elo": 1168,
+      "ci": 12,
+      "vendor": "Microsoft AI"
+    },
+    {
+      "name": "Grok Imagine Image 2.0",
+      "elo": 1167,
+      "ci": 12,
+      "vendor": "SpaceXAI"
+    },
+    {
+      "name": "MAI-Image-2.7-Flash",
+      "elo": 1158,
+      "ci": 12,
+      "vendor": "Microsoft AI"
+    },
+    {
+      "name": "Canva Craft",
+      "elo": 1158,
+      "ci": 13,
+      "vendor": "Canva"
+    }
+  ]
+}

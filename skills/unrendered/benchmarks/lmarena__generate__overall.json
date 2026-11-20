@@ -1,0 +1,50 @@
+{
+  "source": "lmarena",
+  "track": "generate",
+  "category": "overall",
+  "rank": "secondary",
+  "url": "https://www.digitalapplied.com/blog/gpt-image-2-6-vs-gemini-flux-seedream (LMArena as of 2026-11-02)",
+  "fetched": "2026-11-02",
+  "rows": [
+    {
+      "name": "GPT-Image-2.5 Sunburst",
+      "elo": 1427,
+      "ci": 5
+    },
+    {
+      "name": "GPT-Image-2.6 Sunburst (Medium)",
+      "elo": 1409,
+      "ci": 13
+    },
+    {
+      "name": "GPT-Image-2.5 Flare",
+      "elo": 1399,
+      "ci": 5
+    },
+    {
+      "name": "GPT-Image-2.6 Flare (Medium)",
+      "elo": 1384,
+      "ci": 13
+    },
+    {
+      "name": "GPT-Image-2 (Medium)",
+      "elo": 1382,
+      "ci": 4
+    },
+    {
+      "name": "MAI-Image-2.6",
+      "elo": 1331,
+      "ci": 5
+    },
+    {
+      "name": "Gemini Nano Banana 2.1",
+      "elo": 1325,
+      "ci": 9
+    },
+    {
+      "name": "Grok Imagine Image 2.0",
+      "elo": 1317,
+      "ci": 7
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "unrendered",
+  "version": "1.0.0",
+  "description": "Photos, not renders. Agent skill for photorealistic AI image generation and editing through any image API, with benchmark-driven model selection.",
+  "author": {
+    "name": "Ruben Ferraro",
+    "url": "https://github.com/mysterxn-ctrl"
+  },
+  "homepage": "https://github.com/mysterxn-ctrl/unrendered",
+  "repository": "https://github.com/mysterxn-ctrl/unrendered",
+  "license": "Apache-2.0",
+  "keywords": [
+    "image-generation",
+    "photorealistic",
+    "ai-photography",
+    "gpt-image",
+    "image-editing",
+    "agent-skill",
+    "prompt-engineering"
+  ]
+}

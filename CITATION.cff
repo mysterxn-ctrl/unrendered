@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use or build on Unrendered, please cite it as below."
+type: software
+title: "Unrendered — Photos, not renders."
+abstract: >-
+  Agent skill for photorealistic AI image generation and editing through any
+  image-generation API, with autonomous benchmark-based model selection,
+  photographer-grade prompt compilation and vision-based quality assurance.
+authors:
+  - given-names: Ruben
+    family-names: Ferraro
+version: 1.0.0
+date-released: 2026-11-21
+license: Apache-2.0
+repository-code: "https://github.com/mysterxn-ctrl/unrendered"
+keywords:
+  - photorealistic image generation
+  - AI image editing
+  - agent skill
+  - Claude Code
+  - image generation API
+  - prompt engineering
+  - benchmark-based model selection

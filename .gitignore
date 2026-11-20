@@ -1,0 +1,20 @@
+# build output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# generated images and local state
+/images/
+/out/
+.config/
+
+# environment and secrets
+.env
+.env.*
+*.key
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

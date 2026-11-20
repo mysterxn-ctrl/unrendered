@@ -1,0 +1,224 @@
+<p align="center">
+  <img src="assets/brand/hero.jpg" alt="Unrendered — Photos, not renders." width="100%">
+</p>
+
+<h3 align="center">Photorealistic AI images and edits for coding agents —<br>through any image API, with the model picked by benchmarks.</h3>
+
+<p align="center">
+  <a href="https://github.com/mysterxn-ctrl/unrendered/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/mysterxn-ctrl/unrendered/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-FFC857?style=flat-square&labelColor=0A0D14"></a>
+  <a href="CHANGELOG.md"><img alt="Version 1.0.0" src="https://img.shields.io/badge/version-1.0.0-FF8A00?style=flat-square&labelColor=0A0D14"></a>
+  <img alt="Python 3.9+" src="https://img.shields.io/badge/python-3.9%2B-00E5FF?style=flat-square&labelColor=0A0D14">
+  <a href="docs/getting-started.md#install"><img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude_Code-plugin-A56CFF?style=flat-square&labelColor=0A0D14"></a>
+  <img alt="Zero dependencies" src="https://img.shields.io/badge/core-zero_dependencies-F7F5F0?style=flat-square&labelColor=0A0D14">
+</p>
+
+<p align="center">
+  <a href="docs/getting-started.md"><strong>Get started</strong></a> ·
+  <a href="docs/README.md"><strong>Documentation</strong></a> ·
+  <a href="docs/how-it-works.md">How it works</a> ·
+  <a href="docs/model-selection.md">Model selection</a> ·
+  <a href="docs/photorealism.md">Photorealism guide</a> ·
+  <a href="docs/faq.md">FAQ</a>
+</p>
+
+<p align="center"><sub>Created by <strong>Ruben Ferraro</strong></sub></p>
+
+---
+
+**Unrendered** is an open-source agent skill that teaches Claude Code, Codex, Cursor, OpenCode and other coding agents to create and edit images that look like a person shot them on a real camera. You ask in plain language — *"make a photo of…"*, *"replace the sky in this picture…"* — and the skill does the rest: it picks the best image model from blind-preference leaderboards, turns your sentence into a photographer's brief, generates several candidates, inspects every one like a photo editor, repairs what fails and delivers the winner.
+
+It works with **any image-generation API** — vendors, gateways, self-hosted endpoints or MCP tools — and decides **by itself** which model to use. Today that is **GPT Image 2.6 Sunburst**, the leader of the Artificial Analysis text-to-image arena.
+
+<details>
+<summary><strong>Contents</strong></summary>
+
+- [Why API images look rendered](#why-api-images-look-rendered)
+- [Features](#features)
+- [Quick start](#quick-start)
+- [How it works](#how-it-works)
+- [From one line to a brief](#from-one-line-to-a-brief)
+- [Today's pick](#todays-pick)
+- [Documentation](#documentation)
+- [Repository layout](#repository-layout)
+- [Responsible use](#responsible-use)
+- [Contributing](#contributing)
+- [License and credit](#license-and-credit)
+
+</details>
+
+## Why API images look rendered
+
+The same image model often looks brilliant inside a chat app and flat through the API. The model is identical; the pipeline is not. Chat apps rewrite your prompt, plan and pick quality for you — a raw API call ships your one-liner at whatever default the gateway uses.
+
+| Raw API call | With Unrendered |
+|---|---|
+| Your one-liner reaches the model verbatim | A photographer's brief: who shot it, which lens, which light, which imperfections |
+| Gateway default quality — often `low` or `medium` | The model's top settings, chosen per task |
+| One image, shipped without review | Several candidates, a realism rubric and targeted repair |
+| A model you picked once and hope is still the best | The model chosen from blind-preference leaderboards, automatically |
+| Code tied to one vendor's SDK | Any API, gateway or agent tool through JSON profiles |
+| Edits that quietly change the whole picture | A dedicated edit track that protects everything you didn't ask to change |
+
+## Features
+
+- **Autonomous, benchmark-based model choice.** Reads the [Artificial Analysis](https://artificialanalysis.ai/image/leaderboard/text-to-image) and [LMArena](https://arena.ai/leaderboard/text-to-image) arenas and switches only when a model's lead exceeds the combined 95 % confidence interval — separately for **generation** and **editing**. New models are added automatically. [How it decides →](docs/model-selection.md)
+- **Provider-agnostic.** OpenAI-protocol endpoints work out of the box; any other API — sync or async, JSON or multipart, base64 or URL results, separate edit endpoints — is a small JSON profile your agent writes from the provider's docs. [Providers →](docs/providers.md)
+- **Photographer-grade briefs.** Light with direction and colour temperature, optics that match the framing, real skin and wear, one to three capture artifacts, twenty genre recipes — and none of the "8k masterpiece" vocabulary that pulls images toward CGI. [Photorealism guide →](docs/photorealism.md)
+- **Vision QA with hard fails.** Ten weighted realism criteria plus hard fails for hands, text, light, fused objects and unwanted edit changes. Ships at 8.5 / 10. [QA rubric →](docs/quality-assurance.md)
+- **Surgical edits.** Edit-specific model, endpoint and settings; invariants restated on every turn. [Editing →](docs/editing.md)
+- **Keeps itself current.** Re-reads the leaderboards every 14 days locally; this repository refreshes its bundled data — and the table below — every week.
+- **Zero dependencies for the core.** Python 3.9+ standard library. Keys only from environment variables.
+
+## Quick start
+
+### 1 · Install
+
+**Claude Code** (plugin, recommended):
+
+```text
+/plugin marketplace add mysterxn-ctrl/unrendered
+/plugin install unrendered@unrendered
+```
+
+**Codex, Cursor, OpenCode and other agents** ([skills CLI](https://github.com/vercel-labs/skills)):
+
+```bash
+npx skills add mysterxn-ctrl/unrendered
+```
+
+**Manual:** copy [`skills/unrendered/`](skills/unrendered) to `~/.claude/skills/`, `~/.agents/skills/` or wherever your agent loads skills. [All options →](docs/getting-started.md#install)
+
+### 2 · Connect an image API
+
+If your service speaks the OpenAI-style Images protocol:
+
+```bash
+export IMAGE_API_BASE_URL="https://your-image-service.example/v1"
+export IMAGE_API_KEY="your-key"
+```
+
+For anything else, ask your agent *"Connect Unrendered to &lt;provider&gt;"* — it writes the profile from the provider's documentation. [Details →](docs/providers.md)
+
+### 3 · Ask
+
+> Make a photo of an old fisherman mending a net on a pier at dawn.
+
+> Replace the sky in `beach.jpg` with heavy overcast. Keep everything else identical.
+
+## How it works
+
+```mermaid
+flowchart LR
+    A[Request] --> B[Plan<br/>model + provider]
+    B --> C[Brief<br/>photographer's view]
+    C --> D[Candidates<br/>high quality]
+    D --> E[Vision QA<br/>rubric + hard fails]
+    E -- fail --> F[Repair<br/>edit or rebrief]
+    F --> E
+    E -- pass --> G[Final render<br/>top quality]
+    G --> H[Deliver]
+```
+
+1. **Plan** — `model_select.py plan` picks the benchmark-best model that one of your providers actually serves, with its tuned settings.
+2. **Brief** — the request becomes a structured photographer's brief.
+3. **Candidates** — three renders at high quality, each with a reproducible sidecar.
+4. **Vision QA** — every image inspected and scored; any hard fail disqualifies it.
+5. **Repair** — local defects edited, global ones re-briefed, one change at a time.
+6. **Deliver** — final render at the model's top setting, reported with model, settings and score.
+
+[Full walkthrough →](docs/how-it-works.md)
+
+## From one line to a brief
+
+<table>
+<tr><th width="28%">You say</th><th>The model receives</th></tr>
+<tr>
+<td valign="top"><em>"A man drinking coffee."</em></td>
+<td>
+
+```text
+Photographer & purpose: candid documentary photo taken by a friend across the table.
+Scene: small neighbourhood café, grey November morning, rain-speckled window,
+a crumpled sugar wrapper and half a croissant on a scratched wooden table.
+Subject: man in his late 40s, salt-and-pepper beard, pilled navy sweater, holding
+the cup by its handle, blowing on the coffee, looking out of the window.
+Camera & capture: 50 mm at f/2.8, 1/125 s, ISO 1600; focus on the near eye.
+Light: overcast window light from camera left (~6500 K), faint warm pendant behind.
+Texture & realism: visible pores, stray beard hairs, faint steam, slight grain.
+Avoid: airbrushed skin, glossy commercial look, cinematic grade, watermark.
+```
+
+</td>
+</tr>
+</table>
+
+## Today's pick
+
+<!-- unrendered:model-table:start -->
+| Track | Selected model | Why |
+|---|---|---|
+| Generation | **GPT Image 2.6 Sunburst** | #1 on the Artificial Analysis text-to-image arena — 1261 ± 14 vs. 1229 ± 10 for #2 |
+| Editing | **GPT Image 2.6 Sunburst** | MAI-Image-2.7 leads the image-editing arena by 4 Elo — inside the combined CI of 27, so the current choice stays |
+
+Leaderboard data checked on 2026-11-18. Refreshed automatically every week — the skill re-checks on its own every 14 days.
+<!-- unrendered:model-table:end -->
+
+## Documentation
+
+| | |
+|---|---|
+| [Getting started](docs/getting-started.md) | Install, connect an API, first image and edit |
+| [How it works](docs/how-it-works.md) | The pipeline and why raw API images look worse |
+| [Model selection](docs/model-selection.md) | The autonomous, benchmark-based decision system |
+| [Providers](docs/providers.md) | Connect any image API or agent tool |
+| [Photorealism guide](docs/photorealism.md) | How to make AI images look like real photos |
+| [Editing](docs/editing.md) | The edit track, briefs, masks and common edits |
+| [Quality assurance](docs/quality-assurance.md) | The realism rubric and repair map |
+| [CLI reference](docs/cli-reference.md) | Every script, option and exit code |
+| [Configuration](docs/configuration.md) | Registry, snapshots, provider-profile schema |
+| [FAQ](docs/faq.md) | Common questions |
+| [Brand assets](docs/brand.md) | Logos, colours, typography |
+
+## Repository layout
+
+```text
+.claude-plugin/          plugin + marketplace manifests (Claude Code)
+skills/unrendered/
+├── SKILL.md             the workflow the agent follows
+├── references/          photorealism playbook, genres, brief compiler, QA, editing, providers, model selection
+├── scripts/             imagegen.py · model_select.py · contact_sheet.py · photo_finish.py
+├── providers/           generic OpenAI-protocol profile + template
+├── models.json          model registry (seed)
+└── benchmarks/          leaderboard snapshots (seed)
+docs/                    documentation
+tools/                   README table updater, Markdown link checker
+tests/                   offline test suite
+assets/brand/            logos, icons, social images (all rights reserved)
+```
+
+## Responsible use
+
+Unrendered aims for images that *look* real — it does not help pass them off as real. It never strips or forges provenance data (such as C2PA) or invents camera metadata, and it declines photoreal depictions of real private individuals without consent, fabricated evidence and fake news events.
+
+## Contributing
+
+Issues and pull requests are welcome — new provider profiles, prompt-dialect notes for new models, genre recipes and QA findings especially. Start with [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: see [SECURITY.md](SECURITY.md).
+
+If Unrendered saves you from one more plastic-looking render, a ⭐ helps others find it.
+
+## License and credit
+
+Unrendered is created and maintained by **Ruben Ferraro**.
+
+- Code and documentation: [Apache License 2.0](LICENSE). Redistributions must keep the [NOTICE](NOTICE) file.
+- The name "Unrendered", the logo and the ribbon mark are trademarks of Ruben Ferraro — see the [trademark policy](TRADEMARKS.md).
+- Brand assets in [`assets/brand/`](assets/brand): © Ruben Ferraro, all rights reserved — see [LICENSE.md](assets/brand/LICENSE.md).
+
+When you build on Unrendered, please credit it as:
+
+```text
+Unrendered by Ruben Ferraro — https://github.com/mysterxn-ctrl/unrendered
+```
+
+<p align="center"><sub><strong>Unrendered</strong> — Photos, not renders. · © 2026 Ruben Ferraro</sub></p>

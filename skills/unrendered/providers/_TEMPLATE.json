@@ -1,0 +1,155 @@
+{
+  "name": "REPLACE-provider-name",
+  "notes": "Filled from <provider docs URL> on <date>. Only field names/values that appear in the provider's own docs.",
+  "base_url": "https://REPLACE.example/api",
+  "auth": {
+    "type": "header",
+    "header": "Authorization",
+    "prefix": "Bearer ",
+    "env": "REPLACE_API_KEY_ENV"
+  },
+  "headers": {},
+  "timeout_s": 300,
+  "download_with_auth": false,
+  "model_map": {
+    "gpt-image-2.6-sunburst": "REPLACE provider's id for this model (may be a path segment)"
+  },
+  "operations": {
+    "generate": {
+      "method": "POST",
+      "path": "/REPLACE/{model}/generate",
+      "content_type": "json",
+      "static": {},
+      "params": {
+        "prompt": "prompt",
+        "model": "model",
+        "size": [
+          {
+            "to": "size"
+          }
+        ],
+        "quality": {
+          "to": "quality"
+        },
+        "complexity": {
+          "to": "complexity"
+        },
+        "n": {
+          "to": "n"
+        },
+        "output_format": {
+          "to": "output_format"
+        },
+        "background": {
+          "to": "background"
+        },
+        "moderation": {
+          "to": "moderation"
+        }
+      },
+      "async": null,
+      "result": {
+        "paths": [
+          "data[*].b64_json",
+          "data[*].url"
+        ],
+        "meta_paths": {
+          "revised_prompt": "data[*].revised_prompt"
+        }
+      }
+    },
+    "edit": {
+      "method": "POST",
+      "path": "/REPLACE/{model}/edit",
+      "content_type": "json",
+      "params": {
+        "prompt": "prompt",
+        "model": "model",
+        "images": {
+          "to": "images",
+          "transform": "data_uri"
+        },
+        "mask": {
+          "to": "mask",
+          "transform": "data_uri",
+          "single": true
+        },
+        "size": "size",
+        "quality": "quality",
+        "complexity": "complexity"
+      },
+      "async": null,
+      "result": {
+        "paths": [
+          "data[*].b64_json",
+          "data[*].url"
+        ]
+      },
+      "model_map": {
+        "gpt-image-2.6-sunburst": "REPLACE provider's id/endpoint of the EDIT variant if it differs (e.g. '.../sunburst/edit' or '...-image-to-image')"
+      }
+    }
+  },
+  "_reference": {
+    "param spec forms": "\"field\" | {\"to\": \"a.b\", \"transform\": T, \"map\": {canonicalValue: providerValue}, \"choices\": [...], \"tiers\": {...}, \"single\": true} | list of these (one canonical -> several provider fields)",
+    "transforms": "aspect_ratio (WxH -> 'w:h' or nearest of choices) | resolution_tier (WxH -> 1K/2K/4K by megapixels, override with tiers) | width | height | int | float | bool | list | first | data_uri | b64 | file (multipart upload) | template ({value})",
+    "omit a canonical param": "remove it from params; runner warns and does not send it. If 'n' is unmapped the runner loops calls. If 'negative_prompt' is unmapped it is appended to the prompt as 'Avoid: ...'.",
+    "async example": {
+      "id_path": "request_id",
+      "poll_url": "{base_url}/jobs/{id}",
+      "poll_url_path": null,
+      "status_path": "status",
+      "done": [
+        "completed",
+        "succeeded"
+      ],
+      "failed": [
+        "failed",
+        "error"
+      ],
+      "interval_s": 3,
+      "timeout_s": 900,
+      "result_url_path": null,
+      "result_in_submit": true
+    },
+    "url instead of path": "set operations.X.url to a full URL (supports {model} and ${ENV})",
+    "query auth": {
+      "type": "query",
+      "param": "key",
+      "env": "X"
+    },
+    "no auth / proxy-injected": {
+      "type": "header",
+      "header": "Authorization",
+      "prefix": "Bearer ",
+      "env": "X",
+      "optional": true
+    },
+    "tool providers": {
+      "name": "my-mcp-image",
+      "type": "tool",
+      "tool": "mcp__server__generate_image",
+      "operations": {
+        "generate": {
+          "models": [
+            "gpt-image-2.6-sunburst"
+          ]
+        },
+        "edit": {
+          "models": [
+            "gpt-image-2.6-sunburst"
+          ]
+        }
+      }
+    },
+    "edit model": "Many providers expose the edit variant under a different id/endpoint. Put it in operations.edit.model_map; operation-level model_map wins over the global one."
+  },
+  "models": [
+    "optional: canonical ids this provider serves (alternative to model_map)"
+  ],
+  "list_models": {
+    "path": "/models",
+    "ids_path": "data[*].id",
+    "_optional": "only if the provider has a model-listing endpoint"
+  }
+}

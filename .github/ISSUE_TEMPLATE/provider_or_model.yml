@@ -1,0 +1,32 @@
+name: Provider or model support
+description: Request or contribute a provider profile or the onboarding of a new image model.
+labels: [providers]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options:
+        - New provider profile
+        - New model onboarding
+        - Problem with an existing profile
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Provider or model
+    validations:
+      required: true
+  - type: input
+    id: docs
+    attributes:
+      label: Official documentation URL
+      description: Field names and settings must come from the vendor's or provider's own docs.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Sync or async, edit endpoint, quality options, limits. For models, add leaderboard links.

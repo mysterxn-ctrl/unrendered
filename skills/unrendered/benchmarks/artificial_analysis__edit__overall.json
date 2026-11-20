@@ -1,0 +1,46 @@
+{
+  "source": "artificial_analysis",
+  "track": "edit",
+  "category": "overall",
+  "rank": "primary",
+  "url": "https://artificialanalysis.ai/image/leaderboard/editing",
+  "fetched": "2026-11-18",
+  "rows": [
+    {
+      "name": "MAI-Image-2.7",
+      "elo": 1215,
+      "ci": 14,
+      "vendor": "Microsoft AI"
+    },
+    {
+      "name": "GPT Image 2.6 Sunburst (max)",
+      "elo": 1211,
+      "ci": 13,
+      "vendor": "OpenAI"
+    },
+    {
+      "name": "GPT Image 2.6 Flare (max)",
+      "elo": 1205,
+      "ci": 13,
+      "vendor": "OpenAI"
+    },
+    {
+      "name": "GPT Image 2.5 Sunburst (max)",
+      "elo": 1202,
+      "ci": 11,
+      "vendor": "OpenAI"
+    },
+    {
+      "name": "GPT Image 2.5 Flare (max)",
+      "elo": 1185,
+      "ci": 11,
+      "vendor": "OpenAI"
+    },
+    {
+      "name": "Kling Image 4.0",
+      "elo": 1183,
+      "ci": 14,
+      "vendor": "KlingAI"
+    }
+  ]
+}

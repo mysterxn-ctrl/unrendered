@@ -1,0 +1,81 @@
+{
+  "name": "openai-images-protocol",
+  "notes": "Generic profile for ANY endpoint implementing the OpenAI-style Images wire protocol (POST {base}/images/generations JSON, POST {base}/images/edits multipart). This is a protocol, not a vendor: set IMAGE_API_BASE_URL to whichever service you use (e.g. https://<host>/v1) and IMAGE_API_KEY to its key. Add model_map entries if that service names models differently. Verify in the service's docs that it supports quality/complexity values for the chosen model. model_select.py probes GET {base}/models to see which models are actually served; if that endpoint does not exist the profile is treated as 'may serve any model' and the agent must verify.",
+  "base_url": "${IMAGE_API_BASE_URL}",
+  "auth": {
+    "type": "header",
+    "header": "Authorization",
+    "prefix": "Bearer ",
+    "env": "IMAGE_API_KEY"
+  },
+  "timeout_s": 600,
+  "model_map": {},
+  "operations": {
+    "generate": {
+      "method": "POST",
+      "path": "/images/generations",
+      "content_type": "json",
+      "params": {
+        "prompt": "prompt",
+        "model": "model",
+        "size": "size",
+        "quality": "quality",
+        "complexity": "complexity",
+        "n": {
+          "to": "n",
+          "transform": "int"
+        },
+        "output_format": "output_format",
+        "output_compression": "output_compression",
+        "background": "background",
+        "moderation": "moderation"
+      },
+      "result": {
+        "paths": [
+          "data[*].b64_json",
+          "data[*].url"
+        ],
+        "meta_paths": {
+          "revised_prompt": "data[*].revised_prompt"
+        }
+      }
+    },
+    "edit": {
+      "method": "POST",
+      "path": "/images/edits",
+      "content_type": "multipart",
+      "params": {
+        "prompt": "prompt",
+        "model": "model",
+        "images": {
+          "to": "image[]",
+          "transform": "file"
+        },
+        "mask": {
+          "to": "mask",
+          "transform": "file",
+          "single": true
+        },
+        "size": "size",
+        "quality": "quality",
+        "complexity": "complexity",
+        "n": "n",
+        "output_format": "output_format",
+        "background": "background",
+        "moderation": "moderation"
+      },
+      "result": {
+        "paths": [
+          "data[*].b64_json",
+          "data[*].url"
+        ]
+      }
+    }
+  },
+  "serves_any_model": true,
+  "list_models": {
+    "path": "/models",
+    "ids_path": "data[*].id",
+    "note": "used by model_select.py plan to verify which models this endpoint really serves"
+  }
+}

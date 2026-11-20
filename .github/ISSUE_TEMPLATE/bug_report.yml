@@ -1,0 +1,32 @@
+name: Bug report
+description: Something does not work as documented.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for the report. Please never paste API keys or full request logs that contain them.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you run, what did you expect, what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and output
+      description: The exact command (e.g. `imagegen.py generate --dry-run ...`) and its output.
+      render: shell
+  - type: textarea
+    id: profile
+    attributes:
+      label: Provider profile (without keys)
+      render: json
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "Unrendered 1.0.0 · Python 3.12 · macOS 15 · agent: ..."
+    validations:
+      required: true
