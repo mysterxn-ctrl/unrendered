@@ -28,7 +28,9 @@
 
 **Unrendered** is an open-source agent skill that teaches Claude Code, Codex, Cursor, OpenCode and other coding agents to create and edit images that look like a person shot them on a real camera. You ask in plain language — *"make a photo of…"*, *"replace the sky in this picture…"* — and the skill does the rest: it picks the best image model from blind-preference leaderboards, turns your sentence into a photographer's brief, generates several candidates, inspects every one like a photo editor, repairs what fails and delivers the winner.
 
-It works with **any image-generation API** — vendors, gateways, self-hosted endpoints or MCP tools — and decides **by itself** which model to use. Its default starting point is **GPT Image 2.6 Sunburst**.
+It works with **any image-generation API** — vendors, gateways, self-hosted endpoints or MCP tools — and decides **by itself** which model to use.
+
+> **Default model: GPT Image 2.6 Sunburst** — for both generation and editing. When another model takes a clear lead on the blind-preference leaderboards, Unrendered switches to it automatically.
 
 <details>
 <summary><strong>Contents</strong></summary>

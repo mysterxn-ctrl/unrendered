@@ -14,7 +14,7 @@ Any. Services that speak the OpenAI-style Images protocol work out of the box th
 
 ## Which model does it use?
 
-Whatever leads the blind-preference leaderboards by a statistically meaningful margin — separately for generation and for editing — and is reachable through your providers. The default starting point and current choice for both is **GPT Image 2.6 Sunburst**. See [Model selection](model-selection.md).
+Whatever leads the blind-preference leaderboards by a statistically meaningful margin — separately for generation and for editing — and is reachable through your providers. The default model for both is **GPT Image 2.6 Sunburst**. See [Model selection](model-selection.md).
 
 ## Will it switch models automatically when something better comes out?
 

@@ -83,7 +83,7 @@ Just ask your agent:
 
 The skill will:
 
-1. pick the model from the blind-preference leaderboards (default starting point: GPT Image 2.6 Sunburst),
+1. pick the model from the blind-preference leaderboards (default model: GPT Image 2.6 Sunburst),
 2. turn the one-liner into a photographer's brief — who shot it, with which lens, in what light, with which imperfections,
 3. generate three candidates at high quality,
 4. inspect every candidate against a 10-criterion realism rubric with hard fails (hands, text, light, fused objects…),
