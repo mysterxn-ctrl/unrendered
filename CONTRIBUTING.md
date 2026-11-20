@@ -72,19 +72,15 @@ The files in `assets/brand/` and the name "Unrendered" are not covered by the Ap
 
 - Keep each pull request focused on one change.
 - Describe what changed and how you tested it.
-- Make sure CI is green: tests, JSON validation, link check and the README model table.
+- Make sure CI is green: tests, JSON validation and link check.
 - Use clear commit messages in the imperative mood (`Add async polling for result URLs`).
 
 ## Maintaining the bundled benchmark data
 
-A scheduled workflow refreshes `skills/unrendered/benchmarks/`, `models.json` and the model table in the README every week. To refresh by hand:
+A scheduled workflow refreshes `skills/unrendered/benchmarks/` and `models.json`. To refresh by hand:
 
 ```bash
 UNRENDERED_HOME=skills/unrendered python3 skills/unrendered/scripts/model_select.py refresh
-```
-
-```bash
-python3 tools/update_readme.py
 ```
 
 If a leaderboard blocks scripted access, write the rows per `model_select.py schema` and run `ingest` with the same `UNRENDERED_HOME`.

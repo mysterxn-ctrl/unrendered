@@ -16,7 +16,7 @@ First public release by Ruben Ferraro.
 - Photorealism playbook, twenty photo-genre recipes, brief compiler, realism QA rubric, editing guide and non-photo brief format.
 - `contact_sheet.py` and `photo_finish.py` helpers.
 - Claude Code plugin and marketplace manifests; compatible with the skills CLI.
-- Documentation, offline test suite, CI, Markdown link check and a weekly benchmark refresh that keeps the README model table current.
+- Documentation, offline test suite, CI, Markdown link check and a scheduled benchmark refresh.
 - Apache License 2.0 with NOTICE, trademark policy and reserved brand assets.
 
 [1.0.0]: https://github.com/mysterxn-ctrl/unrendered/releases/tag/v1.0.0

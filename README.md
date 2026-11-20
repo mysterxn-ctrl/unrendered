@@ -28,7 +28,7 @@
 
 **Unrendered** is an open-source agent skill that teaches Claude Code, Codex, Cursor, OpenCode and other coding agents to create and edit images that look like a person shot them on a real camera. You ask in plain language — *"make a photo of…"*, *"replace the sky in this picture…"* — and the skill does the rest: it picks the best image model from blind-preference leaderboards, turns your sentence into a photographer's brief, generates several candidates, inspects every one like a photo editor, repairs what fails and delivers the winner.
 
-It works with **any image-generation API** — vendors, gateways, self-hosted endpoints or MCP tools — and decides **by itself** which model to use. Today that is **GPT Image 2.6 Sunburst**, the leader of the Artificial Analysis text-to-image arena.
+It works with **any image-generation API** — vendors, gateways, self-hosted endpoints or MCP tools — and decides **by itself** which model to use. Its default starting point is **GPT Image 2.6 Sunburst**.
 
 <details>
 <summary><strong>Contents</strong></summary>
@@ -38,7 +38,6 @@ It works with **any image-generation API** — vendors, gateways, self-hosted en
 - [Quick start](#quick-start)
 - [How it works](#how-it-works)
 - [From one line to a brief](#from-one-line-to-a-brief)
-- [Today's pick](#todays-pick)
 - [Documentation](#documentation)
 - [Repository layout](#repository-layout)
 - [Responsible use](#responsible-use)
@@ -152,17 +151,6 @@ Avoid: airbrushed skin, glossy commercial look, cinematic grade, watermark.
 </tr>
 </table>
 
-## Today's pick
-
-<!-- unrendered:model-table:start -->
-| Track | Selected model | Why |
-|---|---|---|
-| Generation | **GPT Image 2.6 Sunburst** | #1 on the Artificial Analysis text-to-image arena — 1261 ± 14 vs. 1229 ± 10 for #2 |
-| Editing | **GPT Image 2.6 Sunburst** | MAI-Image-2.7 leads the image-editing arena by 4 Elo — inside the combined CI of 27, so the current choice stays |
-
-Leaderboard data as of 18 November 2026.
-<!-- unrendered:model-table:end -->
-
 ## Documentation
 
 | Guide | What's inside |
@@ -191,7 +179,7 @@ skills/unrendered/
 ├── models.json          model registry (seed)
 └── benchmarks/          leaderboard snapshots (seed)
 docs/                    documentation
-tools/                   README table updater, Markdown link checker
+tools/                   Markdown link checker
 tests/                   offline test suite
 assets/brand/            logos, icons, social images (all rights reserved)
 ```

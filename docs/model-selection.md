@@ -40,16 +40,6 @@ Otherwise C stays. Stability is deliberate: prompting knowledge is tuned per mod
 
 Every switch is written to `history` in the registry with the reason, the numbers and the source URLs.
 
-## Current state
-
-Snapshot from 18 November 2026:
-
-| Track | #1 on primary board | Runner-up | Decision |
-|---|---|---|---|
-| generate | GPT Image 2.6 Sunburst (max) — 1261 ± 14 | GPT Image 2.5 Sunburst (max) — 1229 ± 10 | **GPT Image 2.6 Sunburst** (clear lead) |
-| edit | MAI-Image-2.7 — 1215 ± 14 | GPT Image 2.6 Sunburst (max) — 1211 ± 13 | **GPT Image 2.6 Sunburst** (4 Elo inside a combined CI of 27 → statistical tie, default kept) |
-
-The repository refreshes this data weekly through a scheduled workflow; your local copy refreshes itself every 14 days.
 
 ## Availability
 

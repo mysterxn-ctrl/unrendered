@@ -37,8 +37,6 @@ jobs:
         run: python -m unittest -v
       - name: Check Markdown links
         run: python tools/check_links.py
-      - name: README model table is up to date
-        run: python tools/update_readme.py --check
 
   min-python:
     name: Minimum Python version (3.9)

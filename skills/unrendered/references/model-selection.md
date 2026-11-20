@@ -71,6 +71,3 @@ model_select.py schema                 # ingest format
 ```
 Registry location: `~/.config/unrendered/models.json` if present (user-writable, survives skill updates), else the skill's `models.json`. Snapshots live next to it in `benchmarks/`.
 
-## State at creation (2026-11-18, from the ingested snapshots)
-- generate: GPT Image 2.6 Sunburst (max) 1261±14 #1 → keep default.
-- edit: MAI-Image-2.7 1215±14 vs GPT Image 2.6 Sunburst (max) 1211±13 → 4 Elo < CI 27 → statistical tie → keep default (Sunburst); duel may break it.
