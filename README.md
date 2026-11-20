@@ -67,7 +67,6 @@ The same image model often looks brilliant inside a chat app and flat through th
 - **Photographer-grade briefs.** Light with direction and colour temperature, optics that match the framing, real skin and wear, one to three capture artifacts, twenty genre recipes — and none of the "8k masterpiece" vocabulary that pulls images toward CGI. [Photorealism guide →](docs/photorealism.md)
 - **Vision QA with hard fails.** Ten weighted realism criteria plus hard fails for hands, text, light, fused objects and unwanted edit changes. Ships at 8.5 / 10. [QA rubric →](docs/quality-assurance.md)
 - **Surgical edits.** Edit-specific model, endpoint and settings; invariants restated on every turn. [Editing →](docs/editing.md)
-- **Keeps itself current.** Re-reads the leaderboards every 14 days locally; this repository refreshes its bundled data — and the table below — every week.
 - **Zero dependencies for the core.** Python 3.9+ standard library. Keys only from environment variables.
 
 ## Quick start
@@ -161,7 +160,7 @@ Avoid: airbrushed skin, glossy commercial look, cinematic grade, watermark.
 | Generation | **GPT Image 2.6 Sunburst** | #1 on the Artificial Analysis text-to-image arena — 1261 ± 14 vs. 1229 ± 10 for #2 |
 | Editing | **GPT Image 2.6 Sunburst** | MAI-Image-2.7 leads the image-editing arena by 4 Elo — inside the combined CI of 27, so the current choice stays |
 
-Leaderboard data checked on 2026-11-18. Refreshed automatically every week — the skill re-checks on its own every 14 days.
+Leaderboard data as of 18 November 2026.
 <!-- unrendered:model-table:end -->
 
 ## Documentation

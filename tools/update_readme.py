@@ -55,8 +55,9 @@ def build_table() -> str:
                        f"{margin:.0f} Elo — inside the combined CI of {ci:.0f}, so the current choice stays")
         lines.append(f"| {name} | **{display(reg, sel_id)}** | {why} |")
     checked = reg.get("last_checked", "")
-    lines += ["", f"Leaderboard data checked on {checked}. Refreshed automatically every week — "
-                  "the skill re-checks on its own every 14 days."]
+    import datetime as dt
+    d = dt.date.fromisoformat(checked)
+    lines += ["", f"Leaderboard data as of {d.day} {d.strftime('%B')} {d.year}."]
     return "\n".join(lines)
 
 
