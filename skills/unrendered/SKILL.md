@@ -85,7 +85,7 @@ Follow `references/prompt-compiler.md`. In short:
 3. **Write the physical scene:** concrete place, time, weather, one motivated key light + its direction and colour temperature, what is in focus, what is not, real clutter and wear.
 4. **Inject human truth** (`references/photoreal-playbook.md`): skin with pores and uneven tone, asymmetry, flyaway hair, creased clothing, mid-motion expressions, imperfect framing, mundane background objects.
 5. **Inject capture truth:** lens character, depth of field matched to focal length and aperture, sensor noise at the stated ISO, highlight roll-off, white balance consistent with the light.
-6. **Forbid the AI look** in plain words (no airbrushing, no HDR glow, no symmetric "perfect" faces, no cinematic teal-orange grade unless asked) — and **never use AI-art vocabulary** (`8k, ultra-detailed, hyperrealistic, masterpiece, award-winning, trending, octane, unreal engine, stunning, epic`). Those words pull toward CG gloss.
+6. **Forbid the AI look** in plain words (no airbrushing, no smooth polished surfaces, no HDR glow or high-contrast grade, no symmetric "perfect" faces, no cinematic teal-orange grade unless asked) — and **never use AI-art vocabulary** (`8k, ultra-detailed, hyperrealistic, masterpiece, award-winning, trending, octane, unreal engine, stunning, epic`). Those words pull toward CG gloss.
 7. Format in the model's `prompt_dialect` (for GPT-Image: labeled sections in natural language, ~120–250 words; exact text in quotes).
 
 Default is a real photograph. If the user explicitly wants a non-photo look (illustration, infographic, logo, UI, 3D, painting), use `references/non-photo.md` instead of steps 2–6 of this list, but keep the same candidate → QA → repair discipline.
@@ -104,7 +104,7 @@ If the user's prompt is already a detailed brief, normalise it — don't overrid
 ## Step 4 — Vision QA (do not skip)
 
 Open **every** image (Read tool / view image). For comparisons build a sheet: `python3 SKILL_DIR/scripts/contact_sheet.py out/<slug>/*.png -o out/<slug>/sheet.jpg`.
-Score each candidate with `references/qa-rubric.md` (10 criteria, hard-fail list). Zoom mentally into hands, eyes/teeth, ears, text, reflections, shadows, object contact points, background people, repeating textures.
+Score each candidate with `references/qa-rubric.md` (10 criteria, hard-fail list). First count bodies and limbs: trace every arm and hand back to one plausible body and check that each pose is physically possible. Then zoom mentally into hands, eyes/teeth, ears, text, reflections, shadows, object contact points, background people, repeating textures.
 - Pick the best. A candidate with any **hard fail** cannot ship.
 - If the best scores ≥ 8.5/10 with no hard fail → Step 6.
 - Else → Step 5.

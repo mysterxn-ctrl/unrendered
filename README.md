@@ -66,11 +66,11 @@ Same scene, same checklist. Only one of them can be read.
 <th width="50%">Photo</th>
 </tr>
 <tr>
-<td><img src="website/brand-extra/example-render.webp" alt="Render: hands ticking a checklist at a dark desk; the checklist lines are grey bars without words" width="100%"></td>
+<td><img src="website/brand-extra/example-render.webp" alt="Render: hands ticking a checklist at a dark desk; arms and hands are duplicated and misplaced, the checklist lines are grey bars without words, surfaces look smooth and the colours are high-contrast" width="100%"></td>
 <td><img src="website/brand-extra/example-photo.webp" alt="Photo: the same meeting at a window over the mountains; the checklist reads Strategische Analyse with six labelled points" width="100%"></td>
 </tr>
 <tr>
-<td>Grey bars instead of words, a chart with nothing to read, one cinematic grade on every surface.</td>
+<td>Duplicated and misplaced arms and hands in impossible positions, grey bars instead of words, a chart with nothing to read, smooth AI-sloppy surfaces and the typical AI high-contrast colour grade.</td>
 <td>A readable checklist: <em>Strategische Analyse</em>, Marktpotenziale, Wettbewerbsanalyse, Wachstumsstrategie, Risikobewertung, Investitionsbedarf, Umsetzungsplan.</td>
 </tr>
 </table>
@@ -84,7 +84,7 @@ The same image model often looks brilliant inside a chat app and flat through th
 | Raw API call | With Unrendered |
 |---|---|
 | Your one-liner reaches the model verbatim | A photographer's brief: who shot it, which lens, which light, which imperfections |
-| Gateway default quality — often `low` or `medium` | The model's top settings, chosen per task |
+| Whatever quality the gateway defaults to — sometimes `low` or `medium` | The model's top settings, chosen per task |
 | One image, shipped without review | Several candidates, a realism rubric and targeted repair |
 | A model you picked once and hope is still the best | The model chosen from blind-preference leaderboards, automatically |
 | Code tied to one vendor's SDK | Any API, gateway or agent tool through JSON profiles |
@@ -92,7 +92,7 @@ The same image model often looks brilliant inside a chat app and flat through th
 
 ## Features
 
-- **Autonomous, benchmark-based model choice.** Reads the [Artificial Analysis](https://artificialanalysis.ai/image/leaderboard/text-to-image) and [LMArena](https://arena.ai/leaderboard/text-to-image) arenas and switches only when a model's lead exceeds the combined 95 % confidence interval — separately for **generation** and **editing**. New models are added automatically. [How it decides →](docs/model-selection.md)
+- **Autonomous, benchmark-based model choice.** Reads the [Artificial Analysis](https://artificialanalysis.ai/image/leaderboard/text-to-image) blind-preference arenas, with [LMArena](https://arena.ai/leaderboard/text-to-image) as an optional second opinion, and switches only on a statistically clear lead: larger than both 95 % confidence intervals combined, or at least 25 Elo and confirmed by the second board. Generation and editing are decided separately. New models are added automatically. [How it decides →](docs/model-selection.md)
 - **Provider-agnostic.** OpenAI-protocol endpoints work out of the box; any other API — sync or async, JSON or multipart, base64 or URL results, separate edit endpoints — is a small JSON profile your agent writes from the provider's docs. [Providers →](docs/providers.md)
 - **Photographer-grade briefs.** Light with direction and colour temperature, optics that match the framing, real skin and wear, one to three capture artifacts, twenty genre recipes — and none of the "8k masterpiece" vocabulary that pulls images toward CGI. [Photorealism guide →](docs/photorealism.md)
 - **Vision QA with hard fails.** Ten weighted realism criteria plus hard fails for hands, text, light, fused objects and unwanted edit changes. Ships at 8.5 / 10. [QA rubric →](docs/quality-assurance.md)

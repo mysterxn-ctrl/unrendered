@@ -7,7 +7,7 @@ Unrendered decides **by itself** which image model to use — not the person who
 | `generate` | new images, with or without inspiration references | [Artificial Analysis — Text to Image](https://artificialanalysis.ai/image/leaderboard/text-to-image) |
 | `edit` | changing existing images: retouching, compositing, background swaps, try-ons | [Artificial Analysis — Image Editing](https://artificialanalysis.ai/image/leaderboard/editing) |
 
-The secondary source for both tracks is the [LMArena / arena.ai](https://arena.ai/leaderboard/text-to-image) leaderboard. **Default model for both tracks: GPT Image 2.6 Sunburst.**
+The secondary source for both tracks is the [LMArena / arena.ai](https://arena.ai/leaderboard/text-to-image) leaderboard. It usually blocks scripted access, so it only counts when its rows were added with `ingest`; without it, rule 2 below cannot apply and rule 1 decides. **Default model for both tracks: GPT Image 2.6 Sunburst.**
 
 ## What happens before every job
 

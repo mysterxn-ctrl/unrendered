@@ -22,7 +22,7 @@ Yes. Every 14 days it re-reads the leaderboards (the repository also refreshes i
 
 ## Why do my API images look worse than the same model in a chat app?
 
-Chat apps rewrite your prompt into a detailed one, may plan and generate several candidates, and pick quality settings for you. A raw API call sends your one-liner at whatever default the gateway uses — often `low` or `medium`. Unrendered does the rewriting, the candidates and the quality settings explicitly, plus photorealism-specific briefs and QA. See [How it works](how-it-works.md).
+Chat apps rewrite your prompt into a detailed one, may plan and generate several candidates, and pick quality settings for you. A raw API call sends your one-liner at whatever quality the gateway defaults to, sometimes `low` or `medium`. Unrendered does the rewriting, the candidates and the quality settings explicitly, plus photorealism-specific briefs and QA. See [How it works](how-it-works.md).
 
 ## What does it cost?
 

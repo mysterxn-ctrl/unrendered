@@ -1,12 +1,12 @@
 # Quality assurance
 
-No image leaves Unrendered unchecked. The agent looks at every candidate — at full size and in zoomed regions — like a photo editor hunting for fakes: eyes, teeth, ears, hands, hairline, jewellery, text, reflections, shadows, contact points, background people, repeating textures, subject edges.
+No image leaves Unrendered unchecked. The agent looks at every candidate — at full size and in zoomed regions — like a photo editor hunting for fakes. It first traces every arm and hand back to one plausible body, then checks eyes, teeth, ears, hands, hairline, jewellery, text, reflections, shadows, contact points, background people, repeating textures, subject edges.
 
 ## Hard fails
 
 Any one of these disqualifies a candidate, whatever its score:
 
-1. Wrong anatomy — extra, missing or fused fingers; impossible joints; mismatched eyes or catchlights; melted ears; too many teeth.
+1. Wrong anatomy — duplicated or misplaced arms, hands or legs; limbs that belong to no plausible body; impossible body positions; extra, missing or fused fingers; impossible joints; mismatched eyes or catchlights; melted ears; too many teeth.
 2. Gibberish or misspelled text where text is readable.
 3. Physically impossible light — contradictory shadows, a subject lit by nothing, missing contact shadows.
 4. Fused objects — a hand merging into a cup, glasses into hair, chair legs into the floor.
@@ -26,7 +26,7 @@ Any one of these disqualifies a candidate, whatever its score:
 | 5 | Material and world realism | 1.0 | correct materials, wear, clutter, reflections |
 | 6 | Capture authenticity | 1.0 | plausible noise, dynamic range, small imperfections |
 | 7 | Composition plausibility | 0.75 | a person would plausibly frame it this way |
-| 8 | Colour naturalness | 0.75 | believable white balance, restrained saturation |
+| 8 | Colour naturalness | 0.75 | believable white balance, restrained saturation and contrast |
 | 9 | Absence of AI sheen | 1.5 | no plastic skin, glow or over-sharpened micro-contrast |
 | 10 | Technical cleanliness | 1.0 | no artifacts, banding, halos or mushy textures |
 
@@ -41,6 +41,8 @@ Any one of these disqualifies a candidate, whatever its score:
 | Flat light from nowhere | one key source with direction and Kelvin | — |
 | Creamy blur in a phone shot | "background mostly in focus, as from a phone" | — |
 | Warm or yellow cast | "neutral white balance, no warm cast" | correct white balance only |
+| Duplicated or misplaced limbs, impossible pose | fewer people and hands in frame; say who the hands belong to; one simple pose | remove the extra limb with a masked edit |
+| AI-typical high contrast | soft, low-contrast natural light; open shadows; straight-out-of-camera colours | lower contrast and saturation only |
 | Bad hands | give the hands a task, fewer visible hands | masked edit of the hand |
 | Gibberish text | remove text or quote it exactly | edit only the sign |
 | Cellular texture in foliage, fur, fog | less fine organic texture, out of focus, ≤ 2K size | replace the region |

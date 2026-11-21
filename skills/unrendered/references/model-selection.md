@@ -7,7 +7,7 @@ The model is **not** chosen by the person who installed the skill, nor by the ag
 | `generate` | new images (text-to-image, with or without inspiration references) | Artificial Analysis Text-to-Image arena — `artificialanalysis.ai/image/leaderboard/text-to-image` |
 | `edit` | editing/compositing/retouching existing images | Artificial Analysis Image-Editing arena — `artificialanalysis.ai/image/leaderboard/editing` |
 
-Secondary board for both: LMArena / arena.ai (`/leaderboard/text-to-image`, `/leaderboard/image-edit`).
+Secondary board for both: LMArena / arena.ai (`/leaderboard/text-to-image`, `/leaderboard/image-edit`). It usually blocks scripted access; it only counts once its rows were added with `ingest`. Without it, rule (b) cannot apply.
 Default starting point for both tracks (`models.json → default`): **gpt-image-2.6-sunburst**.
 
 ## Pipeline (what `plan` does)

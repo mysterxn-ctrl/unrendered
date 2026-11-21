@@ -286,7 +286,7 @@ class Site:
                 m = ms.find_model(reg, r["name"])
                 items.append({"id": m["id"] if m else r["key"], "name": r["name"], "elo": round(r["elo"]),
                               "ci": round(r["ci"]) if r.get("ci") is not None else None})
-            data["tracks"][track] = {"rows": items, "current": reg["default"][track]}
+            data["tracks"][track] = {"rows": items, "current": reg["selected"].get(track) or reg["default"][track]}
             trs = []
             for i, r in enumerate(items, 1):
                 ci = f'<span class="ci">± {r["ci"]}</span>' if r["ci"] is not None else ""
@@ -294,7 +294,7 @@ class Site:
                            f'<td class="num"><span data-sc-count="{r["elo"] - 200} {r["elo"]}" data-sc-count-ms="1400">{r["elo"]}</span> {ci}</td></tr>')
             cards.append(f"""      <div class="board" data-track="{track}" data-sc-in>
         <p class="board__title">{names[track]}</p>
-        <table><caption class="visually-hidden">{names[track]}: top five on the Artificial Analysis arena, Elo with 95% confidence interval</caption>
+        <table><caption class="visually-hidden">{names[track]}: top five in the Artificial Analysis snapshot bundled with the skill, Elo with 95% confidence interval</caption>
         <thead><tr><th scope="col">#</th><th scope="col">Model</th><th scope="col" class="num">Elo</th></tr></thead>
         <tbody>{''.join(trs)}</tbody></table>
         <p class="board__verdict" data-verdict="{track}">Decision rule runs in this page.</p>

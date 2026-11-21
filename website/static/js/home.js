@@ -54,7 +54,7 @@
     "session": "session ready · sample request · track generate",
     "plan": "plan · track generate · " + (currentModel.generate || "default model") + " · rule: lead > CI(new) + CI(current)",
     "brief": "brief · photographer's view · 7 fields",
-    "inspect": "inspect · sample review · 6 findings · verdict: render",
+    "inspect": "inspect · sample review · 8 findings · verdict: render",
     "finish": "finish · photo_finish",
     "your-turn": "ready · type a request"
   };

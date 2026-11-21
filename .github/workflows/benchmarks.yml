@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # start the website build after a data commit (pushes made with GITHUB_TOKEN do not trigger workflows)
 
 concurrency:
   group: benchmarks
@@ -40,7 +41,9 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           rm -f refresh.log
           exit 0
-      - name: Commit updated registry and README
+      - name: Commit updated registry and snapshots
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           if git diff --quiet -- skills/unrendered; then
             echo "No changes."
@@ -51,3 +54,4 @@ jobs:
           git add skills/unrendered/models.json skills/unrendered/benchmarks
           git commit -m "chore(benchmarks): refresh leaderboard snapshots"
           git push
+          gh workflow run pages.yml --ref main

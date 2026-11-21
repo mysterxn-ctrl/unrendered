@@ -50,7 +50,7 @@
   <div class="wrap plan">
     <div class="plan__head" data-sc-in data-sc-stagger="60">
       <h2 id="plan-title" class="label-h">Plan</h2>
-      <p class="plan__rule">The model comes from blind-preference leaderboards. Unrendered switches only when a new leader's lead is larger than both 95% confidence intervals added together. Default: <strong>GPT Image 2.6 Sunburst</strong>.</p>
+      <p class="plan__rule">The model comes from blind-preference leaderboards. Unrendered switches only on a clear lead: larger than both 95% confidence intervals added together, or at least 25 Elo and confirmed by a second leaderboard. A tie keeps the current model. Default: <strong>GPT Image 2.6 Sunburst</strong>.</p>
     </div>
     <div class="boards">
 {{boards}}
@@ -97,8 +97,10 @@
           <li><span class="flag" aria-hidden="true"></span>A desk without a single trace of use.</li>
           <li><span class="flag" aria-hidden="true"></span>Wrong or duplicated limbs and body parts.</li>
           <li><span class="flag" aria-hidden="true"></span>Unrealistic body positions.</li>
+          <li><span class="flag" aria-hidden="true"></span>Smooth, AI-sloppy surfaces: skin, paper and stone look polished.</li>
+          <li><span class="flag" aria-hidden="true"></span>AI-typical high contrast: crushed blacks next to glowing highlights.</li>
         </ul>
-        <p class="verdict">Reads as a render. Repair: rebrief, regenerate, check the text.</p>
+        <p class="verdict">Reads as a render. Repair: rebrief, regenerate, check anatomy, contrast and text again.</p>
       </div>
     </div>
   </div>
