@@ -59,10 +59,11 @@ Never all at once — that becomes a filter, not a photograph.
 ## People
 
 - **Skin:** visible pores, fine vellus hair, uneven tone, small blemishes, natural shine on the T-zone. Say "unretouched, no skin smoothing".
-- **Faces:** natural asymmetry, real teeth, eyes looking at something specific.
+- **Faces:** natural asymmetry, real teeth, both eyes on the same specific target.
 - **Hair:** flyaways, strands crossing the face, reacting to wind and gravity.
-- **Pose:** mid-action ("laughing mid-sentence", "reaching for the salt"), weight on one leg.
-- **Hands:** give them a task — holding the cup by its handle, typing, adjusting a strap. Idle hands are where models fail.
+- **Limbs:** models draw arms and hands from text statistics, not from a skeleton. State how many people are in frame, place each one, and give every visible hand a side and a task ("his right hand holds the pen, his left keeps the paper flat"). Fewer visible hands mean fewer errors. Never ask for disembodied "hands doing X" — say whose hands they are and where the body is.
+- **Pose:** describe it as physics — where the weight is, what carries the body, what touches what. Mid-action ("reaching for the salt"), shoulders and hips slightly turned against each other, never a stiff, symmetric stance. A grip must work: a pen between thumb, index and middle finger; a cup by its handle.
+- **Expression:** never just "smiling". Write the moment as eyes, brows, mouth and gaze target: "eyes narrowed and cheeks lifted mid-laugh", "brows slightly drawn, lips pressed, eyes on the paper". A real smile reaches the eyes.
 - **Clothing:** creases at elbows and waist, pilling on knitwear, real fabric names.
 - **Background people:** few, small, out of focus.
 
@@ -93,15 +94,17 @@ A real photograph, not an illustration or render.
 
 Photographer & purpose: <who took it, why>
 Scene: <specific place, time, weather; specific objects and clutter>
-Subject: <concrete physical details; mid-action; expression; materials and wear>
+Subject: <concrete physical details; mid-action; materials and wear>
+Bodies & pose: <people counted and placed; what each visible hand does, left and right; weight and support>
+Face & expression: <eyes, brows, mouth and gaze target for this moment>
 Composition: <shot size, camera height, placement, what crosses the frame edges, aspect>
 Camera & capture: <camera, focal length, aperture, shutter, ISO; focus point; resulting DOF>
 Light: <one key source, direction, colour temperature; fill; what clips>
-Texture & realism: <skin, hair, fabric, dust; 1–3 capture artifacts>
+Texture & realism: <each main material with its texture and wear; 1–3 capture artifacts>
 Colour: <neutral white balance for this light; saturation; no grade>
 Text: <"exact text" with placement | No readable text anywhere.>
 Avoid: no airbrushed skin, no plastic sheen, no CGI look, no HDR glow, no cinematic grade,
-no perfect symmetry, no extra fingers, no watermark, no logos.
+no perfect symmetry, no stiff posed stance, no extra or disembodied hands, no watermark, no logos.
 ```
 
 ### Example — "a man drinking coffee"
@@ -113,15 +116,18 @@ Photographer & purpose: candid documentary photo taken by a friend sitting acros
 Scene: small neighbourhood café on a grey November morning; rain-speckled window, condensation at
 the edges, a crumpled sugar wrapper and a half-eaten croissant on a scratched dark-wood table.
 Subject: a man in his late 40s with a short salt-and-pepper beard, reading glasses pushed up on his
-head, pilled navy merino sweater, holding a white ceramic cup by the handle, blowing on the coffee,
-looking out of the window.
+head, pilled navy merino sweater.
+Bodies & pose: one person, seated alone; right elbow on the table, right hand holds a white ceramic
+cup by the handle just below his mouth; left forearm on the table, left hand flat beside the saucer.
+Face & expression: lips pursed, blowing on the coffee; eyes half-lowered towards the window, brows
+relaxed; a still-tired early-morning look.
 Composition: medium close-up from across the table at seated eye level, subject right of centre,
 edge of the window frame entering left, 3:2.
 Camera & capture: full-frame mirrorless, 50 mm at f/2.8, 1/125 s, ISO 1600; focus on the near eye.
 Light: overcast daylight from the window camera-left as the only key (~6500 K), faint warm pendant
 behind; gentle fall-off into shadow.
-Texture & realism: visible pores and fine lines, stray beard hairs, faint steam, slight ISO grain,
-horizon very slightly tilted.
+Texture & realism: visible pores and fine lines, stray beard hairs, pilled wool, worn wood grain,
+faint steam, slight ISO grain, horizon very slightly tilted.
 Colour: neutral cool daylight with a little warm spill; muted saturation.
 Text: no readable text anywhere.
 Avoid: no airbrushed skin, no glossy commercial look, no cinematic grade, no watermark, no logos.

@@ -14,6 +14,8 @@ First public release by Ruben Ferraro.
 - Provider-agnostic runner (`imagegen.py`): JSON provider profiles, sync and async APIs, JSON and multipart bodies, base64 / data-URI / URL results, per-operation edit model ids, tool providers, `--model auto`.
 - Generic OpenAI-protocol provider profile and a profile template.
 - Photorealism playbook, twenty photo-genre recipes, brief compiler, realism QA rubric, editing guide and non-photo brief format.
+- Briefs block every body and face: people counted and placed, every visible hand with a side and a task, weight and support, expression as eyes, brows, mouth and gaze.
+- QA built around limbs, pose, facial expression, texture and optics, each with its own minimum score of 8.
 - Every render at the model's highest quality and complexity; the runner stops rather than fall back to a provider default.
 - `qa_tiles.py` for full-detail inspection of every image region, plus `contact_sheet.py` and `photo_finish.py` helpers.
 - Claude Code plugin and marketplace manifests; compatible with the skills CLI.

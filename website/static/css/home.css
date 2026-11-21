@@ -150,17 +150,17 @@ code { font-family: var(--sc-font-mono); }
 
 /* ---------- 3 · brief (pinned) ---------- */
 .act--brief .stage { display: grid; align-items: center; padding-top: var(--chrome-h); }
-.brief { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.brief { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
 .brief__in { margin: var(--sc-5) 0 0; font: 500 clamp(1.8rem, 1.2rem + 2vw, 2.8rem)/1.12 var(--sc-font-display); letter-spacing: -0.025em; }
 .brief__hint { margin: var(--sc-4) 0 0; max-width: 32ch; color: var(--sc-ink-soft); }
 .brief__doc {
   margin: 0; padding: clamp(1rem, 2vw, 1.6rem) clamp(1.1rem, 2.4vw, 2rem); border-radius: 14px;
   background: var(--sc-surface); border: 1px solid var(--line-strong); box-shadow: var(--sc-edge), var(--sc-e2);
 }
-.brief__doc > div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--sc-4); padding: 12px 0; border-bottom: 1px solid var(--line); }
+.brief__doc > div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: var(--sc-4); padding: 8px 0; border-bottom: 1px solid var(--line); }
 .brief__doc > div:last-child { border-bottom: 0; }
 .brief__doc dt { font: 500 0.78rem/1.5 var(--sc-font-mono); color: var(--sc-accent); padding-top: 2px; }
-.brief__doc dd { margin: 0; line-height: 1.55; }
+.brief__doc dd { margin: 0; font-size: 0.95rem; line-height: 1.45; }
 .brief__doc dd.nums { font-variant-numeric: tabular-nums; }
 
 /* ---------- 4 · inspect ---------- */
@@ -319,10 +319,10 @@ code { font-family: var(--sc-font-mono); }
   .chrome__tabs { margin-inline: -8px; width: calc(100% + 16px); }
   .chrome__tabs a { padding: 7px 10px; font-size: 0.82rem; }
   .boards { grid-template-columns: minmax(0, 1fr); }
-  .brief__doc { padding: 10px 14px; }
-  .brief__doc > div { grid-template-columns: minmax(0, 1fr); gap: 1px; padding: 6px 0; }
-  .brief__doc dt { font-size: 0.7rem; }
-  .brief__doc dd { font-size: 0.84rem; line-height: 1.4; }
+  .brief__doc { padding: 8px 14px; }
+  .brief__doc > div { display: block; padding: 4px 0; font-size: 0.8rem; line-height: 1.36; }
+  .brief__doc dt { display: inline; font-size: 0.7rem; line-height: inherit; padding: 0; margin-right: 0.45em; }
+  .brief__doc dd { display: inline; font-size: inherit; line-height: inherit; }
   .brief__in { font-size: 1.35rem; }
   .cmd { width: 100%; }
   .cmd code { white-space: normal; word-break: break-all; font-size: 0.82rem; }
@@ -334,6 +334,7 @@ code { font-family: var(--sc-font-mono); }
 
 /* ---------- brand kit layer: ribbon, glow, gradient hairlines, light waves ---------- */
 .session__stage { position: relative; isolation: isolate; }
+.act--session { overflow-x: clip; } /* the ribbon is wider than the stage by design; never widen the page */
 .session__ribbon {
   position: absolute; z-index: -1; width: 128%; max-width: none; height: auto; left: 50%; top: 0;
   transform: translateX(-50%);

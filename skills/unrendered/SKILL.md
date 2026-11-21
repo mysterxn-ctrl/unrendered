@@ -82,12 +82,13 @@ Follow `references/prompt-compiler.md`. In short:
 1. **Interpret intent:** subject, purpose (ad, editorial, social, stock, family snapshot…), mood, must-haves, must-not-haves, any exact text.
 2. **Cast the photographer:** decide *who* took this photo, *with what*, *why*, *when* (`references/photo-genres.md`). This single decision fixes camera, lens, light, framing and the kind of imperfection — the root of believability.
 3. **Write the physical scene:** concrete place, time, weather, one motivated key light + its direction and colour temperature, what is in focus, what is not, real clutter and wear.
-4. **Inject human truth** (`references/photoreal-playbook.md`): skin with pores and uneven tone, asymmetry, flyaway hair, creased clothing, mid-motion expressions, imperfect framing, mundane background objects.
-5. **Inject capture truth:** lens character, depth of field matched to focal length and aperture, sensor noise at the stated ISO, highlight roll-off, white balance consistent with the light.
-6. **Forbid the AI look** in plain words (no airbrushing, no smooth polished surfaces, no HDR glow or high-contrast grade, no symmetric "perfect" faces, no cinematic teal-orange grade unless asked) — and **never use AI-art vocabulary** (`8k, ultra-detailed, hyperrealistic, masterpiece, award-winning, trending, octane, unreal engine, stunning, epic`). Those words pull toward CG gloss.
-7. Format in the model's `prompt_dialect` (for GPT-Image: labeled sections in natural language, ~120–250 words; exact text in quotes).
+4. **Block every body and face** (mandatory whenever a person or any body part is visible — this is where wrong limbs, stiff poses and dead faces are prevented): how many people; where each one is (seated/standing, side of the frame, facing where); what each visible hand does, left and right, with a grip that works; where limbs leave the frame and the body continues; weight and support. Never ask for disembodied hands — say whose they are and where the body is. Write the expression as eyes, brows, mouth and gaze target for this exact moment, never just "smiling".
+5. **Inject human and material truth** (`references/photoreal-playbook.md`): skin with pores and uneven tone, asymmetry, flyaway hair, creased clothing, each main material with its texture and wear, imperfect framing, mundane background objects.
+6. **Inject capture truth:** lens character, depth of field matched to focal length and aperture, sensor noise at the stated ISO, highlight roll-off, white balance consistent with the light.
+7. **Forbid the AI look** in plain words (no airbrushing, no smooth polished surfaces, no HDR glow, no stiff posed stance, no symmetric "perfect" faces, no cinematic teal-orange grade unless asked) — and **never use AI-art vocabulary** (`8k, ultra-detailed, hyperrealistic, masterpiece, award-winning, trending, octane, unreal engine, stunning, epic`). Those words pull toward CG gloss.
+8. Format in the model's `prompt_dialect` (for GPT-Image: labeled sections in natural language, ~120–250 words; exact text in quotes).
 
-Default is a real photograph. If the user explicitly wants a non-photo look (illustration, infographic, logo, UI, 3D, painting), use `references/non-photo.md` instead of steps 2–6 of this list, but keep the same candidate → QA → repair discipline.
+Default is a real photograph. If the user explicitly wants a non-photo look (illustration, infographic, logo, UI, 3D, painting), use `references/non-photo.md` instead of steps 2–7 of this list, but keep the same candidate → QA → repair discipline.
 
 If the user's prompt is already a detailed brief, normalise it — don't override their creative choices. Ask a question only if something blocking is unknown (e.g. which person, which product, exact copy); otherwise decide like a professional and state the decisions.
 
@@ -104,21 +105,22 @@ If the user's prompt is already a detailed brief, normalise it — don't overrid
 
 You usually see an image downscaled; that hides a wrong finger, a third arm at the frame edge or garbled small text. So inspect in two passes:
 
-1. **Whole frame.** Open every candidate. Count people, then trace every arm and hand to the shoulder of one plausible body; check poses, light direction, colour and overall look. Anything with a hard fail is out.
+1. **Whole frame.** Open every candidate. Count people, then trace every arm and hand to the shoulder of one plausible body; check each pose (weight, support, joints, grip), each facial expression, light direction and the overall look. Anything with a hard fail is out.
 2. **Every region at full detail.** For each candidate still in the running, cut it into enlarged tiles and open **every** tile:
    `python3 SKILL_DIR/scripts/qa_tiles.py out/<slug>/<file>.png -o out/<slug>/qa`
-   Tiles overlap and cover the frame edge to edge (corners and borders included). In each tile check hands and fingers, faces, eyes and teeth, ears, hairline, text and labels letter by letter, edges of objects, contact points, reflections, background people and repeating texture.
+   Tiles overlap and cover the frame edge to edge (corners and borders included). In each tile check, in this order: limbs and fingers, pose details (grip, contact), faces (eyes, gaze, mouth, teeth), texture (skin pores, hair, fabric, materials), optics (focus falloff, perspective, glow, grain); then text letter by letter, contact points, reflections and background people.
 For a side-by-side view of the candidates: `python3 SKILL_DIR/scripts/contact_sheet.py out/<slug>/*.png -o out/<slug>/sheet.jpg`.
 
-Score each candidate with `references/qa-rubric.md` (10 criteria, hard-fail list).
+Score each candidate with `references/qa-rubric.md` (checklist, hard fails, 10 criteria). Write what you see, not "looks fine".
 - Pick the best. A candidate with any **hard fail** cannot ship.
-- If the best scores ≥ 8.5/10 with no hard fail → Step 6.
+- If the best has no hard fail, scores ≥ 8.5/10 **and at least 8 in each of limbs, pose, expression, texture and optics** → Step 6.
 - Else → Step 5.
 - The image you deliver must have passed both passes, including after every repair.
 
 ## Step 5 — Repair loop (max 3 rounds, one change at a time)
 
-- Local defect (hand, text, stray object, face detail) → **edit** the winner with a mask or tight instruction, restating every invariant ("change only the left hand; keep everything else identical").
+- Wrong, extra or misplaced limbs, or a stiff or impossible pose → **re-block the bodies in the brief** (fewer visible hands, every hand assigned, simpler pose) and regenerate; pose edits rarely hold.
+- Local defect (one hand, one expression, text, stray object, skin texture in one area) → **edit** the winner with a mask or tight instruction, restating every invariant ("change only the left hand; keep everything else identical").
 - Global defect (too glossy, wrong light, staged feel, AI look) → **revise the brief** (the rubric maps each failure to a prompt fix) and regenerate.
 - Re-QA after every round. After 3 rounds, deliver the best and state the remaining flaw honestly.
 
@@ -141,7 +143,7 @@ Score each candidate with `references/qa-rubric.md` (10 criteria, hard-fail list
 3. Lens/focal length consistent with framing; DOF consistent with aperture and distance.
 4. Real imperfections: noise, slight tilt, clipped highlight, imperfect focus plane.
 5. Skin: pores, uneven tone, fine hair, no airbrushing.
-6. Asymmetry and mid-action moments, not poses.
+6. Every body blocked: people counted and placed, every visible hand with a side and a task, weight and support; mid-action, never a stiff pose; expression as eyes + mouth + gaze.
 7. Mundane, specific background clutter.
 8. Wear: scratches, dust, creases, fingerprints, stains.
 9. Neutral, believable colour (no default warm/sepia cast, no teal-orange).

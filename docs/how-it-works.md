@@ -40,6 +40,8 @@ The request is compiled into a structured brief:
 - **Who** took the photo and why (a friend's phone snapshot, a photojournalist, a studio product shooter).
 - **Scene** with a specific place, time, weather and mundane clutter.
 - **Subject** doing something concrete, with real skin, asymmetry and worn materials.
+- **Bodies & pose**: every person counted and placed, every visible hand given a side and a task, weight and support described — this is where wrong limbs and stiff poses are prevented.
+- **Face & expression**: the moment written as eyes, brows, mouth and gaze target, never just "smiling".
 - **Camera & capture**: focal length, aperture, shutter, ISO — and the depth of field that follows from them.
 - **Light**: one motivated key source, its direction and colour temperature; what clips.
 - **Imperfections**: one to three believable capture artifacts.
@@ -53,7 +55,7 @@ Three candidates by default (one for a quick look, up to six for hero work), eve
 
 ### 4 · Vision QA
 
-The agent looks at every candidate twice: as a whole frame, counting people and tracing every arm and hand to one body, and as enlarged, overlapping tiles from `qa_tiles.py` that cover the image edge to edge — so a wrong finger, a stray arm at the border or garbled small text is seen at full detail. It then scores the image on ten weighted criteria (light physics, optics, human realism, materials, capture authenticity, absence of AI sheen…). Hard fails such as duplicated or misplaced limbs, impossible poses, extra fingers, gibberish text, contradictory shadows or fused objects disqualify a candidate regardless of score. Shipping threshold: **8.5 / 10 and no hard fail**. → [Quality assurance](quality-assurance.md)
+The agent looks at every candidate twice: as a whole frame, counting people and tracing every arm and hand to one body, and as enlarged, overlapping tiles from `qa_tiles.py` that cover the image edge to edge — so a wrong finger, a stray arm at the border or garbled small text is seen at full detail. Limbs, pose, facial expression, texture and optics are checked first, then light, colour, text and composition — ten weighted criteria in all. Hard fails such as duplicated or misplaced limbs, impossible poses, dead or mismatched eyes, waxy skin, gibberish text, contradictory shadows or fused objects disqualify a candidate regardless of score. An image ships only with no hard fail, **8.5 / 10 overall and at least 8 in each of limbs, pose, expression, texture and optics**. → [Quality assurance](quality-assurance.md)
 
 ### 5 · Repair
 

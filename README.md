@@ -66,12 +66,12 @@ Same scene, same checklist. Only one of them can be read.
 <th width="50%">Photo</th>
 </tr>
 <tr>
-<td><img src="website/brand-extra/example-render.webp" alt="Render: hands ticking a checklist at a dark desk; arms and hands are duplicated and misplaced, the checklist lines are grey bars without words, surfaces look smooth and the colours are high-contrast" width="100%"></td>
+<td><img src="website/brand-extra/example-render.webp" alt="Render: hands ticking a checklist at a dark desk; arms and hands are duplicated and misplaced, the checklist lines are grey bars without words, surfaces look smooth and one colour grade lies over everything" width="100%"></td>
 <td><img src="website/brand-extra/example-photo.webp" alt="Photo: the same meeting at a window over the mountains; anatomically correct people, natural daylight and colours, the checklist reads Strategische Analyse with six labelled points" width="100%"></td>
 </tr>
 <tr>
-<td>Duplicated and misplaced arms and hands in impossible positions, grey bars instead of words, a chart with nothing to read, smooth AI-sloppy surfaces and the typical AI high-contrast colour grade.</td>
-<td>Every arm and hand belongs to a visible person in a natural pose, and the checklist is readable: <em>Strategische Analyse</em>, Marktpotenziale, Wettbewerbsanalyse, Wachstumsstrategie, Risikobewertung, Investitionsbedarf, Umsetzungsplan. Soft window daylight, natural colours with moderate contrast, real textures and everyday clutter: espresso cup, water glass, phone, laptop, watches.</td>
+<td>Duplicated and misplaced arms and hands in impossible positions, grey bars instead of words, a chart with nothing to read, smooth AI-sloppy surfaces and one cinematic colour grade over every surface.</td>
+<td>Every arm and hand belongs to a visible person in a natural pose, and the checklist is readable: <em>Strategische Analyse</em>, Marktpotenziale, Wettbewerbsanalyse, Wachstumsstrategie, Risikobewertung, Investitionsbedarf, Umsetzungsplan. Soft window daylight, natural colours, real textures and everyday clutter: espresso cup, water glass, phone, laptop, watches.</td>
 </tr>
 </table>
 
@@ -95,7 +95,7 @@ The same image model often looks brilliant inside a chat app and flat through th
 - **Autonomous, benchmark-based model choice.** Reads the [Artificial Analysis](https://artificialanalysis.ai/image/leaderboard/text-to-image) blind-preference arenas, with [LMArena](https://arena.ai/leaderboard/text-to-image) as an optional second opinion, and switches only on a statistically clear lead: larger than both 95 % confidence intervals combined, or at least 25 Elo and confirmed by the second board. Generation and editing are decided separately. New models are added automatically. [How it decides →](docs/model-selection.md)
 - **Provider-agnostic.** OpenAI-protocol endpoints work out of the box; any other API — sync or async, JSON or multipart, base64 or URL results, separate edit endpoints — is a small JSON profile your agent writes from the provider's docs. [Providers →](docs/providers.md)
 - **Photographer-grade briefs.** Light with direction and colour temperature, optics that match the framing, real skin and wear, one to three capture artifacts, twenty genre recipes — and none of the "8k masterpiece" vocabulary that pulls images toward CGI. [Photorealism guide →](docs/photorealism.md)
-- **Vision QA with hard fails.** Every image is inspected whole and in enlarged, overlapping tiles, so a wrong finger or a stray arm at the frame edge does not slip through. Hard fails for duplicated or misplaced limbs, impossible poses, hands, text, light, fused objects and unwanted edit changes; ten weighted realism criteria including AI sheen and unnatural contrast. Ships at 8.5 / 10. [QA rubric →](docs/quality-assurance.md)
+- **Vision QA built around what gives AI images away: limbs, pose, facial expression, texture and optics.** Every image is inspected whole and in enlarged, overlapping tiles, so a wrong finger or a stray arm at the frame edge does not slip through. Duplicated or misplaced limbs, impossible poses, dead faces and waxy skin are hard fails; an image ships only at 8.5 / 10 overall and at least 8 in each of those five. [QA rubric →](docs/quality-assurance.md)
 - **Highest quality, always.** Every candidate, repair and edit is sent at the model's highest quality and complexity — never a gateway default.
 - **Surgical edits.** Edit-specific model and endpoint; masks and invariants restated on every turn. [Editing →](docs/editing.md)
 - **Zero dependencies for the core.** Python 3.9+ standard library. Keys only from environment variables.
@@ -170,12 +170,17 @@ flowchart LR
 Photographer & purpose: candid documentary photo taken by a friend across the table.
 Scene: small neighbourhood café, grey November morning, rain-speckled window,
 a crumpled sugar wrapper and half a croissant on a scratched wooden table.
-Subject: man in his late 40s, salt-and-pepper beard, pilled navy sweater, holding
-the cup by its handle, blowing on the coffee, looking out of the window.
+Subject: man in his late 40s, salt-and-pepper beard, pilled navy merino sweater.
+Bodies & pose: one person, seated alone; right elbow on the table, right hand holds
+the cup by its handle just below his mouth; left hand flat beside the saucer.
+Face & expression: lips pursed to blow on the coffee, eyes half-lowered towards
+the window, brows relaxed, a still-tired early-morning look.
 Camera & capture: 50 mm at f/2.8, 1/125 s, ISO 1600; focus on the near eye.
 Light: overcast window light from camera left (~6500 K), faint warm pendant behind.
-Texture & realism: visible pores, stray beard hairs, faint steam, slight grain.
-Avoid: airbrushed skin, glossy commercial look, cinematic grade, watermark.
+Texture & realism: visible pores, stray beard hairs, pilled wool, worn wood grain,
+faint steam, slight grain.
+Avoid: airbrushed skin, stiff posed stance, disembodied hands, glossy commercial
+look, cinematic grade, watermark.
 ```
 
 </td>

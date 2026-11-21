@@ -26,7 +26,7 @@ Chat apps rewrite your prompt into a detailed one, may plan and generate several
 
 ## Does it catch every flaw?
 
-It catches the typical ones reliably, but not every subtle one. The checking is done by the vision of the agent that runs the skill, guided by a fixed rubric: it traces every arm and hand to one body, checks hands, faces, text, light, contrast and surfaces, and treats duplicated limbs, impossible poses and garbled text as hard fails. Fine defects at small scale can still slip through, and image models do not always fix a flaw on request. After three repair rounds the agent delivers the best image and names any flaw that remains, instead of calling it perfect.
+It catches the typical ones reliably, but not every subtle one. The checking is done by the vision of the agent that runs the skill, guided by a fixed rubric: it traces every arm and hand to one body and checks pose, facial expression, texture and optics at full detail; duplicated limbs, impossible poses, dead faces, waxy skin and garbled text are hard fails. Fine defects at small scale can still slip through, and image models do not always fix a flaw on request. After three repair rounds the agent delivers the best image and names any flaw that remains, instead of calling it perfect.
 
 ## What does it cost?
 
