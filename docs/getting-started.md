@@ -85,9 +85,9 @@ The skill will:
 
 1. pick the model from the blind-preference leaderboards (default model: GPT Image 2.6 Sunburst),
 2. turn the one-liner into a photographer's brief — who shot it, with which lens, in what light, with which imperfections,
-3. generate three candidates at high quality,
-4. inspect every candidate against a 10-criterion realism rubric with hard fails (hands, text, light, fused objects…),
-5. repair or regenerate if needed, then render the winner at the model's top quality setting,
+3. generate three candidates at the model's highest quality and complexity,
+4. inspect every candidate as a whole and in enlarged tiles against a 10-criterion realism rubric with hard fails (limbs, hands, text, light, fused objects…),
+5. repair or regenerate if needed, and check every repair the same way,
 6. save the image and report path, model, provider, settings, the final brief and the QA score.
 
 ## Your first edit

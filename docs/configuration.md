@@ -6,7 +6,7 @@
 |---|---|
 | `skills/unrendered/SKILL.md` | The skill: workflow and rules the agent follows |
 | `skills/unrendered/references/` | Photorealism playbook, genre recipes, prompt compiler, QA rubric, editing, providers, model selection, non-photo requests |
-| `skills/unrendered/scripts/` | `imagegen.py`, `model_select.py`, `contact_sheet.py`, `photo_finish.py` |
+| `skills/unrendered/scripts/` | `imagegen.py`, `model_select.py`, `qa_tiles.py`, `contact_sheet.py`, `photo_finish.py` |
 | `skills/unrendered/models.json` | Seed model registry |
 | `skills/unrendered/benchmarks/` | Seed leaderboard snapshots |
 | `skills/unrendered/providers/` | Bundled provider profiles and the template |
@@ -40,7 +40,7 @@ The registry is read from the newer of the seed copy and your state copy (by las
 | `onboarded` | `false` for models auto-added from a leaderboard until settings are filled in |
 | `benchmarks` | `{"<source>_<track>_<category>": {"elo", "ci95", "config", "rank", "date"}}` — maintained by the code |
 | `capabilities` | `generate`, `edit`, `max_reference_images`, `mask`, `negative_prompt_param`, `seed`, `transparent_background`, size limits |
-| `settings` | `quality_values`, `complexity_values`, `candidate`, `final`, `edit`, `edit_final`, `preferred_sizes` |
+| `settings` | `quality_values`, `complexity_values` (every render uses the highest listed level), `candidate`, `final`, `edit`, `edit_final` (kept at the highest level), `preferred_sizes` |
 | `prompt_dialect` | How to phrase briefs for this model |
 | `known_weaknesses` | What QA should look for first |
 

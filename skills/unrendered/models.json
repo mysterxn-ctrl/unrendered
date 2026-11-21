@@ -133,7 +133,7 @@
           "high"
         ],
         "candidate": {
-          "quality": "high",
+          "quality": "max",
           "complexity": "high"
         },
         "final": {
@@ -141,12 +141,12 @@
           "complexity": "high"
         },
         "edit": {
-          "quality": "high",
-          "complexity": "low"
+          "quality": "max",
+          "complexity": "high"
         },
         "edit_final": {
           "quality": "max",
-          "complexity": "low"
+          "complexity": "high"
         },
         "preferred_sizes": {
           "3:2": "1536x1024",
@@ -166,7 +166,7 @@
         "slight warm cast and shallow-DOF bokeh by default",
         "fine organic repeating textures (foliage, fur, fog, crowds) can show cellular/noise artifacts",
         "sizes above 2560x1440 are experimental: more artifacts/composition shifts",
-        "high complexity on edits changes areas outside the instruction"
+        "edits at high complexity can also change areas outside the instruction: restate every invariant, use a mask, and check the whole image against the original"
       ]
     },
     {
@@ -204,13 +204,16 @@
       },
       "settings": {
         "candidate": {
-          "quality": "high"
+          "quality": "max"
         },
         "final": {
           "quality": "max"
         },
         "edit": {
-          "quality": "high"
+          "quality": "max"
+        },
+        "edit_final": {
+          "quality": "max"
         }
       },
       "prompt_dialect": "same as gpt-image-2.6-sunburst",
@@ -254,7 +257,7 @@
       },
       "settings": {
         "candidate": {
-          "quality": "high",
+          "quality": "max",
           "complexity": "high"
         },
         "final": {
@@ -262,8 +265,12 @@
           "complexity": "high"
         },
         "edit": {
-          "quality": "high",
-          "complexity": "low"
+          "quality": "max",
+          "complexity": "high"
+        },
+        "edit_final": {
+          "quality": "max",
+          "complexity": "high"
         }
       },
       "prompt_dialect": "same as gpt-image-2.6-sunburst",
@@ -305,13 +312,16 @@
       },
       "settings": {
         "candidate": {
-          "quality": "high"
+          "quality": "max"
         },
         "final": {
           "quality": "max"
         },
         "edit": {
-          "quality": "high"
+          "quality": "max"
+        },
+        "edit_final": {
+          "quality": "max"
         }
       },
       "prompt_dialect": "same as gpt-image-2.6-sunburst"
@@ -363,6 +373,9 @@
           "quality": "high"
         },
         "edit": {
+          "quality": "high"
+        },
+        "edit_final": {
           "quality": "high"
         }
       },

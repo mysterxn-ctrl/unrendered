@@ -18,12 +18,11 @@ Unrendered makes every one of those steps explicit, and adds what neither does b
 flowchart LR
     A[Request] --> B[Plan<br/>model + provider]
     B --> C[Brief<br/>photographer's view]
-    C --> D[Candidates<br/>high quality]
-    D --> E[Vision QA<br/>rubric + hard fails]
+    C --> D[Candidates<br/>highest quality]
+    D --> E[Vision QA<br/>whole frame + enlarged tiles]
     E -- fail --> F[Repair<br/>edit or rebrief]
     F --> E
-    E -- pass --> G[Final render<br/>top quality]
-    G --> H[Deliver]
+    E -- pass --> H[Deliver]
 ```
 
 ### 0 · Connect
@@ -32,7 +31,7 @@ The skill looks for a provider the user has configured: a profile, environment v
 
 ### 1 · Plan — model, provider, settings
 
-`model_select.py plan --task generate|edit` refreshes leaderboard data when it is older than 14 days, applies a fixed statistical rule to decide the best model per track, then walks the ranking until it finds a model that one of your providers really serves. It returns the model, the provider, the provider's model id and the model's tuned settings. → [Model selection](model-selection.md)
+`model_select.py plan --task generate|edit` refreshes leaderboard data when it is older than 14 days, applies a fixed statistical rule to decide the best model per track, then walks the ranking until it finds a model that one of your providers really serves. It returns the model, the provider, the provider's model id and the model's quality levels. → [Model selection](model-selection.md)
 
 ### 2 · Brief — think like the person behind the camera
 
@@ -50,11 +49,11 @@ The request is compiled into a structured brief:
 
 ### 3 · Candidates
 
-Three candidates by default (one for quick drafts, up to six for hero work) at the model's candidate settings — for GPT Image 2.6 Sunburst `quality=high`, `complexity=high`, at a native size. Every image gets a sidecar JSON with the full request, so the same call can be repeated.
+Three candidates by default (one for a quick look, up to six for hero work), every one at the model's highest quality and complexity — for GPT Image 2.6 Sunburst `quality=max`, `complexity=high` — at a native size. The runner never falls back to a gateway default: if a model's quality levels are unknown, it stops until they are added. Every image gets a sidecar JSON with the full request, so the same call can be repeated.
 
 ### 4 · Vision QA
 
-The agent looks at every candidate — including zoomed regions — and scores it on ten weighted criteria (light physics, optics, human realism, materials, capture authenticity, absence of AI sheen…). Hard fails such as extra fingers, gibberish text, contradictory shadows or fused objects disqualify a candidate regardless of score. Shipping threshold: **8.5 / 10 and no hard fail**. → [Quality assurance](quality-assurance.md)
+The agent looks at every candidate twice: as a whole frame, counting people and tracing every arm and hand to one body, and as enlarged, overlapping tiles from `qa_tiles.py` that cover the image edge to edge — so a wrong finger, a stray arm at the border or garbled small text is seen at full detail. It then scores the image on ten weighted criteria (light physics, optics, human realism, materials, capture authenticity, absence of AI sheen…). Hard fails such as duplicated or misplaced limbs, impossible poses, extra fingers, gibberish text, contradictory shadows or fused objects disqualify a candidate regardless of score. Shipping threshold: **8.5 / 10 and no hard fail**. → [Quality assurance](quality-assurance.md)
 
 ### 5 · Repair
 
@@ -63,14 +62,14 @@ At most three rounds, one change at a time:
 - local defects (a hand, a sign, a stray object) → a masked or tightly scoped **edit** that restates every invariant,
 - global defects (glossy, staged, flat light) → a **revised brief** and a regeneration.
 
-### 6 · Final render and delivery
+### 6 · Delivery
 
-The winning brief is rendered once more at the model's top setting (`quality=max` for Sunburst); the better of the two is kept. An optional finishing pass adds subtle grain, lens vignetting and highlight roll-off if an image still looks too clean. The agent reports file paths, model, provider, settings, brief and QA result.
+The winner is already rendered at the highest quality, so no extra render is needed. An optional finishing pass adds subtle grain, lens vignetting and highlight roll-off if an image still looks too clean. The agent reports file paths, model, provider, settings, brief and QA result.
 
 ## Design principles
 
 1. **Evidence over opinion.** Models are chosen by blind-preference benchmarks with confidence intervals, not by hype.
 2. **No vendor lock-in.** Providers are data (JSON profiles), not code.
-3. **Never ship unchecked.** Every image is inspected before it is delivered.
+3. **Highest quality, never unchecked.** Every render uses the model's top level, and every image is inspected region by region before it is delivered.
 4. **One change per iteration.** Repairs stay controllable and reproducible.
 5. **Realism is an aesthetic, not a disguise.** Provenance data is never stripped or forged.

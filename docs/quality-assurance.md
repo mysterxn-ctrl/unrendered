@@ -1,6 +1,6 @@
 # Quality assurance
 
-No image leaves Unrendered unchecked. The agent looks at every candidate — at full size and in zoomed regions — like a photo editor hunting for fakes. It first traces every arm and hand back to one plausible body, then checks eyes, teeth, ears, hands, hairline, jewellery, text, reflections, shadows, contact points, background people, repeating textures, subject edges.
+No image leaves Unrendered unchecked. The agent looks at every candidate like a photo editor hunting for fakes, in two passes. First the whole frame: it counts the people and traces every arm and hand back to one plausible body. Then every region at full detail, using enlarged, overlapping tiles that cover the image edge to edge, because an agent usually sees a whole image downscaled. In each tile it checks eyes, teeth, ears, hands, hairline, jewellery, text, reflections, shadows, contact points, background people, repeating textures, subject edges.
 
 ## Hard fails
 
@@ -34,7 +34,7 @@ Any one of these disqualifies a candidate, whatever its score:
 
 ## Repair map
 
-| Problem | Global fix (new brief) | Local fix (edit, low complexity) |
+| Problem | Global fix (new brief) | Local fix (masked edit) |
 |---|---|---|
 | Plastic, airbrushed skin | "unretouched, visible pores, uneven tone"; documentary register | restore skin texture, keep identity |
 | Glossy stock look | amateur or photojournalist photographer; mundane clutter; one imperfection | — |
@@ -46,11 +46,17 @@ Any one of these disqualifies a candidate, whatever its score:
 | Bad hands | give the hands a task, fewer visible hands | masked edit of the hand |
 | Gibberish text | remove text or quote it exactly | edit only the sign |
 | Cellular texture in foliage, fur, fog | less fine organic texture, out of focus, ≤ 2K size | replace the region |
-| Edit changed other areas | lower complexity, restate invariants, use a mask | restart from last approved image |
+| Edit changed other areas | restate every invariant, use a mask, describe only the change | restart from last approved image |
 
 One change per iteration, invariants restated every time, at most three rounds. If an image still has a flaw after that, the agent delivers the best one and names the flaw.
 
 ## Tools
+
+**Tiles** — every image cut into enlarged, overlapping tiles plus one whole-frame view, each tile labelled with its position:
+
+```bash
+python3 scripts/qa_tiles.py images/candidate-1.png -o images/qa
+```
 
 **Contact sheet** — candidates side by side, optionally with a 3× centre crop row for texture inspection:
 

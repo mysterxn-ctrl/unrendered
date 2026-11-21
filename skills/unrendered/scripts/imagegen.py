@@ -16,7 +16,7 @@ Usage:
   imagegen.py generate --profile NAME --model ID --prompt-file brief.txt [--size 1536x1024]
                        [--quality high] [--complexity high] [--n 3] [--out-dir out/x] [--dry-run]
   imagegen.py edit --profile NAME --model ID --prompt-file edit.txt --image in.png [--image ref.png]
-                   [--mask mask.png] [--complexity low] ...
+                   [--mask mask.png] ...
   Extra provider fields: --set key=value (repeatable, raw passthrough into the body).
 """
 from __future__ import annotations
@@ -534,24 +534,37 @@ def registry_model(model_id: str):
         return None
 
 
-def apply_model_settings(a):
-    """Fill quality/complexity from the model's tuned settings.
+QUALITY_RANK = {"low": 1, "standard": 2, "medium": 3, "hd": 4, "high": 5, "xhigh": 6, "ultra": 7, "max": 8}
+COMPLEXITY_RANK = {"low": 1, "medium": 2, "high": 3, "xhigh": 4, "max": 5}
 
-    Only parameters the model is known to accept are defaulted. For a model without tuned settings nothing is
-    added, because many APIs reject fields they do not know; the agent passes --quality from the provider's docs.
+
+def highest(values, rank):
+    """Highest known level among values ('auto' and unknown words are ignored)."""
+    known = [v for v in values if isinstance(v, str) and v in rank]
+    return max(known, key=rank.get) if known else None
+
+
+def apply_model_settings(a):
+    """Every render uses the model's highest quality and complexity.
+
+    Levels come from the model's registry entry (quality_values / complexity_values, and its tuned settings).
+    Complexity is only sent to models known to support it. A model whose quality levels are unknown is not
+    rendered with a provider default: the run stops until its levels are onboarded or --quality is passed.
     """
     m = registry_model(a.model) or {}
     s = m.get("settings") or {}
-    key = ("edit_final" if a.final else "edit") if a.cmd == "edit" else ("final" if a.final else "candidate")
-    st = s.get(key) or (s.get("edit") if key == "edit_final" else None) or {}
+    tuned = [s.get(k) or {} for k in ("candidate", "final", "edit", "edit_final")]
     if a.quality is None:
-        a.quality = st.get("quality") or ("high" if "high" in s.get("quality_values", []) else None)
+        a.quality = highest(list(s.get("quality_values", [])) + [t.get("quality") for t in tuned], QUALITY_RANK)
     if a.complexity is None:
-        a.complexity = st.get("complexity") or (("low" if a.cmd == "edit" else "high")
-                                                if s.get("complexity_values") else None)
+        a.complexity = highest(list(s.get("complexity_values", [])) + [t.get("complexity") for t in tuned], COMPLEXITY_RANK)
     if a.quality is None:
-        warn(f"no tuned settings for model '{a.model}': quality is left to the provider's default. "
-             "Pass --quality with the provider's highest value (see the ONBOARD_MODEL action).")
+        print(json.dumps({"action": "ONBOARD_MODEL", "model": a.model,
+                          "do": "The quality levels of this model are unknown, so its highest level cannot be sent. Read the "
+                                "provider's API reference, add quality_values (and complexity_values if supported) to the "
+                                "model's entry in ~/.config/unrendered/models.json, then run again - or pass --quality with "
+                                "the highest documented value."}, indent=2))
+        sys.exit(10)
     print(f"settings: model={a.model} profile={a.profile} quality={a.quality} complexity={a.complexity}", file=sys.stderr)
 
 
@@ -621,13 +634,13 @@ def main():
     for name in ("generate", "edit"):
         g = sub.add_parser(name)
         g.add_argument("--profile", default="auto", help="provider profile name/path, or 'auto'")
-        g.add_argument("--final", action="store_true", help="use the model's final settings (highest quality) for generate or edit")
+        g.add_argument("--final", action="store_true", help="kept for compatibility: every render already uses the highest settings")
         g.add_argument("--model", default="auto", help="canonical model id, or 'auto' = benchmark-best available (model_select.py plan)")
         g.add_argument("--prompt")
         g.add_argument("--prompt-file")
         g.add_argument("--size", default="1536x1024")
-        g.add_argument("--quality", help="default: the model's tuned settings; none for a model without tuned settings")
-        g.add_argument("--complexity", help="default: the model's tuned settings; only sent to models that support it")
+        g.add_argument("--quality", help="default: the model's highest quality level")
+        g.add_argument("--complexity", help="default: the model's highest complexity level, only for models that support it")
         g.add_argument("--n", type=int, default=1)
         g.add_argument("--output-format")
         g.add_argument("--output-compression", type=int)

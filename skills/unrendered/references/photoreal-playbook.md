@@ -92,5 +92,5 @@ Chat apps expand prompts generically ("a stunning, highly detailed photo…"), w
 2. constrains physics (light, optics, DOF, colour temperature),
 3. injects human/world specificity and plausible imperfection,
 4. bans the AI-gloss vocabulary,
-5. generates several candidates at the benchmark-leading quality setting,
-6. inspects every pixel region against a rubric and repairs locally.
+5. generates several candidates at the model's highest quality setting,
+6. inspects every region of every image at full detail against a rubric and repairs locally.

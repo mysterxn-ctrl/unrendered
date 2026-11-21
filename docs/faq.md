@@ -30,7 +30,7 @@ It catches the typical ones reliably, but not every subtle one. The checking is 
 
 ## What does it cost?
 
-Unrendered is free. You pay your image provider. A typical job is three candidates at high quality plus one final render at the model's top setting; one or two repair rounds add more. Ask for "one quick draft" to use a single low-cost render.
+Unrendered is free. You pay your image provider. A typical job is three candidates at the model's highest quality; one or two repair rounds add more. Every render uses the highest level, so the way to spend less is fewer images: ask for a single candidate.
 
 ## Why are briefs written in English?
 

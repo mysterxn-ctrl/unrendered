@@ -84,8 +84,8 @@ The same image model often looks brilliant inside a chat app and flat through th
 | Raw API call | With Unrendered |
 |---|---|
 | Your one-liner reaches the model verbatim | A photographer's brief: who shot it, which lens, which light, which imperfections |
-| Whatever quality the gateway defaults to — sometimes `low` or `medium` | The model's top settings, chosen per task |
-| One image, shipped without review | Several candidates, a realism rubric and targeted repair |
+| Whatever quality the gateway defaults to — sometimes `low` or `medium` | Every render at the model's highest quality and complexity |
+| One image, shipped without review | Several candidates, every region inspected enlarged, a realism rubric and targeted repair |
 | A model you picked once and hope is still the best | The model chosen from blind-preference leaderboards, automatically |
 | Code tied to one vendor's SDK | Any API, gateway or agent tool through JSON profiles |
 | Edits that quietly change the whole picture | A dedicated edit track that protects everything you didn't ask to change |
@@ -95,8 +95,9 @@ The same image model often looks brilliant inside a chat app and flat through th
 - **Autonomous, benchmark-based model choice.** Reads the [Artificial Analysis](https://artificialanalysis.ai/image/leaderboard/text-to-image) blind-preference arenas, with [LMArena](https://arena.ai/leaderboard/text-to-image) as an optional second opinion, and switches only on a statistically clear lead: larger than both 95 % confidence intervals combined, or at least 25 Elo and confirmed by the second board. Generation and editing are decided separately. New models are added automatically. [How it decides →](docs/model-selection.md)
 - **Provider-agnostic.** OpenAI-protocol endpoints work out of the box; any other API — sync or async, JSON or multipart, base64 or URL results, separate edit endpoints — is a small JSON profile your agent writes from the provider's docs. [Providers →](docs/providers.md)
 - **Photographer-grade briefs.** Light with direction and colour temperature, optics that match the framing, real skin and wear, one to three capture artifacts, twenty genre recipes — and none of the "8k masterpiece" vocabulary that pulls images toward CGI. [Photorealism guide →](docs/photorealism.md)
-- **Vision QA with hard fails.** Ten weighted realism criteria plus hard fails for hands, text, light, fused objects and unwanted edit changes. Ships at 8.5 / 10. [QA rubric →](docs/quality-assurance.md)
-- **Surgical edits.** Edit-specific model, endpoint and settings; invariants restated on every turn. [Editing →](docs/editing.md)
+- **Vision QA with hard fails.** Every image is inspected whole and in enlarged, overlapping tiles, so a wrong finger or a stray arm at the frame edge does not slip through. Hard fails for duplicated or misplaced limbs, impossible poses, hands, text, light, fused objects and unwanted edit changes; ten weighted realism criteria including AI sheen and unnatural contrast. Ships at 8.5 / 10. [QA rubric →](docs/quality-assurance.md)
+- **Highest quality, always.** Every candidate, repair and edit is sent at the model's highest quality and complexity — never a gateway default.
+- **Surgical edits.** Edit-specific model and endpoint; masks and invariants restated on every turn. [Editing →](docs/editing.md)
 - **Zero dependencies for the core.** Python 3.9+ standard library. Keys only from environment variables.
 
 ## Quick start
@@ -141,20 +142,19 @@ For anything else, ask your agent *"Connect Unrendered to &lt;provider&gt;"* —
 flowchart LR
     A[Request] --> B[Plan<br/>model + provider]
     B --> C[Brief<br/>photographer's view]
-    C --> D[Candidates<br/>high quality]
-    D --> E[Vision QA<br/>rubric + hard fails]
+    C --> D[Candidates<br/>highest quality]
+    D --> E[Vision QA<br/>whole frame + enlarged tiles]
     E -- fail --> F[Repair<br/>edit or rebrief]
     F --> E
-    E -- pass --> G[Final render<br/>top quality]
-    G --> H[Deliver]
+    E -- pass --> H[Deliver]
 ```
 
 1. **Plan** — `model_select.py plan` picks the benchmark-best model that one of your providers actually serves, with its tuned settings.
 2. **Brief** — the request becomes a structured photographer's brief.
-3. **Candidates** — three renders at high quality, each with a sidecar file that records the full request.
-4. **Vision QA** — every image inspected and scored; any hard fail disqualifies it.
+3. **Candidates** — three renders at the model's highest quality and complexity, each with a sidecar file that records the full request.
+4. **Vision QA** — every image inspected as a whole and in enlarged tiles, edge to edge, then scored; any hard fail disqualifies it.
 5. **Repair** — local defects edited, global ones re-briefed, one change at a time.
-6. **Deliver** — final render at the model's top setting, reported with model, settings and score.
+6. **Deliver** — the winner, reported with model, settings and score.
 
 [Full walkthrough →](docs/how-it-works.md)
 
@@ -205,7 +205,7 @@ Avoid: airbrushed skin, glossy commercial look, cinematic grade, watermark.
 skills/unrendered/
 ├── SKILL.md             the workflow the agent follows
 ├── references/          photorealism playbook, genres, brief compiler, QA, editing, providers, model selection
-├── scripts/             imagegen.py · model_select.py · contact_sheet.py · photo_finish.py
+├── scripts/             imagegen.py · model_select.py · qa_tiles.py · contact_sheet.py · photo_finish.py
 ├── providers/           generic OpenAI-protocol profile + template
 ├── models.json          model registry (seed)
 └── benchmarks/          leaderboard snapshots (seed)

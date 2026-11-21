@@ -16,7 +16,7 @@ Every input image is labelled by index and role in the prompt: `Image 1: edit ta
 
 - **Model:** the leader of the [image-editing leaderboard](model-selection.md) after the decision rule — which can differ from the generation leader.
 - **Endpoint:** the provider's edit model id or endpoint (`operations.edit.model_map`).
-- **Settings:** `complexity=low` (or `medium` for larger changes). High complexity plans more and tends to change areas outside the instruction.
+- **Settings:** the model's highest quality and complexity, like every render. High complexity plans more and can also touch areas outside the instruction, so every edit brief restates the invariants, uses a mask where the provider supports it, and the result is compared region by region with the original.
 - **QA:** an extra hard fail — *anything changed outside the requested area*.
 
 ```bash

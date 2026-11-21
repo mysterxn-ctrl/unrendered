@@ -74,7 +74,7 @@ class TestRunnerEndToEnd(unittest.TestCase):
         self.assertEqual(side["provider_meta"]["revised_prompt"], ["rp", "rp"])
         body = json.loads(self.api.requests[-1]["body"])
         self.assertIn("Avoid: plastic skin", body["prompt"])
-        self.assertEqual(body["quality"], "high")
+        self.assertEqual(body["quality"], "max")  # candidates use the highest level too
         self.assertEqual(body["complexity"], "high")
         self.assertNotIn("dummy", json.dumps(side))  # key never persisted
 
@@ -110,24 +110,26 @@ class TestRunnerEndToEnd(unittest.TestCase):
         body = self.api.requests[-1]["body"]
         self.assertEqual(body.count(b'name="image[]"'), 2)
         self.assertIn(b'name="mask"', body)
-        self.assertIn(b'name="complexity"\r\n\r\nlow', body)
+        self.assertIn(b'name="quality"\r\n\r\nmax', body)
+        self.assertIn(b'name="complexity"\r\n\r\nhigh', body)
 
     def test_dry_run_masks_secret(self):
-        r = self.run_cli("generate", "--profile", "openai-images-protocol", "--model", "x", "--prompt", "p",
-                         "--dry-run")
+        r = self.run_cli("generate", "--profile", "openai-images-protocol", "--model", "x", "--quality", "high",
+                         "--prompt", "p", "--dry-run")
         self.assertIn('"Authorization": "***"', r.stdout)
         self.assertNotIn("dummy", r.stdout)
 
     def test_missing_key_fails_cleanly(self):
         self.env.pop("IMAGE_API_KEY")
-        r = self.run_cli("generate", "--profile", "openai-images-protocol", "--model", "x", "--prompt", "p", ok=False)
+        r = self.run_cli("generate", "--profile", "openai-images-protocol", "--model", "x", "--quality", "high",
+                         "--prompt", "p", ok=False)
         self.assertEqual(r.returncode, 2)
         self.assertIn("IMAGE_API_KEY", r.stderr)
 
     def test_tool_provider_hands_back_to_agent(self):
         (self.state / "providers" / "t.json").write_text(json.dumps(
             {"name": "t", "type": "tool", "tool": "mcp__img__gen", "operations": {"generate": {"models": ["m"]}}}))
-        r = self.run_cli("generate", "--profile", "t", "--model", "m", "--prompt", "p", ok=False)
+        r = self.run_cli("generate", "--profile", "t", "--model", "m", "--quality", "high", "--prompt", "p", ok=False)
         self.assertEqual(r.returncode, 10)
         self.assertEqual(json.loads(r.stdout)["action"], "CALL_TOOL")
 
@@ -163,8 +165,8 @@ class TestPhotoFinishProvenance(unittest.TestCase):
         self.assertFalse((state / "out.png").exists())
 
 
-class TestUnknownModelSettings(unittest.TestCase):
-    """A model without tuned settings must not receive GPT-specific fields."""
+class TestHighestQuality(unittest.TestCase):
+    """Every render is sent at the model's highest quality and complexity."""
 
     @classmethod
     def setUpClass(cls):
@@ -174,27 +176,67 @@ class TestUnknownModelSettings(unittest.TestCase):
     def tearDownClass(cls):
         cls.api.close()
 
-    def test_no_quality_or_complexity_for_unknown_model(self):
+    def run_gen(self, *args):
         state = temp_state()
         env = env_with(UNRENDERED_HOME=state, IMAGE_API_BASE_URL=f"{self.api.base}/v1", IMAGE_API_KEY="dummy")
-        r = subprocess.run(RUNNER + ["generate", "--profile", "openai-images-protocol", "--model", "brand-new-model",
-                                     "--prompt", "p", "--out-dir", str(state / "o")],
-                           env=env, capture_output=True, text=True, timeout=60)
-        self.assertEqual(r.returncode, 0, r.stderr)
-        body = json.loads(self.api.requests[-1]["body"])
-        self.assertNotIn("quality", body)
-        self.assertNotIn("complexity", body)
-        self.assertIn("no tuned settings", r.stderr)
+        before = len(self.api.requests)
+        r = subprocess.run(RUNNER + ["generate", "--profile", "openai-images-protocol", "--prompt", "p",
+                                     "--out-dir", str(state / "o"), *args], env=env, capture_output=True, text=True, timeout=60)
+        return r, self.api.requests[before:]
 
-    def test_final_uses_registry_settings_with_explicit_model(self):
-        state = temp_state()
-        env = env_with(UNRENDERED_HOME=state, IMAGE_API_BASE_URL=f"{self.api.base}/v1", IMAGE_API_KEY="dummy")
-        r = subprocess.run(RUNNER + ["generate", "--profile", "openai-images-protocol", "--model", "gpt-image-2.6-sunburst",
-                                     "--final", "--prompt", "p", "--out-dir", str(state / "o")],
-                           env=env, capture_output=True, text=True, timeout=60)
+    def test_highest_level_without_final_flag(self):
+        r, reqs = self.run_gen("--model", "gpt-image-2.6-sunburst")
         self.assertEqual(r.returncode, 0, r.stderr)
-        body = json.loads(self.api.requests[-1]["body"])
+        body = json.loads(reqs[-1]["body"])
         self.assertEqual((body["quality"], body["complexity"]), ("max", "high"))
+
+    def test_highest_level_from_quality_values_even_if_tuned_lower(self):
+        import imagegen
+        self.assertEqual(imagegen.highest(["low", "medium", "high", "xhigh", "max", "auto"], imagegen.QUALITY_RANK), "max")
+        self.assertEqual(imagegen.highest(["auto", "standard", "hd"], imagegen.QUALITY_RANK), "hd")
+        self.assertIsNone(imagegen.highest(["auto"], imagegen.QUALITY_RANK))
+
+    def test_unknown_levels_stop_instead_of_provider_default(self):
+        r, reqs = self.run_gen("--model", "brand-new-model")
+        self.assertEqual(r.returncode, 10)
+        self.assertEqual(json.loads(r.stdout)["action"], "ONBOARD_MODEL")
+        self.assertEqual(reqs, [])  # nothing sent at a default level
+
+    def test_model_without_complexity_gets_no_complexity_field(self):
+        r, reqs = self.run_gen("--model", "gpt-image-2.5-sunburst")
+        self.assertEqual(r.returncode, 0, r.stderr)
+        body = json.loads(reqs[-1]["body"])
+        self.assertEqual(body["quality"], "max")
+        self.assertNotIn("complexity", body)
+
+
+class TestQaTiles(unittest.TestCase):
+    def test_tiles_cover_the_whole_frame(self):
+        try:
+            from PIL import Image
+        except ImportError:
+            self.skipTest("Pillow not installed")
+        state = temp_state()
+        src = state / "c.png"
+        Image.new("RGB", (1536, 1024), (90, 100, 110)).save(src)
+        r = subprocess.run([sys.executable, str(SCRIPTS / "qa_tiles.py"), str(src), "-o", str(state / "qa")],
+                           capture_output=True, text=True, timeout=60)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        tiles = json.loads(r.stdout)[0]["tiles"]
+        self.assertEqual(tiles[0]["region"], "full frame")
+        boxes = [t["box"] for t in tiles[1:]]
+        self.assertEqual(len(boxes), 6)  # 3 x 2 for 1536 x 1024 at 640 px
+        self.assertEqual(min(b[0] for b in boxes), 0)
+        self.assertEqual(min(b[1] for b in boxes), 0)
+        self.assertEqual(max(b[2] for b in boxes), 1536)
+        self.assertEqual(max(b[3] for b in boxes), 1024)
+        for x in range(0, 1536, 16):  # every column and row is inside some tile
+            self.assertTrue(any(b[0] <= x < b[2] for b in boxes))
+        for y in range(0, 1024, 16):
+            self.assertTrue(any(b[1] <= y < b[3] for b in boxes))
+        for t in tiles:
+            self.assertTrue(Path(t["file"]).exists())
+        self.assertEqual(Image.open(tiles[1]["file"]).width, (boxes[0][2] - boxes[0][0]) * 2)
 
 
 if __name__ == "__main__":

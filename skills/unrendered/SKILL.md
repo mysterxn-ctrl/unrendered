@@ -37,6 +37,7 @@ Hard rules (never break):
 | `references/qa-rubric.md` | Steps 4–5 — scoring, AI-tell checklist, repair moves |
 | `references/editing.md` | Edits, references, identity, compositing |
 | `scripts/imagegen.py` | Generic HTTP runner driven by a provider profile (stdlib only) |
+| `scripts/qa_tiles.py` | Step 4 — enlarged, overlapping tiles of every image region for full-detail inspection |
 | `scripts/contact_sheet.py` | Put candidates side by side for comparison |
 | `scripts/photo_finish.py` | Optional optical/film finishing pass |
 | `providers/_TEMPLATE.json` | Blank profile to fill from the provider's own docs |
@@ -65,15 +66,13 @@ The model is chosen by benchmarks; the provider is chosen by availability. Any p
    - `note` (benchmark-best not reachable, next-best used) → tell the user in one line.
    - `actions` → handle each before generating:
      - `AGENT_FETCH_LEADERBOARDS`: auto-fetch was blocked; read the listed leaderboard pages with your web tools, write the rows per `model_select.py schema`, `model_select.py ingest <file>`, re-run `plan`. If you have no web access, continue with the current selection and say so.
-     - `ONBOARD_MODEL`: a newly winning model lacks settings; read its official API + prompting docs, fill its entry in the user registry `~/.config/unrendered/models.json` (`settings` incl. `quality_values`/`complexity_values`, `prompt_dialect`, `capabilities`, `known_weaknesses`, `onboarded: true`). Until then pass the provider's highest quality value yourself with `--quality`: `imagegen.py` sends no quality or complexity field for a model without tuned settings, because many APIs reject unknown fields.
+     - `ONBOARD_MODEL`: a newly winning model lacks settings; read its official API + prompting docs, fill its entry in the user registry `~/.config/unrendered/models.json` (`settings` incl. `quality_values`/`complexity_values`, `prompt_dialect`, `capabilities`, `known_weaknesses`, `onboarded: true`). Every render then uses the highest level listed there; until the levels are known, `imagegen.py` stops instead of sending a provider default.
      - `CONNECT_PROVIDER`: no configured API/tool serves any ranked model → Step 0.
      - `provider_type: tool` → call that agent tool (MCP etc.) yourself with the canonical values mapped onto its arguments.
-3. `imagegen.py` accepts `--model auto --profile auto` (the defaults) and does steps 2's selection internally, applying the model's `candidate` / `final` (`--final`) / `edit` settings unless you pass explicit values.
-4. Defaults for the current model (GPT-Image-2.6 Sunburst):
-   - **Candidates:** `quality=high`, `complexity=high` (new images), size native ≤ 2560×1440 (2K+ beyond that is *experimental*: more artifacts).
-   - **Final render of the winning prompt:** `quality=max` (the benchmark-leading configuration) — or `xhigh` if latency/cost matters. Higher is not guaranteed better for every prompt: keep the better of the two after QA.
-   - **Edits:** `complexity=low|medium` (high complexity changes things outside the edit area).
-   - Never accept a gateway's default `low`/`medium`/`auto` silently — always pass quality explicitly.
+3. `imagegen.py` accepts `--model auto --profile auto` (the defaults) and does step 2's selection internally.
+4. **Always the highest quality.** Every render — candidates, repairs, edits and the final image — is sent at the model's highest quality and complexity level. `imagegen.py` does this automatically from the registry (`quality_values`, `complexity_values`); for GPT Image 2.6 Sunburst that is `quality=max`, `complexity=high`, for generation and edits alike. Never pass a lower level, never accept a gateway default. If the runner stops with `ONBOARD_MODEL` (quality levels of the model unknown), read the provider's API reference, add the levels, and run again.
+   - Size: native ≤ 2560×1440 (beyond that is *experimental*: more artifacts).
+   - Edits at high complexity can also touch areas outside the instruction: always restate every invariant, use a mask where supported, and compare the whole result against the original in Step 4.
 5. Aspect ratio follows the photographic genre (3:2 for full-frame/DSLR, 4:3 for phone, 4:5 / 9:16 for social, 16:9 for video stills). Use the provider's exact allowed sizes.
 
 ## Step 2 — Compile the brief (the single biggest quality lever)
@@ -97,28 +96,36 @@ If the user's prompt is already a detailed brief, normalise it — don't overrid
 - Write the brief to a file, then e.g.:
   `python3 SKILL_DIR/scripts/imagegen.py generate --prompt-file brief.txt --size 1536x1024 --n 3 --out-dir out/<slug> --slug <slug>`
   (model/profile/quality/complexity come from Step 1 automatically; override only with a reason.)
-- **Edits** (see `references/editing.md`): `imagegen.py edit --prompt-file edit.txt --image target.png [--image ref.png] [--mask mask.png] --n 2 --out-dir out/<slug>` → uses the edit-track model, the provider's edit endpoint/model id, and edit settings (`complexity=low`). Then the same QA + repair loop, with the extra hard fail "anything changed outside the requested area".
-- Default **3 candidates** (1 if the user wants it cheap/fast; up to 6 for hero work). If the provider has no `n`, loop calls. Vary *only* what is useful (e.g. two framings), not randomly.
+- **Edits** (see `references/editing.md`): `imagegen.py edit --prompt-file edit.txt --image target.png [--image ref.png] [--mask mask.png] --n 2 --out-dir out/<slug>` → uses the edit-track model, the provider's edit endpoint/model id, and the highest quality and complexity. Then the same QA + repair loop, with the extra hard fail "anything changed outside the requested area".
+- Default **3 candidates** (1 if the user wants it fast; up to 6 for hero work), all at the highest quality. If the provider has no `n`, loop calls. Vary *only* what is useful (e.g. two framings), not randomly.
 - Every output gets a sidecar `.json` with the full request (no key) for reproducibility.
 
 ## Step 4 — Vision QA (do not skip)
 
-Open **every** image (Read tool / view image). For comparisons build a sheet: `python3 SKILL_DIR/scripts/contact_sheet.py out/<slug>/*.png -o out/<slug>/sheet.jpg`.
-Score each candidate with `references/qa-rubric.md` (10 criteria, hard-fail list). First count bodies and limbs: trace every arm and hand back to one plausible body and check that each pose is physically possible. Then zoom mentally into hands, eyes/teeth, ears, text, reflections, shadows, object contact points, background people, repeating textures.
+You usually see an image downscaled; that hides a wrong finger, a third arm at the frame edge or garbled small text. So inspect in two passes:
+
+1. **Whole frame.** Open every candidate. Count people, then trace every arm and hand to the shoulder of one plausible body; check poses, light direction, colour and overall look. Anything with a hard fail is out.
+2. **Every region at full detail.** For each candidate still in the running, cut it into enlarged tiles and open **every** tile:
+   `python3 SKILL_DIR/scripts/qa_tiles.py out/<slug>/<file>.png -o out/<slug>/qa`
+   Tiles overlap and cover the frame edge to edge (corners and borders included). In each tile check hands and fingers, faces, eyes and teeth, ears, hairline, text and labels letter by letter, edges of objects, contact points, reflections, background people and repeating texture.
+For a side-by-side view of the candidates: `python3 SKILL_DIR/scripts/contact_sheet.py out/<slug>/*.png -o out/<slug>/sheet.jpg`.
+
+Score each candidate with `references/qa-rubric.md` (10 criteria, hard-fail list).
 - Pick the best. A candidate with any **hard fail** cannot ship.
 - If the best scores ≥ 8.5/10 with no hard fail → Step 6.
 - Else → Step 5.
+- The image you deliver must have passed both passes, including after every repair.
 
 ## Step 5 — Repair loop (max 3 rounds, one change at a time)
 
-- Local defect (hand, text, stray object, face detail) → **edit** the winner with a mask or tight instruction, `complexity=low`, restating every invariant ("change only the left hand; keep everything else identical").
+- Local defect (hand, text, stray object, face detail) → **edit** the winner with a mask or tight instruction, restating every invariant ("change only the left hand; keep everything else identical").
 - Global defect (too glossy, wrong light, staged feel, AI look) → **revise the brief** (the rubric maps each failure to a prompt fix) and regenerate.
 - Re-QA after every round. After 3 rounds, deliver the best and state the remaining flaw honestly.
 
-## Step 6 — Final render + finishing + delivery
+## Step 6 — Finishing + delivery
 
-1. If candidates were at `high`: re-render the winning brief once with `--final` (the model's top setting, e.g. `quality=max`), QA it, keep the better one. For edits use the `edit_final` settings if defined.
-2. Optional `scripts/photo_finish.py` (grain, subtle vignette, lateral chromatic aberration, highlight roll-off) — only if the image still looks too clean; keep it subtle; compare before/after. It refuses files that carry C2PA provenance data (exit 3); then deliver the image as generated.
+1. The winner is already rendered at the highest quality; no extra render is needed.
+2. Optional `scripts/photo_finish.py` (grain, subtle vignette, lateral chromatic aberration, highlight roll-off) — only if the image still looks too clean; keep it subtle; compare before/after and inspect the result again. It refuses files that carry C2PA provenance data (exit 3); then deliver the image as generated.
 3. Save to the user's requested location (or `./images/<slug>-vN.<ext>`); never overwrite without being asked.
 4. Report: file path(s), model + provider + settings, final brief (collapsed), QA score + any known flaw, cost estimate if known.
 
@@ -139,5 +146,5 @@ Score each candidate with `references/qa-rubric.md` (10 criteria, hard-fail list
 8. Wear: scratches, dust, creases, fingerprints, stains.
 9. Neutral, believable colour (no default warm/sepia cast, no teal-orange).
 10. No AI-art vocabulary.
-11. Multiple candidates + ruthless QA.
+11. Highest quality on every render, multiple candidates, ruthless QA at full detail.
 12. Edit locally, regenerate globally; restate invariants every time.

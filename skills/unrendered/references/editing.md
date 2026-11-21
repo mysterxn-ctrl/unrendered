@@ -11,7 +11,7 @@ Keep exactly unchanged: identity and face of every person, pose, expression, clo
 Match: the new element must share the scene's light direction (<from left>), colour temperature (<~5000K>), perspective and lens blur, with a correct contact shadow.
 Avoid: restyling, smoothing skin, sharpening, colour shifts, extra objects, watermark.
 ```
-Settings: `complexity=low` (or `medium` for larger changes), quality `high`. Use a mask when the provider supports it (transparent = editable area, same pixel size as Image 1). Masks are guidance, not pixel-exact guarantees.
+Settings: the highest quality and complexity (set automatically). Because high complexity can also touch areas outside the instruction, restate every invariant and use a mask when the provider supports it (transparent = editable area, same pixel size as Image 1). Masks are guidance, not pixel-exact guarantees.
 
 ## Use-case notes
 - **Identity-preserve (try-on, person in new scene):** lock face, hairline, skin tone, body proportions; describe the new clothing/scene; demand light matching. Accept only if the face is recognisably the same at a glance AND at zoom.

@@ -490,8 +490,8 @@ def plan(reg, reg_file, task, probe=True):
             actions.append({"action": "ONBOARD_MODEL", "model": m["id"],
                             "do": "Read the vendor's official API + prompting docs for this model; fill capabilities, settings "
                                   "(candidate/final/edit: highest quality values), prompt_dialect, known_weaknesses in models.json; "
-                                  "set onboarded=true. Until then pass the provider's highest quality value explicitly (imagegen.py --quality); "
-                                  "imagegen.py sends no quality or complexity fields for a model without tuned settings."})
+                                  "set onboarded=true. Every render uses the highest level listed there; until the levels are known, "
+                                  "imagegen.py stops instead of falling back to a provider default."})
     else:
         actions.append({"action": "CONNECT_PROVIDER",
                         "do": f"No configured provider serves any of {ranking[:5]} for '{task}'. Follow references/provider-adapters.md: "

@@ -1,6 +1,6 @@
 # QA rubric — judge like a photo editor who hunts AI fakes
 
-Look at **every** candidate at full size. **Count bodies and limbs first:** trace every hand and arm back to a shoulder of one plausible body; count arms, hands and fingers per person; check that each pose is physically possible. Then mentally zoom into: eyes, teeth, ears, hands/fingers, feet, hairline, jewellery, text/signage, reflections, shadows, contact points, background people, repeating textures, edges between subject and background.
+Look at **every** candidate as a whole, then at every enlarged tile from `scripts/qa_tiles.py` — corners and edges included. **Count bodies and limbs first:** trace every hand and arm back to a shoulder of one plausible body; count arms, hands and fingers per person; check that each pose is physically possible. Then mentally zoom into: eyes, teeth, ears, hands/fingers, feet, hairline, jewellery, text/signage, reflections, shadows, contact points, background people, repeating textures, edges between subject and background.
 
 ## Hard fails (any one → cannot ship; repair or regenerate)
 
@@ -34,7 +34,7 @@ Write the QA as a short table per candidate in your working notes; tell the user
 
 ## Failure → repair map
 
-| Observed | Global fix (revise brief → regenerate) | Local fix (edit, complexity low) |
+| Observed | Global fix (revise brief → regenerate) | Local fix (masked edit) |
 |---|---|---|
 | Plastic/airbrushed skin | Add "unretouched, visible pores, fine vellus hair, uneven tone, T-zone shine"; switch register to documentary/vernacular; remove beauty words | Edit face: "restore natural skin texture with visible pores; keep identity, expression, lighting identical" |
 | Glossy stock/ad look | Cast an amateur or photojournalist; add mundane clutter; available light only; add 1 imperfection | — |
@@ -50,6 +50,6 @@ Write the QA as a short table per candidate in your working notes; tell the user
 | Cellular/noise texture in foliage, fur, fog, crowds | Reduce area of fine organic texture, move it out of focus, simpler subject; drop contradictory style words; stay ≤ 2K | Edit region: "replace with clean natural texture" |
 | Background people melted | Fewer people, farther away, out of focus | Edit: remove or blur them |
 | Composition shifted at 2K+ | Generate at native ≤ 2560×1440; upscale externally if needed | — |
-| Edit changed other areas | complexity=low, repeat invariants, use a mask | Start again from the last approved version |
+| Edit changed other areas | restate every invariant, use a mask, describe only the change | Start again from the last approved version |
 
 Rule: **one change per iteration**, restate all invariants, keep the last approved image as fallback.

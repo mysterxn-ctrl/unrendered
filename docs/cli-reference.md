@@ -19,11 +19,11 @@ python3 imagegen.py edit --image TARGET [--image REF ...] [--mask MASK] [options
 |---|---|---|
 | `--profile NAME\|PATH` | `auto` | Provider profile. `auto` asks `model_select.py plan` for the best available provider. |
 | `--model ID` | `auto` | Canonical model id from the registry. `auto` = benchmark-best available model for this track. |
-| `--final` | off | Use the model's final (highest) settings from the registry instead of its candidate settings. |
+| `--final` | off | Kept for compatibility; every render already uses the highest settings. |
 | `--prompt TEXT` / `--prompt-file FILE` | — | The compiled brief. One of the two is required. |
 | `--size WxH` | `1536x1024` | Canonical size; profiles translate it to sizes, aspect ratios or resolution tiers. |
-| `--quality` | the model's tuned settings | e.g. `low`, `medium`, `high`, `xhigh`, `max`, `auto` (model-dependent). For a model without tuned settings nothing is sent and a warning names the gap. |
-| `--complexity` | the model's tuned settings | Planning effort. Sent by default only to models whose registry entry lists `complexity_values`. |
+| `--quality` | the model's highest level | Taken from the registry (`quality_values`), e.g. `max` for GPT Image 2.6 Sunburst. If a model's levels are unknown, the run stops with exit code 10 (`ONBOARD_MODEL`) instead of using a provider default. |
+| `--complexity` | the model's highest level | Planning effort, e.g. `high` for GPT Image 2.6 Sunburst. Sent only to models that support it. |
 | `--n N` | `1` | Number of images. Looped client-side when the provider has no batch parameter. |
 | `--negative-prompt TEXT` | — | Sent as a field if the provider has one, otherwise appended to the prompt as "Avoid: …". |
 | `--output-format`, `--output-compression`, `--background`, `--moderation`, `--seed` | — | Passed through when the profile maps them. |
@@ -45,7 +45,7 @@ Every saved image gets a sidecar `.json` with the canonical request, the profile
 | 3 | HTTP failure after retries |
 | 4 | no image in the response / no job id |
 | 5 | generation failed or timed out |
-| 10 | agent action required (tool provider selected, or no provider available) |
+| 10 | agent action required (tool provider selected, no provider available, or quality levels of the model unknown) |
 
 Transient HTTP errors (408, 409, 425, 429, 5xx) are retried with exponential back-off.
 
@@ -86,6 +86,20 @@ Benchmark-driven model selection and availability resolution.
 ```
 
 Optional fields: `note` (the benchmark-best model was not reachable), `tool` (for tool providers), `actions` (`AGENT_FETCH_LEADERBOARDS`, `ONBOARD_MODEL`, `CONNECT_PROVIDER`, each with a `do` instruction).
+
+## qa_tiles.py
+
+```bash
+python3 qa_tiles.py IMG [IMG ...] -o OUT_DIR [--tile 640] [--zoom 2] [--overlap 0.15]
+```
+
+Writes a whole-frame view (long edge 1568 px) and enlarged, overlapping tiles that cover every image edge to edge, each labelled with row, column, region and pixel box. Prints the list of files as JSON. Requires Pillow.
+
+| Option | Effect |
+|---|---|
+| `--tile` | target tile size in source pixels |
+| `--zoom` | enlargement of each tile |
+| `--overlap` | overlap between neighbouring tiles (0–0.5) |
 
 ## contact_sheet.py
 
