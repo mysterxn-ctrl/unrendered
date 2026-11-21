@@ -1,0 +1,174 @@
+<header class="chrome" aria-label="Unrendered session">
+  <a class="chrome__brand" href="{{base}}/" aria-label="Unrendered home">
+    <img src="{{base}}/assets/brand/mark.webp" alt="" width="30" height="30">
+    <span>Unrendered</span>
+  </a>
+  <nav class="chrome__tabs" aria-label="Pipeline">
+    <a href="#session" data-tab="session">Session</a>
+    <a href="#plan" data-tab="plan">Plan</a>
+    <a href="#brief" data-tab="brief">Brief</a>
+    <a href="#inspect" data-tab="inspect">Inspect</a>
+    <a href="#finish" data-tab="finish">Finish</a>
+    <a href="#your-turn" data-tab="your-turn">Your turn</a>
+  </nav>
+  <nav class="chrome__links" aria-label="Project">
+    <a href="{{base}}/docs/">Docs</a>
+    <a href="{{repo}}" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section id="session" class="act act--session" data-sc-act="flow" aria-labelledby="session-title">
+  <div class="wrap session">
+    <div class="help" data-sc-in data-sc-stagger="60">
+      <h1 id="session-title">Photorealistic images from any image API</h1>
+      <p class="help__lede">An agent skill that briefs any image model like a photographer and checks every image before you see it.</p>
+      <div class="cmd" role="group" aria-label="Install for Claude Code">
+        <code>/plugin marketplace add {{repo_slug}}</code>
+        <button class="copy" type="button" data-copy="/plugin marketplace add {{repo_slug}}">Copy</button>
+      </div>
+      <p class="help__alt">Codex, Cursor and other agents: <code>npx skills add {{repo_slug}}</code> · <a href="{{base}}/docs/getting-started/">Getting started</a></p>
+    </div>
+    <div class="session__stage">
+    <img class="session__ribbon" src="{{base}}/assets/brand/hero-art-768.webp" srcset="{{base}}/assets/brand/hero-art-768.webp 768w, {{base}}/assets/brand/hero-art.webp 1536w" sizes="(max-width: 1000px) 120vw, 60vw" width="1536" height="580" alt="" aria-hidden="true" fetchpriority="high">
+    <div class="window" data-sc-in>
+      <div class="window__bar"><span class="window__title">Session</span><span class="tag">sample request</span></div>
+      <div class="window__field" aria-label="Request"><span class="caret-line">A man drinking coffee.</span></div>
+      <ol class="steps" aria-label="Pipeline state">
+        <li data-step="plan"><span class="dot" aria-hidden="true"></span>Plan<span class="state">model and provider</span></li>
+        <li data-step="brief"><span class="dot" aria-hidden="true"></span>Brief<span class="state">photographer's view</span></li>
+        <li data-step="inspect"><span class="dot" aria-hidden="true"></span>Inspect<span class="state">realism rubric</span></li>
+        <li data-step="finish"><span class="dot" aria-hidden="true"></span>Finish<span class="state">render to photo</span></li>
+      </ol>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="plan" class="act act--plan has-waves" data-sc-act="flow" aria-labelledby="plan-title">
+  <div class="wrap plan">
+    <div class="plan__head" data-sc-in data-sc-stagger="60">
+      <h2 id="plan-title" class="label-h">Plan</h2>
+      <p class="plan__rule">The model comes from blind-preference leaderboards. Unrendered switches only when a new leader's lead is larger than both 95% confidence intervals added together. Default: <strong>GPT Image 2.6 Sunburst</strong>.</p>
+    </div>
+    <div class="boards">
+{{boards}}
+    </div>
+    <script type="application/json" id="board-data">{{board_json}}</script>
+  </div>
+</section>
+
+<section id="brief" class="act act--brief" data-sc-act="pin" data-sc-span="2.4" aria-labelledby="brief-title">
+  <div data-sc-stage class="stage">
+    <div class="wrap brief">
+      <div class="brief__req">
+        <h2 id="brief-title" class="label-h">Brief</h2>
+        <p class="brief__in">“A man drinking coffee.”</p>
+        <p class="brief__hint">One line in. The skill answers the questions a photographer would ask before lifting the camera.</p>
+      </div>
+      <dl class="brief__doc">
+        <div data-sc-cue="0.02 1 0.08 0.01"><dt>Photographer</dt><dd>Candid documentary photo, taken by a friend across the table.</dd></div>
+        <div data-sc-cue="0.12 1 0.08 0.01"><dt>Scene</dt><dd>Small neighbourhood café, grey November morning, rain on the window, half a croissant on scratched wood.</dd></div>
+        <div data-sc-cue="0.22 1 0.08 0.01"><dt>Subject</dt><dd>Man in his late 40s, salt-and-pepper beard, pilled navy sweater, cup held by the handle, looking out.</dd></div>
+        <div data-sc-cue="0.32 1 0.08 0.01"><dt>Camera</dt><dd class="nums">50 mm · f/2.8 · 1/125 s · ISO 1600 · focus on the near eye</dd></div>
+        <div data-sc-cue="0.42 1 0.08 0.01"><dt>Light</dt><dd>Overcast window light from camera left, about 6500 K. Faint warm pendant behind.</dd></div>
+        <div data-sc-cue="0.52 1 0.08 0.01"><dt>Texture</dt><dd>Visible pores, stray beard hairs, faint steam, slight ISO grain.</dd></div>
+        <div data-sc-cue="0.62 1 0.08 0.01"><dt>Avoid</dt><dd>Airbrushed skin, glossy commercial look, cinematic grade, watermark.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="inspect" class="act act--inspect" data-sc-act="flow" aria-labelledby="inspect-title">
+  <div class="wrap inspect">
+    <figure class="inspect__frame" id="lens-frame">
+      <img src="{{base}}/assets/brand/example-render.webp" width="1120" height="1400" alt="Example render: hands ticking a checklist at a dark desk, the checklist lines are grey bars without words" loading="lazy" decoding="async">
+      <div class="lens" aria-hidden="true"><div class="lens__img"></div><div class="lens__fringe lens__fringe--r"></div><div class="lens__fringe lens__fringe--b"></div></div>
+      <figcaption>Example render. <span class="fine-only">Move the pointer across it.</span></figcaption>
+    </figure>
+    <div class="inspect__notes">
+      <h2 id="inspect-title" class="label-h">Inspect</h2>
+      <div class="findings-wrap" data-sc-reveal="left" data-sc-reveal-at="0.12 0.5">
+        <ul class="findings">
+          <li><span class="flag" aria-hidden="true"></span>The checklist has no words, only grey bars.</li>
+          <li><span class="flag" aria-hidden="true"></span>The tablet shows a chart with nothing to read.</li>
+          <li><span class="flag" aria-hidden="true"></span>One cinematic grade on every surface: teal shadows, gold highlights.</li>
+          <li><span class="flag" aria-hidden="true"></span>A desk without a single trace of use.</li>
+        </ul>
+        <p class="verdict">Reads as a render. Repair: rebrief, regenerate, check the text.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="finish" class="act act--finish" data-sc-act="pin" data-sc-span="3.4" aria-labelledby="finish-title">
+  <div data-sc-stage class="stage">
+    <div class="finish">
+      <div class="finish__frame" id="compare">
+        <img class="compare__render" src="{{base}}/assets/brand/example-render.webp" srcset="{{base}}/assets/brand/example-render-560.webp 560w, {{base}}/assets/brand/example-render.webp 1120w" sizes="(max-width: 700px) 92vw, 34rem" width="1120" height="1400" alt="Render: the checklist carries grey bars instead of words" loading="lazy" decoding="async">
+        <div class="compare__photo"><img src="{{base}}/assets/brand/example-photo.webp" srcset="{{base}}/assets/brand/example-photo-560.webp 560w, {{base}}/assets/brand/example-photo.webp 1120w" sizes="(max-width: 700px) 92vw, 34rem" width="1120" height="1400" alt="Photo: a meeting at a window over the mountains, the checklist reads Strategische Analyse with six labelled points" loading="lazy" decoding="async"></div>
+        <span class="compare__line" aria-hidden="true"></span>
+        <span class="chip chip--left">Render</span>
+        <span class="chip chip--right">Photo</span>
+      </div>
+      <div class="finish__readout">
+        <h2 id="finish-title" class="label-h">Finish</h2>
+        <p class="finish__lede">Same scene, same checklist. Only one of them can be read.</p>
+        <div class="paper" lang="de">
+          <p class="paper__title" data-sc-cue="0.3 1 0.06 0.01">Strategische Analyse</p>
+          <ul class="paper__list">
+            <li data-sc-cue="0.38 1 0.06 0.01"><span class="box"></span>Marktpotenziale</li>
+            <li data-sc-cue="0.44 1 0.06 0.01"><span class="box"></span>Wettbewerbsanalyse</li>
+            <li data-sc-cue="0.50 1 0.06 0.01" class="is-checked"><span class="box"></span>Wachstumsstrategie</li>
+            <li data-sc-cue="0.56 1 0.06 0.01"><span class="box"></span>Risikobewertung</li>
+            <li data-sc-cue="0.62 1 0.06 0.01"><span class="box"></span>Investitionsbedarf</li>
+            <li data-sc-cue="0.68 1 0.06 0.01"><span class="box"></span>Umsetzungsplan</li>
+          </ul>
+        </div>
+        <p class="finish__note">Example images. The labels above are typed out from the photo, not painted.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="your-turn" class="act act--close" data-sc-act="flow" aria-labelledby="turn-title">
+  <div class="wrap close">
+    <h2 id="turn-title" class="label-h">Your turn</h2>
+    <form class="console" id="console" autocomplete="off" novalidate>
+      <label for="request" class="visually-hidden">Describe a photo in one line</label>
+      <input id="request" name="request" type="text" maxlength="160" placeholder="Describe a photo in one line" spellcheck="false">
+      <button type="submit">Brief it</button>
+    </form>
+    <div class="console__view" id="console-view" hidden>
+      <div class="cards" id="cards" role="list" aria-label="Briefs"></div>
+      <figure class="field">
+        <svg id="field" viewBox="-110 -110 220 220" role="img" aria-label="Key light direction of each brief, seen from above, camera at the bottom">
+          <circle r="96" class="field__ring"></circle>
+          <circle r="48" class="field__ring"></circle>
+          <line x1="0" y1="-100" x2="0" y2="100" class="field__axis"></line>
+          <line x1="-100" y1="0" x2="100" y2="0" class="field__axis"></line>
+          <text x="0" y="108" class="field__label" text-anchor="middle">camera</text>
+          <g id="arrows"></g>
+          <circle r="5" class="field__origin"></circle>
+        </svg>
+        <figcaption>Key light direction, seen from above.</figcaption>
+      </figure>
+    </div>
+    <p class="caveat">A simplified stand-in that runs in this page. Installed, the skill writes the full brief, picks the model and checks every image.</p>
+    <div class="next">
+      <div class="cmd" role="group" aria-label="Install for Claude Code">
+        <code>/plugin marketplace add {{repo_slug}}</code>
+        <button class="copy" type="button" data-copy="/plugin marketplace add {{repo_slug}}">Copy</button>
+      </div>
+      <p class="next__links"><a href="{{base}}/docs/getting-started/">Getting started</a><a href="{{base}}/docs/">Documentation</a><a href="{{repo}}" rel="noopener">GitHub</a></p>
+    </div>
+    <footer class="foot">
+      <span>© {{year}} Ruben Ferraro · <a href="{{repo}}/blob/{{branch}}/LICENSE" rel="noopener">Apache License 2.0</a> · <a href="{{repo}}/blob/{{branch}}/TRADEMARKS.md" rel="noopener">Trademarks</a></span>
+      <span>Photos, not renders.</span>
+    </footer>
+  </div>
+</section>
+
+</main>
+<div class="status" id="status" aria-hidden="true"><span class="status__dot"></span><span id="status-text">session ready · sample request</span></div>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{canonical}}">
+<meta name="robots" content="{{robots}}">
+<meta name="theme-color" content="#0a0d14">
+<meta name="color-scheme" content="dark">
+<meta name="author" content="Ruben Ferraro">
+<meta name="generator" content="Unrendered site builder">
+<meta property="og:type" content="{{og_type}}">
+<meta property="og:site_name" content="Unrendered">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{base_url}}/assets/brand/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Unrendered — Photos, not renders.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{og_title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{base_url}}/assets/brand/og-image.jpg">
+<link rel="icon" href="{{base}}/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="{{base}}/assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="{{base}}/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="{{base}}/site.webmanifest">
+<link rel="sitemap" type="application/xml" href="{{base}}/sitemap.xml">
+<link rel="preload" href="{{base}}/assets/fonts/sora-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{base}}/assets/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+{{preload}}
+<link rel="stylesheet" href="{{base}}/assets/css/fonts.css?v={{asset_v}}">
+<link rel="stylesheet" href="{{base}}/assets/engine/scrollcraft.css?v={{asset_v}}">
+<link rel="stylesheet" href="{{base}}/assets/css/home.css?v={{asset_v}}">
+{{extra_css}}
+<script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body class="{{body_class}}">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="sc-grain" aria-hidden="true"></div>
+{{content}}
+<script src="{{base}}/assets/engine/scrollcraft.js?v={{asset_v}}"></script>
+<script>ScrollCraft.mount(document.body);</script>
+<script src="{{base}}/assets/js/home.js?v={{asset_v}}"></script>
+</body>
+</html>

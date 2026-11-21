@@ -14,6 +14,7 @@
 </p>
 
 <p align="center">
+  <a href="https://mysterxn-ctrl.github.io/unrendered/"><strong>Website</strong></a> ·
   <a href="docs/getting-started.md"><strong>Get started</strong></a> ·
   <a href="docs/README.md"><strong>Documentation</strong></a> ·
   <a href="docs/how-it-works.md">How it works</a> ·
@@ -181,6 +182,7 @@ skills/unrendered/
 ├── models.json          model registry (seed)
 └── benchmarks/          leaderboard snapshots (seed)
 docs/                    documentation
+website/                 website on GitHub Pages (landing page + docs)
 tools/                   Markdown link checker
 tests/                   offline test suite
 assets/brand/            logos, icons, social images (all rights reserved)

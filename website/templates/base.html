@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{canonical}}">
+<meta name="robots" content="{{robots}}">
+<meta name="theme-color" content="#0a0d14">
+<meta name="color-scheme" content="dark">
+<meta name="author" content="Ruben Ferraro">
+<meta name="generator" content="Unrendered site builder">
+<meta property="og:type" content="{{og_type}}">
+<meta property="og:site_name" content="Unrendered">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{base_url}}/assets/brand/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Unrendered — Photos, not renders.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{og_title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{base_url}}/assets/brand/og-image.jpg">
+<link rel="icon" href="{{base}}/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="{{base}}/assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="{{base}}/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="{{base}}/site.webmanifest">
+<link rel="sitemap" type="application/xml" href="{{base}}/sitemap.xml">
+<link rel="preload" href="{{base}}/assets/fonts/sora-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{base}}/assets/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+{{preload}}
+<link rel="stylesheet" href="{{base}}/assets/css/site.css?v={{asset_v}}">
+{{extra_css}}
+<script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body class="{{body_class}}">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="{{base}}/" aria-label="Unrendered home">
+      <img src="{{base}}/assets/brand/mark.webp" alt="" width="34" height="34">
+      <span>Unrendered</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="{{base}}/docs/getting-started/"{{cur_start}}>Get started</a>
+      <a href="{{base}}/docs/how-it-works/"{{cur_how}}>How it works</a>
+      <a href="{{base}}/docs/model-selection/"{{cur_models}}>Models</a>
+      <a href="{{base}}/docs/"{{cur_docs}}>Docs</a>
+      <a class="btn btn-ghost btn-sm" href="{{repo}}" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{{content}}
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="cols">
+      <div>
+        <a class="brand" href="{{base}}/" aria-label="Unrendered home"><img src="{{base}}/assets/brand/mark.webp" alt="" width="34" height="34"><span>Unrendered</span></a>
+        <p class="tagline">Photos, not renders. Open-source photorealistic image generation and editing for coding agents, created by Ruben Ferraro.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Documentation</h2>
+        <ul>
+          <li><a href="{{base}}/docs/getting-started/">Getting started</a></li>
+          <li><a href="{{base}}/docs/how-it-works/">How it works</a></li>
+          <li><a href="{{base}}/docs/photorealism/">Photorealism guide</a></li>
+          <li><a href="{{base}}/docs/editing/">Editing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Reference</h2>
+        <ul>
+          <li><a href="{{base}}/docs/model-selection/">Model selection</a></li>
+          <li><a href="{{base}}/docs/providers/">Providers</a></li>
+          <li><a href="{{base}}/docs/cli-reference/">CLI reference</a></li>
+          <li><a href="{{base}}/docs/faq/">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Project</h2>
+        <ul>
+          <li><a href="{{repo}}" rel="noopener">GitHub repository</a></li>
+          <li><a href="{{repo}}/releases" rel="noopener">Releases</a></li>
+          <li><a href="{{repo}}/blob/{{branch}}/CONTRIBUTING.md" rel="noopener">Contributing</a></li>
+          <li><a href="{{base}}/docs/brand/">Brand assets</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© {{year}} Ruben Ferraro · <a href="{{repo}}/blob/{{branch}}/LICENSE" rel="noopener">Apache License 2.0</a> · <a href="{{repo}}/blob/{{branch}}/TRADEMARKS.md" rel="noopener">Trademarks</a></span>
+      <span>v{{version}}</span>
+    </div>
+  </div>
+</footer>
+<script src="{{base}}/assets/js/site.js?v={{asset_v}}" defer></script>
+</body>
+</html>

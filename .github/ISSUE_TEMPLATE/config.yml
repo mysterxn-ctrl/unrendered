@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Documentation
-    url: https://github.com/mysterxn-ctrl/unrendered/tree/main/docs
+    url: https://mysterxn-ctrl.github.io/unrendered/docs/
     about: Getting started, providers, model selection, CLI and configuration reference.
   - name: Security report
     url: https://github.com/mysterxn-ctrl/unrendered/security/advisories/new

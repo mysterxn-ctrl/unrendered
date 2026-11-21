@@ -12,3 +12,9 @@ Ruben Ferraro. The Apache License does not grant permission to use them
 
 The files in assets/brand/ are not licensed under the Apache License.
 All rights reserved; see assets/brand/LICENSE.md.
+
+Third-party components:
+
+- website/static/engine/: scroll-craft engine, Copyright (c) Nate Herk, MIT License
+  (website/static/engine/LICENSE).
+- website/static/fonts/: Sora and Inter, SIL Open Font License 1.1 (OFL-Sora.txt, OFL-Inter.txt).

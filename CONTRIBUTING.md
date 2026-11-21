@@ -42,6 +42,18 @@ python3 tools/check_links.py
 
 Verifies every relative link and anchor in the Markdown files.
 
+### Build the website
+
+```bash
+pip install -r website/requirements.txt
+```
+
+```bash
+python3 website/build.py --out _site --check-links
+```
+
+See [website/README.md](website/README.md) for a local preview.
+
 ### Validate the plugin
 
 ```bash

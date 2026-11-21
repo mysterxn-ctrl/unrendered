@@ -38,6 +38,17 @@ jobs:
       - name: Check Markdown links
         run: python tools/check_links.py
 
+  website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r website/requirements.txt
+      - name: Build website and check links
+        run: python website/build.py --out _site --check-links
+
   min-python:
     name: Minimum Python version (3.9)
     runs-on: ubuntu-latest

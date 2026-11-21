@@ -1,0 +1,114 @@
+{
+  "name": "Unrendered",
+  "tagline": "Photos, not renders.",
+  "base_url": "https://mysterxn-ctrl.github.io/unrendered",
+  "repo": "https://github.com/mysterxn-ctrl/unrendered",
+  "repo_slug": "mysterxn-ctrl/unrendered",
+  "branch": "main",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "home": {
+    "title": "Unrendered — Photorealistic AI Image Skill for Coding Agents",
+    "description": "Open-source agent skill for Claude Code, Codex & more: photorealistic AI images and edits via any image API, model picked by blind-preference benchmarks."
+  },
+  "docs": [
+    {
+      "file": "README.md",
+      "slug": "",
+      "title": "Documentation",
+      "nav": "Overview",
+      "section": "Start here",
+      "description": "Unrendered documentation: install, connect any image API, autonomous model selection, photorealism guide, editing, QA, CLI and configuration reference.",
+      "seo_title": "Unrendered documentation — photorealistic AI images"
+    },
+    {
+      "file": "getting-started.md",
+      "slug": "getting-started",
+      "title": "Getting started",
+      "section": "Start here",
+      "description": "Install Unrendered for Claude Code, Codex, Cursor or any agent, connect an image API and create your first photorealistic image and edit.",
+      "seo_title": "Getting started with Unrendered — install & first image"
+    },
+    {
+      "file": "how-it-works.md",
+      "slug": "how-it-works",
+      "title": "How it works",
+      "section": "Start here",
+      "description": "Why raw API images look worse than chat-app images, and the Unrendered pipeline: plan, brief, candidates, vision QA, repair and final render.",
+      "seo_title": "How Unrendered works — from prompt to photoreal image"
+    },
+    {
+      "file": "model-selection.md",
+      "slug": "model-selection",
+      "title": "Autonomous model selection",
+      "nav": "Model selection",
+      "section": "Concepts",
+      "description": "How Unrendered picks the best image model from blind-preference leaderboards with a statistical rule, separately for generation and editing.",
+      "seo_title": "Benchmark-based AI image model selection | Unrendered"
+    },
+    {
+      "file": "providers.md",
+      "slug": "providers",
+      "title": "Providers",
+      "section": "Concepts",
+      "description": "Connect any image-generation API or agent tool to Unrendered with JSON provider profiles: auth, parameter mapping, async jobs and edit endpoints.",
+      "seo_title": "Connect any image generation API — Providers | Unrendered"
+    },
+    {
+      "file": "photorealism.md",
+      "slug": "photorealism",
+      "title": "Photorealism guide",
+      "section": "Concepts",
+      "description": "How to make AI images look like real photos: light, optics, capture artifacts, people, places, colour, vocabulary and a complete brief template.",
+      "seo_title": "How to make AI images look like real photos | Unrendered"
+    },
+    {
+      "file": "editing.md",
+      "slug": "editing",
+      "title": "Editing",
+      "section": "Concepts",
+      "description": "Photorealistic AI image editing with Unrendered: the edit track, edit briefs, masks, identity preservation, compositing and multi-step edits.",
+      "seo_title": "Photorealistic AI image editing — edit track | Unrendered"
+    },
+    {
+      "file": "quality-assurance.md",
+      "slug": "quality-assurance",
+      "title": "Quality assurance",
+      "section": "Concepts",
+      "description": "The Unrendered realism rubric: hard fails, ten weighted criteria, the shipping threshold and the repair map for AI image defects.",
+      "seo_title": "AI image quality assurance: the realism rubric | Unrendered"
+    },
+    {
+      "file": "cli-reference.md",
+      "slug": "cli-reference",
+      "title": "CLI reference",
+      "section": "Reference",
+      "description": "Every Unrendered script, option, output field and exit code: imagegen.py, model_select.py, contact_sheet.py and photo_finish.py.",
+      "seo_title": "Unrendered CLI reference — scripts, options, exit codes"
+    },
+    {
+      "file": "configuration.md",
+      "slug": "configuration",
+      "title": "Configuration",
+      "section": "Reference",
+      "description": "Unrendered configuration reference: state folder, model registry, benchmark snapshots and the provider profile schema.",
+      "seo_title": "Unrendered configuration: registry and provider profiles"
+    },
+    {
+      "file": "faq.md",
+      "slug": "faq",
+      "title": "FAQ",
+      "section": "Reference",
+      "description": "Frequently asked questions about Unrendered: supported agents and APIs, model choice, costs, editing, provenance and troubleshooting.",
+      "seo_title": "Unrendered FAQ — photorealistic AI images for coding agents"
+    },
+    {
+      "file": "brand.md",
+      "slug": "brand",
+      "title": "Brand assets",
+      "section": "Reference",
+      "description": "Unrendered brand assets: logo files for dark and light backgrounds, the ribbon mark, colours, typography and usage guidelines.",
+      "seo_title": "Unrendered brand assets — logos, colours and typography"
+    }
+  ]
+}
