@@ -13,7 +13,7 @@
   </nav>
   <nav class="chrome__links" aria-label="Project">
     <a href="{{base}}/docs/">Docs</a>
-    <a href="{{repo}}" rel="noopener">GitHub</a>
+    <a class="star-link" href="{{repo}}" rel="noopener"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17.1 6.4 20l1.1-6.2L2.9 9.4l6.3-.9z"/></svg>Star on GitHub</a>
   </nav>
 </header>
 
@@ -95,6 +95,8 @@
           <li><span class="flag" aria-hidden="true"></span>The tablet shows a chart with nothing to read.</li>
           <li><span class="flag" aria-hidden="true"></span>One cinematic grade on every surface: teal shadows, gold highlights.</li>
           <li><span class="flag" aria-hidden="true"></span>A desk without a single trace of use.</li>
+          <li><span class="flag" aria-hidden="true"></span>Wrong or duplicated limbs and body parts.</li>
+          <li><span class="flag" aria-hidden="true"></span>Unrealistic body positions.</li>
         </ul>
         <p class="verdict">Reads as a render. Repair: rebrief, regenerate, check the text.</p>
       </div>
@@ -102,13 +104,14 @@
   </div>
 </section>
 
-<section id="finish" class="act act--finish" data-sc-act="pin" data-sc-span="3.4" aria-labelledby="finish-title">
-  <div data-sc-stage class="stage">
+<section id="finish" class="act act--finish" data-sc-act="flow" aria-labelledby="finish-title">
+  <div class="wrap">
     <div class="finish">
       <div class="finish__frame" id="compare">
         <img class="compare__render" src="{{base}}/assets/brand/example-render.webp" srcset="{{base}}/assets/brand/example-render-560.webp 560w, {{base}}/assets/brand/example-render.webp 1120w" sizes="(max-width: 700px) 92vw, 34rem" width="1120" height="1400" alt="Render: the checklist carries grey bars instead of words" loading="lazy" decoding="async">
         <div class="compare__photo"><img src="{{base}}/assets/brand/example-photo.webp" srcset="{{base}}/assets/brand/example-photo-560.webp 560w, {{base}}/assets/brand/example-photo.webp 1120w" sizes="(max-width: 700px) 92vw, 34rem" width="1120" height="1400" alt="Photo: a meeting at a window over the mountains, the checklist reads Strategische Analyse with six labelled points" loading="lazy" decoding="async"></div>
         <span class="compare__line" aria-hidden="true"></span>
+        <input class="compare__range" type="range" min="0" max="100" value="50" step="1" aria-label="Compare render and photo: move to reveal more of the photo">
         <span class="chip chip--left">Render</span>
         <span class="chip chip--right">Photo</span>
       </div>
@@ -116,16 +119,17 @@
         <h2 id="finish-title" class="label-h">Finish</h2>
         <p class="finish__lede">Same scene, same checklist. Only one of them can be read.</p>
         <div class="paper" lang="de">
-          <p class="paper__title" data-sc-cue="0.3 1 0.06 0.01">Strategische Analyse</p>
+          <p class="paper__title">Strategische Analyse</p>
           <ul class="paper__list">
-            <li data-sc-cue="0.38 1 0.06 0.01"><span class="box"></span>Marktpotenziale</li>
-            <li data-sc-cue="0.44 1 0.06 0.01"><span class="box"></span>Wettbewerbsanalyse</li>
-            <li data-sc-cue="0.50 1 0.06 0.01" class="is-checked"><span class="box"></span>Wachstumsstrategie</li>
-            <li data-sc-cue="0.56 1 0.06 0.01"><span class="box"></span>Risikobewertung</li>
-            <li data-sc-cue="0.62 1 0.06 0.01"><span class="box"></span>Investitionsbedarf</li>
-            <li data-sc-cue="0.68 1 0.06 0.01"><span class="box"></span>Umsetzungsplan</li>
+            <li><span class="box"></span>Marktpotenziale</li>
+            <li><span class="box"></span>Wettbewerbsanalyse</li>
+            <li class="is-checked"><span class="box"></span>Wachstumsstrategie</li>
+            <li><span class="box"></span>Risikobewertung</li>
+            <li><span class="box"></span>Investitionsbedarf</li>
+            <li><span class="box"></span>Umsetzungsplan</li>
           </ul>
         </div>
+        <p class="finish__hint"><span class="fine-only">Move the pointer across the image.</span><span class="touch-only">Drag across the image.</span></p>
         <p class="finish__note">Example images. The labels above are typed out from the photo, not painted.</p>
       </div>
     </div>
@@ -156,6 +160,10 @@
       </figure>
     </div>
     <p class="caveat">A simplified stand-in that runs in this page. Installed, the skill writes the full brief, picks the model and checks every image.</p>
+    <div class="star-cta">
+      <p class="star-cta__text"><strong>Did this page make the difference visible?</strong> A star on GitHub helps other people find Unrendered, and tells Ruben Ferraro what to build next.</p>
+      <a class="star-btn" href="{{repo}}" rel="noopener"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17.1 6.4 20l1.1-6.2L2.9 9.4l6.3-.9z"/></svg>Star on GitHub</a>
+    </div>
     <div class="next">
       <div class="cmd" role="group" aria-label="Install for Claude Code">
         <code>/plugin marketplace add {{repo_slug}}</code>

@@ -54,7 +54,7 @@
     "session": "session ready · sample request · track generate",
     "plan": "plan · track generate · " + (currentModel.generate || "default model") + " · rule: lead > CI(new) + CI(current)",
     "brief": "brief · photographer's view · 7 fields",
-    "inspect": "inspect · sample review · 4 findings · verdict: render",
+    "inspect": "inspect · sample review · 6 findings · verdict: render",
     "finish": "finish · photo_finish",
     "your-turn": "ready · type a request"
   };
@@ -112,28 +112,32 @@
     frame.addEventListener("pointerleave", function () { inside = false; lens.classList.remove("is-on"); });
   }
 
-  /* ---------------------------------------------------------------- finish: the signature move */
-  // Scroll drags the line from the render to the photo; the photo's checklist labels arrive as real text.
-  var finish = document.getElementById("finish"), compare = $("#compare");
-  function smooth(a, b, x) { var t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); }
-  if (finish && compare) {
-    var photo = $(".compare__photo", compare), line = $(".compare__line", compare), lastP = -1, running = false;
-    var drawWipe = function () {
-      var v = parseFloat(getComputedStyle(finish).getPropertyValue("--sc-p")); if (isNaN(v)) v = 0;
-      if (Math.abs(v - lastP) > 0.0005) {
-        lastP = v;
-        var w = smooth(0.06, 0.62, v), left = (1 - w) * 100;
-        photo.style.clipPath = "inset(0 0 0 " + left.toFixed(2) + "%)";
-        line.style.transform = "translateX(" + (left / 100 * compare.clientWidth).toFixed(1) + "px)";
-        line.style.opacity = w > 0.995 || w < 0.005 ? "0" : "1";
-        if (statusText && active === "finish") statusText.textContent = "finish · render " + Math.round((1 - w) * 100) + "% · photo " + Math.round(w * 100) + "% · labels " + Math.round(smooth(0.3, 0.7, v) * 7) + "/7";
-      }
-      if (running) requestAnimationFrame(drawWipe);
+  /* ---------------------------------------------------------------- finish: render / photo slider */
+  // Pointer (or finger, or keyboard) moves the line between the render and the photo.
+  var compare = $("#compare");
+  if (compare) {
+    var photo = $(".compare__photo", compare), line = $(".compare__line", compare), range = $(".compare__range", compare);
+    var target = 50, shown = 50, raf = 0;
+    var paint = function () {
+      shown += (target - shown) * (reduce ? 1 : 0.22);
+      if (Math.abs(target - shown) < 0.05) shown = target;
+      photo.style.clipPath = "inset(0 0 0 " + shown.toFixed(2) + "%)";
+      line.style.transform = "translateX(" + (shown / 100 * compare.clientWidth).toFixed(1) + "px)";
+      if (statusText && active === "finish") statusText.textContent = "finish · render " + Math.round(shown) + "% · photo " + Math.round(100 - shown) + "%";
+      raf = shown !== target ? requestAnimationFrame(paint) : 0;
     };
-    new IntersectionObserver(function (es) {
-      es.forEach(function (e) { var was = running; running = e.isIntersecting; if (running && !was) { lastP = -1; requestAnimationFrame(drawWipe); } });
-    }, { rootMargin: "300px 0px" }).observe(finish);
-    photo.style.clipPath = "inset(0 0 0 100%)";
+    var set = function (pct) {
+      target = Math.max(0, Math.min(100, pct));
+      if (range && Math.round(target) !== +range.value) range.value = Math.round(target);
+      if (!raf) raf = requestAnimationFrame(paint);
+    };
+    var fromEvent = function (e) { var r = compare.getBoundingClientRect(); set((e.clientX - r.left) / r.width * 100); };
+    compare.addEventListener("pointermove", function (e) {
+      if (e.pointerType === "mouse" || e.pointerType === "pen" || e.buttons) fromEvent(e);
+    });
+    compare.addEventListener("pointerdown", function (e) { fromEvent(e); });
+    if (range) range.addEventListener("input", function () { set(+range.value); });
+    set(50);
   }
 
   /* ---------------------------------------------------------------- your turn: brief console */
