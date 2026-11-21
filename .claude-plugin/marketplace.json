@@ -9,7 +9,7 @@
     {
       "name": "unrendered",
       "source": "./",
-      "description": "Photorealistic AI image generation and editing through any image API, with autonomous benchmark-driven model selection, photographer-grade prompt compilation and vision QA.",
+      "description": "Photorealistic AI image generation and editing through any image API, with autonomous benchmark-driven model selection, one-shot photographer-grade briefs that specify every body, hand, face and material.",
       "version": "1.0.0",
       "license": "Apache-2.0",
       "keywords": [

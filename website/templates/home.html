@@ -23,7 +23,7 @@
   <div class="wrap session">
     <div class="help" data-sc-in data-sc-stagger="60">
       <h1 id="session-title">Photorealistic images from any image API</h1>
-      <p class="help__lede">An agent skill that briefs any image model like a photographer and checks every image before you see it.</p>
+      <p class="help__lede">An agent skill that briefs any image model like a photographer — every body, hand, face and material specified before the first render.</p>
       <div class="cmd" role="group" aria-label="Install for Claude Code">
         <code>/plugin marketplace add {{repo_slug}}</code>
         <button class="copy" type="button" data-copy="/plugin marketplace add {{repo_slug}}">Copy</button>
@@ -38,7 +38,7 @@
       <ol class="steps" aria-label="Pipeline state">
         <li data-step="plan"><span class="dot" aria-hidden="true"></span>Plan<span class="state">model and provider</span></li>
         <li data-step="brief"><span class="dot" aria-hidden="true"></span>Brief<span class="state">photographer's view</span></li>
-        <li data-step="inspect"><span class="dot" aria-hidden="true"></span>Inspect<span class="state">realism rubric</span></li>
+        <li data-step="inspect"><span class="dot" aria-hidden="true"></span>Inspect<span class="state">what one-liners get wrong</span></li>
         <li data-step="finish"><span class="dot" aria-hidden="true"></span>Finish<span class="state">render to photo</span></li>
       </ol>
     </div>
@@ -76,7 +76,7 @@
         <div data-sc-cue="0.42 1 0.08 0.01"><dt>Camera</dt><dd class="nums">50 mm · f/2.8 · 1/125 s · ISO 1600 · focus on the near eye</dd></div>
         <div data-sc-cue="0.50 1 0.08 0.01"><dt>Light</dt><dd>Overcast window light from camera left, about 6500 K. Faint warm pendant behind.</dd></div>
         <div data-sc-cue="0.58 1 0.08 0.01"><dt>Texture</dt><dd>Visible pores, stray beard hairs, pilled wool, worn wood grain, slight ISO grain.</dd></div>
-        <div data-sc-cue="0.66 1 0.08 0.01"><dt>Avoid</dt><dd>Airbrushed skin, stiff posed stance, disembodied hands, glossy commercial look, cinematic grade.</dd></div>
+        <div data-sc-cue="0.66 1 0.08 0.01"><dt>Avoid</dt><dd>Airbrushed skin, glossy commercial look, cinematic grade, watermark.</dd></div>
       </dl>
     </div>
   </div>
@@ -101,7 +101,7 @@
           <li><span class="flag" aria-hidden="true"></span>The tablet shows a chart with nothing to read.</li>
           <li><span class="flag" aria-hidden="true"></span>A desk without a single trace of use.</li>
         </ul>
-        <p class="verdict">Reads as a render. Repair: rebrief with every hand assigned, regenerate, check limbs, pose, texture and text again.</p>
+        <p class="verdict">Reads as a render. The brief prevents it: every hand assigned to a body, the pose written as physics, materials named, the text quoted.</p>
       </div>
     </div>
   </div>
@@ -162,7 +162,7 @@
         <figcaption>Key light direction, seen from above.</figcaption>
       </figure>
     </div>
-    <p class="caveat">A simplified stand-in that runs in this page. Installed, the skill writes the full brief, picks the model and checks every image.</p>
+    <p class="caveat">A simplified stand-in that runs in this page. Installed, the skill writes the full brief, picks the model and renders at the highest quality.</p>
     <div class="star-cta">
       <p class="star-cta__text"><strong>Did this page make the difference visible?</strong> A star on GitHub helps other people find Unrendered, and tells Ruben what to build next.</p>
       <a class="star-btn" href="{{repo}}" rel="noopener"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17.1 6.4 20l1.1-6.2L2.9 9.4l6.3-.9z"/></svg>Star on GitHub</a>

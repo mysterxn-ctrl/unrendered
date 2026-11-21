@@ -4,7 +4,7 @@
 
 <h3 align="center">Photorealistic AI images and edits for coding agents.<br>Any image API. The model picked by benchmarks.</h3>
 
-<p align="center"><strong>Stop shipping renders.</strong> Unrendered gives Claude Code, Codex and Cursor a photographer and a photo editor in one skill: it picks the strongest image model from blind-preference leaderboards, writes a camera-accurate brief, generates candidates through any image API and checks every image for waxy skin, broken hands and unreadable text before you ever see it.</p>
+<p align="center"><strong>Stop shipping renders.</strong> Unrendered gives Claude Code, Codex and Cursor a photographer in one skill: it picks the strongest image model from blind-preference leaderboards and writes a brief that leaves the model nothing to guess — every person placed, every hand assigned, every face, material, lens and light written out, the compositions models get wrong designed out — then renders once, at the highest quality, through any image API.</p>
 
 <p align="center">
   <a href="https://mysterxn-ctrl.github.io/unrendered/"><img alt="Visit the website: mysterxn-ctrl.github.io/unrendered" src="https://img.shields.io/badge/Website-mysterxn--ctrl.github.io%2Funrendered-FFC857?style=for-the-badge&labelColor=0A0D14"></a>
@@ -33,7 +33,7 @@
 
 ---
 
-**Unrendered** is an open-source agent skill that teaches Claude Code, Codex, Cursor, OpenCode and other coding agents to create and edit images that look like a person shot them on a real camera. You ask in plain language — *"make a photo of…"*, *"replace the sky in this picture…"* — and the skill does the rest: it picks the best image model from blind-preference leaderboards, turns your sentence into a photographer's brief, generates several candidates, inspects every one like a photo editor, repairs what fails and delivers the winner.
+**Unrendered** is an open-source agent skill that teaches Claude Code, Codex, Cursor, OpenCode and other coding agents to create and edit images that look like a person shot them on a real camera. You ask in plain language — *"make a photo of…"*, *"replace the sky in this picture…"* — and the skill does the rest: it picks the best image model from blind-preference leaderboards, turns your sentence into a photographer's brief that specifies every body, hand, face and material, and renders it once at the model's highest quality. Checks and repairs happen when you ask for them.
 
 It works with **any image-generation API** — vendors, gateways, self-hosted endpoints or MCP tools — and decides **by itself** which model to use.
 
@@ -85,7 +85,8 @@ The same image model often looks brilliant inside a chat app and flat through th
 |---|---|
 | Your one-liner reaches the model verbatim | A photographer's brief: who shot it, which lens, which light, which imperfections |
 | Whatever quality the gateway defaults to — sometimes `low` or `medium` | Every render at the model's highest quality and complexity |
-| One image, shipped without review | Several candidates, every region inspected enlarged, a realism rubric and targeted repair |
+| Hands, poses and faces left to chance | Every person placed, every hand given a side, a task and a grip, every expression written out — before the render |
+| Compositions models are known to get wrong | Designed out up front: disembodied hands, people tangled together, crowds in focus, garbled text |
 | A model you picked once and hope is still the best | The model chosen from blind-preference leaderboards, automatically |
 | Code tied to one vendor's SDK | Any API, gateway or agent tool through JSON profiles |
 | Edits that quietly change the whole picture | A dedicated edit track that protects everything you didn't ask to change |
@@ -95,8 +96,9 @@ The same image model often looks brilliant inside a chat app and flat through th
 - **Autonomous, benchmark-based model choice.** Reads the [Artificial Analysis](https://artificialanalysis.ai/image/leaderboard/text-to-image) blind-preference arenas, with [LMArena](https://arena.ai/leaderboard/text-to-image) as an optional second opinion, and switches only on a statistically clear lead: larger than both 95 % confidence intervals combined, or at least 25 Elo and confirmed by the second board. Generation and editing are decided separately. New models are added automatically. [How it decides →](docs/model-selection.md)
 - **Provider-agnostic.** OpenAI-protocol endpoints work out of the box; any other API — sync or async, JSON or multipart, base64 or URL results, separate edit endpoints — is a small JSON profile your agent writes from the provider's docs. [Providers →](docs/providers.md)
 - **Photographer-grade briefs.** Light with direction and colour temperature, optics that match the framing, real skin and wear, one to three capture artifacts, twenty genre recipes — and none of the "8k masterpiece" vocabulary that pulls images toward CGI. [Photorealism guide →](docs/photorealism.md)
-- **Vision QA built around what gives AI images away: limbs, pose, facial expression, texture and optics.** Every image is inspected whole and in enlarged, overlapping tiles, so a wrong finger or a stray arm at the frame edge does not slip through. Duplicated or misplaced limbs, impossible poses, dead faces and waxy skin are hard fails; an image ships only at 8.5 / 10 overall and at least 8 in each of those five. [QA rubric →](docs/quality-assurance.md)
-- **Highest quality, always.** Every candidate, repair and edit is sent at the model's highest quality and complexity — never a gateway default.
+- **One-shot briefs built around what gives AI images away: limbs, pose, facial expression, texture and optics.** Risky compositions are designed out before writing; every person is placed, every visible hand gets a side, a task and a grip, expressions are written as eyes, brows, mouth and gaze, and the brief is checked for contradictions — in text, before the one render. No inspection pass afterwards unless you ask. [Photorealism guide →](docs/photorealism.md)
+- **Highest quality, always.** Every render and edit is sent at the model's highest quality and complexity — never a gateway default.
+- **Checks and repairs on request.** Point out a flaw, or ask for a check: enlarged tiles of every region, a rubric for limbs, pose, expression, texture and optics, and targeted repair. [QA rubric →](docs/quality-assurance.md)
 - **Surgical edits.** Edit-specific model and endpoint; masks and invariants restated on every turn. [Editing →](docs/editing.md)
 - **Zero dependencies for the core.** Python 3.9+ standard library. Keys only from environment variables.
 
@@ -141,20 +143,18 @@ For anything else, ask your agent *"Connect Unrendered to &lt;provider&gt;"* —
 ```mermaid
 flowchart LR
     A[Request] --> B[Plan<br/>model + provider]
-    B --> C[Brief<br/>photographer's view]
-    C --> D[Candidates<br/>highest quality]
-    D --> E[Vision QA<br/>whole frame + enlarged tiles]
-    E -- fail --> F[Repair<br/>edit or rebrief]
-    F --> E
-    E -- pass --> H[Deliver]
+    B --> C[Brief<br/>every body, hand, face<br/>and material specified]
+    C --> D[Render once<br/>highest quality]
+    D --> E[Deliver]
+    E -. on request .-> F[Check & repair]
 ```
 
-1. **Plan** — `model_select.py plan` picks the benchmark-best model that one of your providers actually serves, with its tuned settings.
-2. **Brief** — the request becomes a structured photographer's brief.
-3. **Candidates** — three renders at the model's highest quality and complexity, each with a sidecar file that records the full request.
-4. **Vision QA** — every image inspected as a whole and in enlarged tiles, edge to edge, then scored; any hard fail disqualifies it.
-5. **Repair** — local defects edited, global ones re-briefed, one change at a time.
-6. **Deliver** — the winner, reported with model, settings and score.
+1. **Plan** — `model_select.py plan` picks the benchmark-best model that one of your providers actually serves.
+2. **Brief** — the request becomes a photographer's brief: risky compositions designed out, every person placed, every hand assigned, expressions, materials, lens and light written out, checked for contradictions in text.
+3. **Render once** — at the model's highest quality and complexity, with a sidecar file that records the full request.
+4. **Deliver** — the image, with model, settings and the brief.
+
+Ask for a check, or point out a flaw, and the skill inspects the image in enlarged tiles and repairs it with a targeted edit or a corrected brief.
 
 [Full walkthrough →](docs/how-it-works.md)
 
@@ -179,8 +179,7 @@ Camera & capture: 50 mm at f/2.8, 1/125 s, ISO 1600; focus on the near eye.
 Light: overcast window light from camera left (~6500 K), faint warm pendant behind.
 Texture & realism: visible pores, stray beard hairs, pilled wool, worn wood grain,
 faint steam, slight grain.
-Avoid: airbrushed skin, stiff posed stance, disembodied hands, glossy commercial
-look, cinematic grade, watermark.
+Avoid: airbrushed skin, glossy commercial look, cinematic grade, watermark.
 ```
 
 </td>
@@ -197,7 +196,7 @@ look, cinematic grade, watermark.
 | [Providers](docs/providers.md) | Connect any image API or agent tool |
 | [Photorealism guide](docs/photorealism.md) | How to make AI images look like real photos |
 | [Editing](docs/editing.md) | The edit track, briefs, masks and common edits |
-| [Quality assurance](docs/quality-assurance.md) | The realism rubric and repair map |
+| [Quality assurance](docs/quality-assurance.md) | Checks and repairs on request: rubric and repair map |
 | [CLI reference](docs/cli-reference.md) | Every script, option and exit code |
 | [Configuration](docs/configuration.md) | Registry, snapshots, provider-profile schema |
 | [FAQ](docs/faq.md) | Common questions |

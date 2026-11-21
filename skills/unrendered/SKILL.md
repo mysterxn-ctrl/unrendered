@@ -1,6 +1,6 @@
 ---
 name: unrendered
-description: "Unrendered — photos, not renders. Generate or edit images through ANY image-generation API (provider-agnostic) at the highest achievable quality; default goal: photographs that look genuinely captured by a person with a real camera. Use whenever the user asks to create, generate, render, make, shoot or edit an image, photo, picture, portrait, product shot, scene or visual, in any language (e.g. 'erstelle ein Bild', 'mach ein Foto von', 'bearbeite dieses Foto'). Picks the model autonomously from current blind-preference benchmarks (separately for generation and editing), compiles a photographer's brief, generates candidates, runs vision QA against an AI-tell rubric, repairs, and delivers. Not for SVG/vector/code-native graphics."
+description: "Unrendered — photos, not renders. Generate or edit images through ANY image-generation API (provider-agnostic) at the highest achievable quality; default goal: photographs that look genuinely captured by a person with a real camera. Use whenever the user asks to create, generate, render, make, shoot or edit an image, photo, picture, portrait, product shot, scene or visual, in any language (e.g. 'erstelle ein Bild', 'mach ein Foto von', 'bearbeite dieses Foto'). Picks the model autonomously from current blind-preference benchmarks (separately for generation and editing), designs out the compositions models get wrong, compiles a photographer's brief that specifies every person, hand, face and material, and renders once at the highest quality; checks and repairs only on request. Not for SVG/vector/code-native graphics."
 license: Apache-2.0
 metadata:
   author: Ruben Ferraro
@@ -12,13 +12,13 @@ metadata:
 
 Provider-agnostic, benchmark-driven, photographer-grade image generation and editing.
 
-You are not a "prompt typist". You are a **photographer, photo editor and QA lead** who happens to operate an image model through an API. A raw API call with the user's one-liner produces a generic, glossy, obviously-AI image. Everything that makes chat apps look better (prompt expansion, planning, multiple candidates, self-checking) — and more — is done **explicitly** by this skill.
+You are not a "prompt typist". You are a **photographer** who happens to operate an image model through an API. A raw API call with the user's one-liner produces a generic, glossy, obviously-AI image, because the model fills every gap with its own average. This skill works **one-shot**: the brief leaves no gap — every person placed, every hand assigned, every face, material, lens and light written out, risky compositions designed out — and the image is rendered once at the highest quality. No inspection pass afterwards unless the user asks for one.
 
 Hard rules (never break):
 1. **Provider-agnostic.** Never assume a specific vendor, gateway or SDK. Use whatever image API the user has configured or names. See "Step 0".
 2. **The skill picks the model itself — by benchmarks, by code.** Always start with `python3 SKILL_DIR/scripts/model_select.py plan --task generate|edit`. It refreshes the leaderboards when due, applies the statistical decision rule separately for generation and editing, and returns the best-ranked model that a configured provider actually serves. Default starting point for both tracks: `gpt-image-2.6-sunburst`. Never pick or switch models by gut feeling, and never hard-code a provider.
-3. **Never ship the user's raw prompt.** Always compile it (Step 2).
-4. **Never ship the first image unchecked.** Always look at every output yourself (Step 4).
+3. **Never ship the user's raw prompt.** Always compile it (Step 2) — the brief carries the whole quality.
+4. **One shot, no post-check by default.** Render once and deliver. Inspect or repair only when the user asks or reports a flaw ("On request" below).
 5. **Never silently downgrade** model, quality or resolution. If you must, say so and why.
 6. API keys only via environment variables / the host's secret mechanism. Never write a key into a file, prompt, log or chat.
 
@@ -33,12 +33,12 @@ Hard rules (never break):
 | `references/provider-adapters.md` | Step 0 — connecting ANY provider, writing a profile |
 | `references/photoreal-playbook.md` | Step 2 — the physics/optics/human-photographer knowledge (core of realism) |
 | `references/photo-genres.md` | Step 2 — pick the genre recipe that matches the request |
-| `references/prompt-compiler.md` | Step 2 — the exact brief template, dialects, worked examples |
-| `references/qa-rubric.md` | Steps 4–5 — scoring, AI-tell checklist, repair moves |
+| `references/prompt-compiler.md` | Step 2 — risk design, writing rules, the brief template, pre-flight, worked examples |
+| `references/qa-rubric.md` | On request — checklist, scoring and repair moves when the user asks for a check or reports a flaw |
 | `references/editing.md` | Edits, references, identity, compositing |
 | `scripts/imagegen.py` | Generic HTTP runner driven by a provider profile (stdlib only) |
-| `scripts/qa_tiles.py` | Step 4 — enlarged, overlapping tiles of every image region for full-detail inspection |
-| `scripts/contact_sheet.py` | Put candidates side by side for comparison |
+| `scripts/qa_tiles.py` | On request — enlarged, overlapping tiles for a full-detail check |
+| `scripts/contact_sheet.py` | On request — several images side by side |
 | `scripts/photo_finish.py` | Optional optical/film finishing pass |
 | `providers/_TEMPLATE.json` | Blank profile to fill from the provider's own docs |
 | `providers/openai-images-protocol.json` | Generic profile for any endpoint that speaks the OpenAI-style `/images/generations` protocol (a wire format many vendors implement — not a vendor choice) |
@@ -70,66 +70,50 @@ The model is chosen by benchmarks; the provider is chosen by availability. Any p
      - `CONNECT_PROVIDER`: no configured API/tool serves any ranked model → Step 0.
      - `provider_type: tool` → call that agent tool (MCP etc.) yourself with the canonical values mapped onto its arguments.
 3. `imagegen.py` accepts `--model auto --profile auto` (the defaults) and does step 2's selection internally.
-4. **Always the highest quality.** Every render — candidates, repairs, edits and the final image — is sent at the model's highest quality and complexity level. `imagegen.py` does this automatically from the registry (`quality_values`, `complexity_values`); for GPT Image 2.6 Sunburst that is `quality=max`, `complexity=high`, for generation and edits alike. Never pass a lower level, never accept a gateway default. If the runner stops with `ONBOARD_MODEL` (quality levels of the model unknown), read the provider's API reference, add the levels, and run again.
+4. **Always the highest quality.** Every render and edit is sent at the model's highest quality and complexity level. `imagegen.py` does this automatically from the registry (`quality_values`, `complexity_values`); for GPT Image 2.6 Sunburst that is `quality=max`, `complexity=high`, for generation and edits alike. Never pass a lower level, never accept a gateway default. If the runner stops with `ONBOARD_MODEL` (quality levels of the model unknown), read the provider's API reference, add the levels, and run again.
    - Size: native ≤ 2560×1440 (beyond that is *experimental*: more artifacts).
-   - Edits at high complexity can also touch areas outside the instruction: always restate every invariant, use a mask where supported, and compare the whole result against the original in Step 4.
+   - Edits at high complexity can also touch areas outside the instruction: always restate every invariant, and use a mask where supported.
 5. Aspect ratio follows the photographic genre (3:2 for full-frame/DSLR, 4:3 for phone, 4:5 / 9:16 for social, 16:9 for video stills). Use the provider's exact allowed sizes.
 
-## Step 2 — Compile the brief (the single biggest quality lever)
+## Step 2 — Design and compile the brief (this is where the result is decided)
 
-Follow `references/prompt-compiler.md`. In short:
+Follow `references/prompt-compiler.md` exactly. In short:
 
-1. **Interpret intent:** subject, purpose (ad, editorial, social, stock, family snapshot…), mood, must-haves, must-not-haves, any exact text.
-2. **Cast the photographer:** decide *who* took this photo, *with what*, *why*, *when* (`references/photo-genres.md`). This single decision fixes camera, lens, light, framing and the kind of imperfection — the root of believability.
-3. **Write the physical scene:** concrete place, time, weather, one motivated key light + its direction and colour temperature, what is in focus, what is not, real clutter and wear.
-4. **Block every body and face** (mandatory whenever a person or any body part is visible — this is where wrong limbs, stiff poses and dead faces are prevented): how many people; where each one is (seated/standing, side of the frame, facing where); what each visible hand does, left and right, with a grip that works; where limbs leave the frame and the body continues; weight and support. Never ask for disembodied hands — say whose they are and where the body is. Write the expression as eyes, brows, mouth and gaze target for this exact moment, never just "smiling".
-5. **Inject human and material truth** (`references/photoreal-playbook.md`): skin with pores and uneven tone, asymmetry, flyaway hair, creased clothing, each main material with its texture and wear, imperfect framing, mundane background objects.
-6. **Inject capture truth:** lens character, depth of field matched to focal length and aperture, sensor noise at the stated ISO, highlight roll-off, white balance consistent with the light.
-7. **Forbid the AI look** in plain words (no airbrushing, no smooth polished surfaces, no HDR glow, no stiff posed stance, no symmetric "perfect" faces, no cinematic teal-orange grade unless asked) — and **never use AI-art vocabulary** (`8k, ultra-detailed, hyperrealistic, masterpiece, award-winning, trending, octane, unreal engine, stunning, epic`). Those words pull toward CG gloss.
-8. Format in the model's `prompt_dialect` (for GPT-Image: labeled sections in natural language, ~120–250 words; exact text in quotes).
+1. **Interpret intent:** subject, purpose (ad, editorial, social, stock, family snapshot…), mood, must-haves, must-not-haves, any exact text. Use reference images the user supplies (person, pose, product, room) as references.
+2. **Design out the failure points** (`prompt-compiler.md` §1): keep what the user asked for, but choose the way of showing it with the fewest risk elements — hands without a visible owner, people touching, more than three people in focus, complex poses, small tools in hands, interlaced fingers, teeth in close-up, legs under tables, text, screens, mirrors, frame-filling fine texture. Handle every remaining one exactly as the table says.
+3. **Cast the photographer:** *who* took this photo, *with what*, *why*, *when* (`references/photo-genres.md`). This fixes camera, lens, light, framing and the kind of imperfection.
+4. **Block every body and face** (mandatory whenever a person or any body part is visible): one block per person — position in the frame and facing; weight and support; right hand: task and grip; left hand: task and grip; where limbs leave the frame and the body continues. Never ask for disembodied hands. Expression as eyes, brows, mouth and gaze target for this exact moment, never just "smiling".
+5. **Write the physical scene:** concrete place, time, weather, counted objects, one motivated key light with direction and colour temperature, where shadows fall, what is in focus and what is not.
+6. **Inject material and capture truth** (`references/photoreal-playbook.md`): skin with pores and uneven tone, flyaway hair, each main material with its texture and wear; depth of field matched to focal length, aperture and distance; noise at the stated ISO; white balance that fits the light.
+7. **Write it the way the model follows** (`prompt-compiler.md` §2): most important first, one fact per sentence, everything anchored in the frame, correct states described positively (no anatomy negations), counts stated, no contradictions, no AI-art vocabulary. The Avoid line is for style only.
+8. **Pre-flight** (`prompt-compiler.md` §4): read the brief once against the checklist and fix it. This costs no image tokens and is the only check in the default flow.
+9. Format in the model's `prompt_dialect` (for GPT-Image: labelled sections in natural language, 120–250 words, up to ~300 with several people or exact text).
 
-Default is a real photograph. If the user explicitly wants a non-photo look (illustration, infographic, logo, UI, 3D, painting), use `references/non-photo.md` instead of steps 2–7 of this list, but keep the same candidate → QA → repair discipline.
+Default is a real photograph. If the user explicitly wants a non-photo look (illustration, infographic, logo, UI, 3D, painting), use `references/non-photo.md`, with the same one-shot discipline.
 
-If the user's prompt is already a detailed brief, normalise it — don't override their creative choices. Ask a question only if something blocking is unknown (e.g. which person, which product, exact copy); otherwise decide like a professional and state the decisions.
+If the user's prompt is already a detailed brief, normalise it — keep their creative choices and add only what is missing (bodies, physics, capture). Ask a question only if something blocking is unknown (which person, which product, exact copy); otherwise decide like a professional and state the decisions.
 
-## Step 3 — Generate candidates
+## Step 3 — Render once
 
-- Write the brief to a file, then e.g.:
-  `python3 SKILL_DIR/scripts/imagegen.py generate --prompt-file brief.txt --size 1536x1024 --n 3 --out-dir out/<slug> --slug <slug>`
-  (model/profile/quality/complexity come from Step 1 automatically; override only with a reason.)
-- **Edits** (see `references/editing.md`): `imagegen.py edit --prompt-file edit.txt --image target.png [--image ref.png] [--mask mask.png] --n 2 --out-dir out/<slug>` → uses the edit-track model, the provider's edit endpoint/model id, and the highest quality and complexity. Then the same QA + repair loop, with the extra hard fail "anything changed outside the requested area".
-- Default **3 candidates** (1 if the user wants it fast; up to 6 for hero work), all at the highest quality. If the provider has no `n`, loop calls. Vary *only* what is useful (e.g. two framings), not randomly.
-- Every output gets a sidecar `.json` with the full request (no key) for reproducibility.
+- Write the brief to a file, then:
+  `python3 SKILL_DIR/scripts/imagegen.py generate --prompt-file brief.txt --size <native size for the aspect> --out-dir out/<slug> --slug <slug>`
+  Model, provider, `quality` and `complexity` (always the highest) come from Step 1 automatically.
+- **Edits** (see `references/editing.md`): `imagegen.py edit --prompt-file edit.txt --image target.png [--image ref.png] [--mask mask.png] --out-dir out/<slug>` → edit-track model, the provider's edit endpoint, highest quality and complexity. Use a mask where supported and restate every invariant.
+- One image by default. Render more only when the user asks for variations.
+- Every output gets a sidecar `.json` with the full request (no key).
 
-## Step 4 — Vision QA (do not skip)
+## Step 4 — Deliver
 
-You usually see an image downscaled; that hides a wrong finger, a third arm at the frame edge or garbled small text. So inspect in two passes:
+1. Save to the user's requested location (or `./images/<slug>.<ext>`); never overwrite without being asked.
+2. Report: file path, model + provider + settings, and the brief (collapsed).
+3. Optional `scripts/photo_finish.py` (grain, subtle vignette, lateral chromatic aberration, highlight roll-off) only if the user wants a less clean look. It refuses files that carry C2PA provenance data (exit 3).
 
-1. **Whole frame.** Open every candidate. Count people, then trace every arm and hand to the shoulder of one plausible body; check each pose (weight, support, joints, grip), each facial expression, light direction and the overall look. Anything with a hard fail is out.
-2. **Every region at full detail.** For each candidate still in the running, cut it into enlarged tiles and open **every** tile:
-   `python3 SKILL_DIR/scripts/qa_tiles.py out/<slug>/<file>.png -o out/<slug>/qa`
-   Tiles overlap and cover the frame edge to edge (corners and borders included). In each tile check, in this order: limbs and fingers, pose details (grip, contact), faces (eyes, gaze, mouth, teeth), texture (skin pores, hair, fabric, materials), optics (focus falloff, perspective, glow, grain); then text letter by letter, contact points, reflections and background people.
-For a side-by-side view of the candidates: `python3 SKILL_DIR/scripts/contact_sheet.py out/<slug>/*.png -o out/<slug>/sheet.jpg`.
+## On request — check and repair
 
-Score each candidate with `references/qa-rubric.md` (checklist, hard fails, 10 criteria). Write what you see, not "looks fine".
-- Pick the best. A candidate with any **hard fail** cannot ship.
-- If the best has no hard fail, scores ≥ 8.5/10 **and at least 8 in each of limbs, pose, expression, texture and optics** → Step 6.
-- Else → Step 5.
-- The image you deliver must have passed both passes, including after every repair.
+Only when the user asks for a check or points out a flaw:
 
-## Step 5 — Repair loop (max 3 rounds, one change at a time)
-
-- Wrong, extra or misplaced limbs, or a stiff or impossible pose → **re-block the bodies in the brief** (fewer visible hands, every hand assigned, simpler pose) and regenerate; pose edits rarely hold.
-- Local defect (one hand, one expression, text, stray object, skin texture in one area) → **edit** the winner with a mask or tight instruction, restating every invariant ("change only the left hand; keep everything else identical").
-- Global defect (too glossy, wrong light, staged feel, AI look) → **revise the brief** (the rubric maps each failure to a prompt fix) and regenerate.
-- Re-QA after every round. After 3 rounds, deliver the best and state the remaining flaw honestly.
-
-## Step 6 — Finishing + delivery
-
-1. The winner is already rendered at the highest quality; no extra render is needed.
-2. Optional `scripts/photo_finish.py` (grain, subtle vignette, lateral chromatic aberration, highlight roll-off) — only if the image still looks too clean; keep it subtle; compare before/after and inspect the result again. It refuses files that carry C2PA provenance data (exit 3); then deliver the image as generated.
-3. Save to the user's requested location (or `./images/<slug>-vN.<ext>`); never overwrite without being asked.
-4. Report: file path(s), model + provider + settings, final brief (collapsed), QA score + any known flaw, cost estimate if known.
+- **Check:** `python3 SKILL_DIR/scripts/qa_tiles.py <image> -o out/<slug>/qa` cuts the image into enlarged, overlapping tiles; open the tiles that show the part in question (or all of them for a full check) and judge with `references/qa-rubric.md` — limbs, pose, facial expression, texture, optics.
+- **Repair, one change at a time:** a wrong limb or an impossible pose → fix the brief per `prompt-compiler.md` §1 and the rubric's repair map, then render again; a single hand, expression, skin area, sign or object → masked edit that restates every invariant. Continue from the last approved image.
 
 ## Ethics & provenance (non-negotiable)
 
@@ -148,5 +132,5 @@ Score each candidate with `references/qa-rubric.md` (checklist, hard fails, 10 c
 8. Wear: scratches, dust, creases, fingerprints, stains.
 9. Neutral, believable colour (no default warm/sepia cast, no teal-orange).
 10. No AI-art vocabulary.
-11. Highest quality on every render, multiple candidates, ruthless QA at full detail.
-12. Edit locally, regenerate globally; restate invariants every time.
+11. Risky compositions designed out before writing; highest quality on every render.
+12. Correct states written positively, nothing contradictory, the brief pre-flighted once — then one render.

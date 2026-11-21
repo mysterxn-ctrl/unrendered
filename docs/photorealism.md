@@ -56,6 +56,25 @@ Depth of field must follow focal length, aperture and distance. A wide-angle pho
 
 Never all at once — that becomes a filter, not a photograph.
 
+## Design out what models get wrong
+
+Unrendered renders once, so the brief has to be right the first time. Before writing, it keeps what you asked for but picks the version of the picture a model renders reliably:
+
+| Risk | One-shot choice |
+|---|---|
+| Hands as the subject | Forearms in frame; say whose hands they are, from which side they enter, where the body is; at most two hands |
+| People touching | At most two people in contact; each person's arms described separately — or the moment just before or after |
+| Groups | At most three people in focus; everyone else far away or out of focus |
+| Complex poses | A stable, well-known moment, described joint by joint |
+| Small tools in hands | The grip named exactly, seen from the side |
+| Interlaced fingers, crossed arms | Hands apart, each on its own object |
+| Teeth in close-up | Closed or slightly open mouth, unless laughter is the point |
+| Text | Only when asked; quoted, short, large, facing the camera |
+| Screens, mirrors | Screen dark or simple; mirrors avoided or their reflection described |
+| Frame-filling foliage, fur, crowds | Smaller area, partly out of focus |
+
+How the brief is written matters as much: most important facts first, one fact per sentence, everything anchored in the frame (left third, foreground, what is in front of what), one block per person in the same order (position, weight, right hand, left hand, face), the correct state described positively rather than a list of anatomy errors, counts stated, and no contradictions between lens and blur or light and shadows.
+
 ## People
 
 - **Skin:** visible pores, fine vellus hair, uneven tone, small blemishes, natural shine on the T-zone. Say "unretouched, no skin smoothing".
@@ -103,8 +122,7 @@ Light: <one key source, direction, colour temperature; fill; what clips>
 Texture & realism: <each main material with its texture and wear; 1–3 capture artifacts>
 Colour: <neutral white balance for this light; saturation; no grade>
 Text: <"exact text" with placement | No readable text anywhere.>
-Avoid: no airbrushed skin, no plastic sheen, no CGI look, no HDR glow, no cinematic grade,
-no perfect symmetry, no stiff posed stance, no extra or disembodied hands, no watermark, no logos.
+Avoid: airbrushed skin, plastic sheen, CGI look, HDR glow, cinematic grade, watermark, logos.
 ```
 
 ### Example — "a man drinking coffee"
@@ -130,7 +148,7 @@ Texture & realism: visible pores and fine lines, stray beard hairs, pilled wool,
 faint steam, slight ISO grain, horizon very slightly tilted.
 Colour: neutral cool daylight with a little warm spill; muted saturation.
 Text: no readable text anywhere.
-Avoid: no airbrushed skin, no glossy commercial look, no cinematic grade, no watermark, no logos.
+Avoid: airbrushed skin, glossy commercial look, cinematic grade, watermark, logos.
 ```
 
 ## Genre recipes

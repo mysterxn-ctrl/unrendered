@@ -10,19 +10,17 @@ The same image model often produces noticeably better pictures inside a consumer
 | Optional planning ("thinking"), sometimes several candidates and a self-check | One shot, no review |
 | Quality and size chosen for you | Gateway defaults — often `low` or `medium` quality |
 
-Unrendered makes every one of those steps explicit, and adds what neither does by default: a photographer's view of the scene, physical consistency checks, a realism-specific QA rubric, targeted repair, and benchmark-driven model choice.
+Unrendered does that rewriting explicitly — and far more precisely than a generic prompt expander: it designs out the compositions models get wrong, writes every person, hand, face, material, lens and light into the brief, checks the brief for contradictions in text, renders once at the highest quality, and picks the model from blind-preference benchmarks. Because the brief carries the quality, there is no inspection pass after the render unless you ask for one.
 
 ## The pipeline
 
 ```mermaid
 flowchart LR
     A[Request] --> B[Plan<br/>model + provider]
-    B --> C[Brief<br/>photographer's view]
-    C --> D[Candidates<br/>highest quality]
-    D --> E[Vision QA<br/>whole frame + enlarged tiles]
-    E -- fail --> F[Repair<br/>edit or rebrief]
-    F --> E
-    E -- pass --> H[Deliver]
+    B --> C[Brief<br/>risk design, bodies, faces,<br/>materials, optics]
+    C --> D[Render once<br/>highest quality]
+    D --> E[Deliver]
+    E -. on request .-> F[Check & repair]
 ```
 
 ### 0 · Connect
@@ -33,45 +31,38 @@ The skill looks for a provider the user has configured: a profile, environment v
 
 `model_select.py plan --task generate|edit` refreshes leaderboard data when it is older than 14 days, applies a fixed statistical rule to decide the best model per track, then walks the ranking until it finds a model that one of your providers really serves. It returns the model, the provider, the provider's model id and the model's quality levels. → [Model selection](model-selection.md)
 
-### 2 · Brief — think like the person behind the camera
+### 2 · Brief — where the result is decided
 
-The request is compiled into a structured brief:
+The image model renders the brief literally and fills every gap with its own average — a glossy look, a generic face, limbs it invents. So the brief leaves no gap:
 
+- **Risk design first.** Without changing what you asked for, the skill picks the version of the picture a model renders reliably: hands always with a visible owner, at most two people in contact, at most three people in focus, stable poses, grips named exactly, no interlaced fingers, text only when asked and then quoted and short, screens dark or simple.
 - **Who** took the photo and why (a friend's phone snapshot, a photojournalist, a studio product shooter).
-- **Scene** with a specific place, time, weather and mundane clutter.
-- **Subject** doing something concrete, with real skin, asymmetry and worn materials.
-- **Bodies & pose**: every person counted and placed, every visible hand given a side and a task, weight and support described — this is where wrong limbs and stiff poses are prevented.
-- **Face & expression**: the moment written as eyes, brows, mouth and gaze target, never just "smiling".
-- **Camera & capture**: focal length, aperture, shutter, ISO — and the depth of field that follows from them.
-- **Light**: one motivated key source, its direction and colour temperature; what clips.
-- **Imperfections**: one to three believable capture artifacts.
-- **Avoid**: the AI look in plain words — and none of the "AI-art" vocabulary (`8k`, `hyperrealistic`, `masterpiece`…) that pulls images toward glossy CGI.
+- **Scene** with a specific place, time, weather and counted objects.
+- **Bodies & pose:** one block per person — position in the frame, weight and support, what the right and the left hand each do and how they grip, where limbs leave the frame.
+- **Face & expression:** the moment written as eyes, brows, mouth and gaze target, never just "smiling".
+- **Camera & capture:** focal length, aperture, shutter, ISO — and the depth of field that follows from them.
+- **Light:** one motivated key source, its direction and colour temperature, where shadows fall.
+- **Texture:** each main material with its texture and wear; one to three believable capture artifacts.
+- **Avoid:** style only — airbrushed skin, CGI look, cinematic grade. Anatomy is written as the correct state, never as a list of errors to avoid.
 
-→ [Photorealism guide](photorealism.md)
+Before the render the brief is read once against a pre-flight checklist: people counted, every hand assigned, no contradictions between lens and blur or light and shadows, exact text quoted. That check is text only and costs no image tokens. → [Photorealism guide](photorealism.md)
 
-### 3 · Candidates
+### 3 · Render once
 
-Three candidates by default (one for a quick look, up to six for hero work), every one at the model's highest quality and complexity — for GPT Image 2.6 Sunburst `quality=max`, `complexity=high` — at a native size. The runner never falls back to a gateway default: if a model's quality levels are unknown, it stops until they are added. Every image gets a sidecar JSON with the full request, so the same call can be repeated.
+One image at the model's highest quality and complexity — for GPT Image 2.6 Sunburst `quality=max`, `complexity=high` — at a native size. The runner never falls back to a gateway default. Every image gets a sidecar JSON with the full request, so the same call can be repeated.
 
-### 4 · Vision QA
+### 4 · Deliver
 
-The agent looks at every candidate twice: as a whole frame, counting people and tracing every arm and hand to one body, and as enlarged, overlapping tiles from `qa_tiles.py` that cover the image edge to edge — so a wrong finger, a stray arm at the border or garbled small text is seen at full detail. Limbs, pose, facial expression, texture and optics are checked first, then light, colour, text and composition — ten weighted criteria in all. Hard fails such as duplicated or misplaced limbs, impossible poses, dead or mismatched eyes, waxy skin, gibberish text, contradictory shadows or fused objects disqualify a candidate regardless of score. An image ships only with no hard fail, **8.5 / 10 overall and at least 8 in each of limbs, pose, expression, texture and optics**. → [Quality assurance](quality-assurance.md)
+The agent reports the file path, model, provider, settings and brief. An optional finishing pass adds subtle grain, lens vignetting and highlight roll-off when you want a less clean look.
 
-### 5 · Repair
+### On request — check and repair
 
-At most three rounds, one change at a time:
-
-- local defects (a hand, a sign, a stray object) → a masked or tightly scoped **edit** that restates every invariant,
-- global defects (glossy, staged, flat light) → a **revised brief** and a regeneration.
-
-### 6 · Delivery
-
-The winner is already rendered at the highest quality, so no extra render is needed. An optional finishing pass adds subtle grain, lens vignetting and highlight roll-off if an image still looks too clean. The agent reports file paths, model, provider, settings, brief and QA result.
+Point out a flaw, or ask for a check, and the agent inspects the image in enlarged, overlapping tiles against a rubric for limbs, pose, facial expression, texture and optics. A wrong limb or pose is fixed in the brief and rendered again; a single hand, expression, skin area or sign is repaired with a masked edit that restates everything else. → [Quality assurance](quality-assurance.md)
 
 ## Design principles
 
 1. **Evidence over opinion.** Models are chosen by blind-preference benchmarks with confidence intervals, not by hype.
 2. **No vendor lock-in.** Providers are data (JSON profiles), not code.
-3. **Highest quality, never unchecked.** Every render uses the model's top level, and every image is inspected region by region before it is delivered.
+3. **Right the first time.** The brief carries the quality; every render uses the model's top level. Checks cost tokens, so they run only when you ask.
 4. **One change per iteration.** Repairs stay controllable and reproducible.
 5. **Realism is an aesthetic, not a disguise.** Provenance data is never stripped or forged.

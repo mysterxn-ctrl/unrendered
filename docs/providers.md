@@ -109,7 +109,7 @@ If your agent already has a tool that generates images — an MCP server, for ex
 }
 ```
 
-When a tool provider is selected, the runner hands the canonical parameters back to the agent (`CALL_TOOL`), which calls the tool itself. Briefing, candidates, QA and repair stay exactly the same.
+When a tool provider is selected, the runner hands the canonical parameters back to the agent (`CALL_TOOL`), which calls the tool itself. The brief and the one-shot render stay exactly the same.
 
 ## Choosing between providers for the same model
 

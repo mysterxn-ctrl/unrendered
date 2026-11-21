@@ -1,5 +1,7 @@
 # QA rubric — judge like a photo editor who hunts AI fakes
 
+Used **only on request**: when the user asks for a check or points out a flaw. The default flow is one-shot (no inspection pass); the same five areas are prevented in the brief by `prompt-compiler.md`.
+
 The five things that give an image away are **limbs, pose, facial expression, texture and optics**. Check them in this order, on the whole frame and then on every enlarged tile from `scripts/qa_tiles.py` (corners and edges included). Write down what you actually see — "right hand, five fingers, holds the pen between thumb and index finger" — not "hands look fine".
 
 ## Inspection checklist
@@ -76,7 +78,7 @@ Then check the rest: light direction and shadows, contact shadows, text letter b
 
 Score = weighted mean. **Ship only if: no hard fail, weighted score ≥ 8.5, and each of criteria 1–5 is at least 8.** A high average must not hide one bad hand, a stiff pose, a dead expression or waxy skin.
 
-Write the QA as a short table per candidate in your working notes; tell the user only the winner's score and any remaining flaw.
+Write the QA as a short table in your working notes; tell the user the score and any flaw found.
 
 ## Failure → repair map
 

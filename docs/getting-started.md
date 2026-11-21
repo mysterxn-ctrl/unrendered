@@ -84,11 +84,11 @@ Just ask your agent:
 The skill will:
 
 1. pick the model from the blind-preference leaderboards (default model: GPT Image 2.6 Sunburst),
-2. turn the one-liner into a photographer's brief — who shot it, with which lens, in what light, with which imperfections,
-3. generate three candidates at the model's highest quality and complexity,
-4. inspect every candidate as a whole and in enlarged tiles against a 10-criterion realism rubric with hard fails (limbs, hands, text, light, fused objects…),
-5. repair or regenerate if needed, and check every repair the same way,
-6. save the image and report path, model, provider, settings, the final brief and the QA score.
+2. turn the one-liner into a photographer's brief — who shot it, where the fisherman sits, what each of his hands does with the net, his expression, the lens, the light, the materials — with the compositions models get wrong designed out,
+3. render it once at the model's highest quality and complexity,
+4. save the image and report path, model, provider, settings and the brief.
+
+See a flaw? Say so — the skill inspects the image in enlarged tiles and repairs it with a targeted edit or a corrected brief.
 
 ## Your first edit
 

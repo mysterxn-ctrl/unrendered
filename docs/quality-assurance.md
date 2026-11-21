@@ -1,6 +1,8 @@
 # Quality assurance
 
-No image leaves Unrendered unchecked. The agent inspects every candidate like a photo editor hunting for fakes, in two passes: the whole frame, then every region at full detail through enlarged, overlapping tiles that cover the image edge to edge — because an agent usually sees a whole image downscaled.
+Unrendered works one-shot: the brief prevents the errors, the image is rendered once and delivered, and no inspection pass runs afterwards — checks cost tokens. This page describes what happens **when you ask for a check or point out a flaw**. The same five areas are what the brief controls in advance ([Photorealism guide](photorealism.md)).
+
+On request, the agent inspects the image like a photo editor hunting for fakes: the whole frame, then the relevant regions at full detail through enlarged, overlapping tiles, because an agent usually sees a whole image downscaled.
 
 The five things that give an image away are checked first, in this order: **limbs, pose, facial expression, texture and optics**. The agent writes down what it actually sees ("right hand, five fingers, holds the pen between thumb and index finger"), not "hands look fine".
 
@@ -18,7 +20,7 @@ Then light and shadows, contact shadows, text letter by letter and reflections.
 
 ## Hard fails
 
-Any one of these disqualifies a candidate, whatever its score:
+Any one of these fails an image, whatever its score:
 
 1. **Limbs:** an extra, missing, duplicated or misplaced arm, hand, leg or foot; a limb that belongs to no plausible body; a hand on the wrong arm; extra, missing or fused fingers.
 2. **Pose:** a joint bent the impossible way, a body that floats or is unsupported, a grip or contact that cannot work.
@@ -46,7 +48,7 @@ Any one of these disqualifies a candidate, whatever its score:
 | 9 | Composition | 0.75 | a person would plausibly frame it this way |
 | 10 | Technical cleanliness | 0.5 | no artifacts, banding, halos or mushy areas |
 
-**An image ships only with no hard fail, a weighted score of at least 8.5, and at least 8 in each of criteria 1–5.** A high average cannot hide one bad hand, a stiff pose, a dead expression or waxy skin.
+**An image passes only with no hard fail, a weighted score of at least 8.5, and at least 8 in each of criteria 1–5.** A high average cannot hide one bad hand, a stiff pose, a dead expression or waxy skin.
 
 ## Repair map
 
@@ -65,23 +67,23 @@ Any one of these disqualifies a candidate, whatever its score:
 | Cellular texture in foliage, fur, fog | less fine organic texture, out of focus, ≤ 2K size | replace the region |
 | Edit changed other areas | restate every invariant, use a mask, describe only the change | restart from last approved image |
 
-One change per iteration, invariants restated every time, at most three rounds. If an image still has a flaw after that, the agent delivers the best one and names the flaw.
+One change per iteration, invariants restated every time, always continuing from the last approved image.
 
 ## Tools
 
-**Tiles** — every image cut into enlarged, overlapping tiles plus one whole-frame view, each tile labelled with its position:
+**Tiles** — an image cut into enlarged, overlapping tiles plus one whole-frame view, each tile labelled with its position:
 
 ```bash
 python3 scripts/qa_tiles.py images/candidate-1.png -o images/qa
 ```
 
-**Contact sheet** — candidates side by side, optionally with a 3× centre crop row for texture inspection:
+**Contact sheet** — several images side by side, optionally with a 3× centre crop row:
 
 ```bash
 python3 scripts/contact_sheet.py images/*.png -o images/sheet.jpg --crops
 ```
 
-**Photo finish** — an optional, subtle optical pass for images that still look too clean: luminance grain, lens vignetting, lateral chromatic aberration and a soft highlight shoulder. ICC profile, EXIF, XMP and DPI are kept and no camera data is invented. Files that carry C2PA provenance data are refused, because new pixels would drop the manifest.
+**Photo finish** — an optional, subtle optical pass when you want a less clean look: luminance grain, lens vignetting, lateral chromatic aberration and a soft highlight shoulder. ICC profile, EXIF, XMP and DPI are kept and no camera data is invented. Files that carry C2PA provenance data are refused, because new pixels would drop the manifest.
 
 ```bash
 python3 scripts/photo_finish.py in.png -o out.png --grain 0.25 --vignette 0.15 --ca 0.6 --rolloff 0.2

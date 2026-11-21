@@ -34,7 +34,7 @@
       "slug": "how-it-works",
       "title": "How it works",
       "section": "Start here",
-      "description": "Why raw API images look worse than chat-app images, and the Unrendered pipeline: plan, brief, candidates, vision QA, repair and final render.",
+      "description": "Why raw API images look worse than chat-app images, and the Unrendered pipeline: plan, a brief that leaves nothing to guess, one render at the highest quality.",
       "seo_title": "How Unrendered works — from prompt to photoreal image"
     },
     {
@@ -75,7 +75,7 @@
       "slug": "quality-assurance",
       "title": "Quality assurance",
       "section": "Concepts",
-      "description": "The Unrendered realism rubric: hard fails, ten weighted criteria, the shipping threshold and the repair map for AI image defects.",
+      "description": "Checks and repairs on request: the Unrendered rubric for limbs, pose, facial expression, texture and optics, hard fails and the repair map.",
       "seo_title": "AI image quality assurance: the realism rubric | Unrendered"
     },
     {
