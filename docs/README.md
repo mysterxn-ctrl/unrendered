@@ -13,7 +13,7 @@
 - [Providers](providers.md) — connect any image API or agent tool.
 - [Photorealism guide](photorealism.md) — light, optics, people, places and the words that make AI images look like real photos.
 - [Editing](editing.md) — the edit track, edit briefs, masks and common edits.
-- [Quality assurance](quality-assurance.md) — checks and repairs on request: rubric, hard fails and repair map.
+- [Quality assurance](quality-assurance.md) — the check after the render: rubric, hard fails and repair map.
 
 ## Reference
 

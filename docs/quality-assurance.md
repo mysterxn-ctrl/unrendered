@@ -1,8 +1,8 @@
 # Quality assurance
 
-Unrendered works one-shot: the brief prevents the errors, the image is rendered once and delivered, and no inspection pass runs afterwards — checks cost tokens. This page describes what happens **when you ask for a check or point out a flaw**. The same five areas are what the brief controls in advance ([Photorealism guide](photorealism.md)).
+Unrendered renders once with a brief built to prevent errors, then checks the image before delivering it — the same five areas the brief controls in advance ([Photorealism guide](photorealism.md)). A good brief leaves the check little to find; whatever it does find is repaired, and nothing else.
 
-On request, the agent inspects the image like a photo editor hunting for fakes: the whole frame, then the relevant regions at full detail through enlarged, overlapping tiles, because an agent usually sees a whole image downscaled.
+The agent checks like a photo editor hunting for fakes, in two passes: the whole frame, then every region at full detail through enlarged, overlapping tiles that cover the image edge to edge, because an agent usually sees a whole image downscaled.
 
 The five things that give an image away are checked first, in this order: **limbs, pose, facial expression, texture and optics**. The agent writes down what it actually sees ("right hand, five fingers, holds the pen between thumb and index finger"), not "hands look fine".
 
@@ -67,11 +67,11 @@ Any one of these fails an image, whatever its score:
 | Cellular texture in foliage, fur, fog | less fine organic texture, out of focus, ≤ 2K size | replace the region |
 | Edit changed other areas | restate every invariant, use a mask, describe only the change | restart from last approved image |
 
-One change per iteration, invariants restated every time, always continuing from the last approved image.
+One change per iteration, invariants restated every time, always continuing from the last approved image, at most three rounds. If a flaw remains after that, the agent delivers the best version and names the flaw.
 
 ## Tools
 
-**Tiles** — an image cut into enlarged, overlapping tiles plus one whole-frame view, each tile labelled with its position:
+**Tiles** — the image cut into enlarged, overlapping tiles plus one whole-frame view, each tile labelled with its position:
 
 ```bash
 python3 scripts/qa_tiles.py images/candidate-1.png -o images/qa

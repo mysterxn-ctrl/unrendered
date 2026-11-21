@@ -95,4 +95,4 @@ Chat apps expand prompts generically ("a stunning, highly detailed photo…"), w
 3. injects human/world specificity and plausible imperfection,
 4. bans the AI-gloss vocabulary,
 5. designs out the compositions models get wrong and assigns every visible hand, before the render,
-6. renders once at the model's highest quality setting.
+6. renders once at the model's highest quality setting, then checks every region of the image and repairs only what it finds.

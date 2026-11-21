@@ -86,9 +86,9 @@ The skill will:
 1. pick the model from the blind-preference leaderboards (default model: GPT Image 2.6 Sunburst),
 2. turn the one-liner into a photographer's brief — who shot it, where the fisherman sits, what each of his hands does with the net, his expression, the lens, the light, the materials — with the compositions models get wrong designed out,
 3. render it once at the model's highest quality and complexity,
-4. save the image and report path, model, provider, settings and the brief.
-
-See a flaw? Say so — the skill inspects the image in enlarged tiles and repairs it with a targeted edit or a corrected brief.
+4. check the image as a whole and in enlarged tiles — limbs, pose, expression, texture, optics, text,
+5. repair only what the check found, with a masked edit or a corrected brief,
+6. save the image and report path, model, provider, settings, the brief and the check result.
 
 ## Your first edit
 

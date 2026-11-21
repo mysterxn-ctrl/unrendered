@@ -1,6 +1,6 @@
 # QA rubric — judge like a photo editor who hunts AI fakes
 
-Used **only on request**: when the user asks for a check or points out a flaw. The default flow is one-shot (no inspection pass); the same five areas are prevented in the brief by `prompt-compiler.md`.
+Used in Step 4 right after the one render. The same five areas are prevented in the brief by `prompt-compiler.md`, so a good brief leaves this check little to find.
 
 The five things that give an image away are **limbs, pose, facial expression, texture and optics**. Check them in this order, on the whole frame and then on every enlarged tile from `scripts/qa_tiles.py` (corners and edges included). Write down what you actually see — "right hand, five fingers, holds the pen between thumb and index finger" — not "hands look fine".
 

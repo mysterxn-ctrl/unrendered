@@ -24,13 +24,13 @@ Yes. Every 14 days it re-reads the leaderboards (the repository also refreshes i
 
 Chat apps rewrite your prompt into a detailed one, may plan and generate several candidates, and pick quality settings for you. A raw API call sends your one-liner at whatever quality the gateway defaults to, sometimes `low` or `medium`. Unrendered does the rewriting, the candidates and the quality settings explicitly, plus photorealism-specific briefs and QA. See [How it works](how-it-works.md).
 
-## Is the first image always flawless?
+## Is the first image flawless?
 
-That is the goal, and the brief is built for it: risky compositions are designed out, every person is placed, every visible hand has a side, a task and a grip, expressions, materials, lens and light are written out, and the brief is checked for contradictions before the render. No image model follows a prompt with certainty, though — generation involves chance — so an occasional flaw is still possible. There is no inspection pass by default, because it costs tokens; if you see a flaw, point it out and the skill repairs exactly that, with a masked edit or a corrected brief.
+That is the goal, and the brief is built for it: risky compositions are designed out, every person is placed, every visible hand has a side, a task and a grip, expressions, materials, lens and light are written out, and the brief is checked for contradictions before the render. No image model follows a prompt with certainty, though — generation involves chance — so an occasional flaw is still possible. So every image is checked after the render — whole frame and enlarged tiles — and only what the check finds is repaired, with a masked edit or a corrected brief. With a good brief that check is usually short. The check is done by the vision of the agent running the skill; very fine defects can still slip through, and you can always point one out.
 
 ## What does it cost?
 
-Unrendered is free. You pay your image provider. A typical job is one render at the model's highest quality. More images cost more only when you ask for variations or a repair.
+Unrendered is free. You pay your image provider. A typical job is one render at the model's highest quality plus the check. A repair round, when the check finds something, adds one more render or edit.
 
 ## Why are briefs written in English?
 
@@ -38,7 +38,7 @@ Image models follow English photographic vocabulary most reliably. You can talk 
 
 ## Can it make images that aren't photos?
 
-Yes. Photographs are the default; when you explicitly ask for an illustration, infographic, logo, UI mock-up or 3D look, a dedicated brief format is used with the same one-shot discipline.
+Yes. Photographs are the default; when you explicitly ask for an illustration, infographic, logo, UI mock-up or 3D look, a dedicated brief format is used with the same render, check and repair discipline.
 
 ## Does it remove watermarks or provenance data so images pass as real photos?
 

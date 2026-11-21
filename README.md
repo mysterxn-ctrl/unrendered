@@ -4,7 +4,7 @@
 
 <h3 align="center">Photorealistic AI images and edits for coding agents.<br>Any image API. The model picked by benchmarks.</h3>
 
-<p align="center"><strong>Stop shipping renders.</strong> Unrendered gives Claude Code, Codex and Cursor a photographer in one skill: it picks the strongest image model from blind-preference leaderboards and writes a brief that leaves the model nothing to guess — every person placed, every hand assigned, every face, material, lens and light written out, the compositions models get wrong designed out — then renders once, at the highest quality, through any image API.</p>
+<p align="center"><strong>Stop shipping renders.</strong> Unrendered gives Claude Code, Codex and Cursor a photographer in one skill: it picks the strongest image model from blind-preference leaderboards and writes a brief that leaves the model nothing to guess — every person placed, every hand assigned, every face, material, lens and light written out, the compositions models get wrong designed out — renders once, at the highest quality, through any image API, and then checks every region of the image for wrong limbs, stiff poses, dead faces and waxy texture, repairing only what it finds.</p>
 
 <p align="center">
   <a href="https://mysterxn-ctrl.github.io/unrendered/"><img alt="Visit the website: mysterxn-ctrl.github.io/unrendered" src="https://img.shields.io/badge/Website-mysterxn--ctrl.github.io%2Funrendered-FFC857?style=for-the-badge&labelColor=0A0D14"></a>
@@ -33,7 +33,7 @@
 
 ---
 
-**Unrendered** is an open-source agent skill that teaches Claude Code, Codex, Cursor, OpenCode and other coding agents to create and edit images that look like a person shot them on a real camera. You ask in plain language — *"make a photo of…"*, *"replace the sky in this picture…"* — and the skill does the rest: it picks the best image model from blind-preference leaderboards, turns your sentence into a photographer's brief that specifies every body, hand, face and material, and renders it once at the model's highest quality. Checks and repairs happen when you ask for them.
+**Unrendered** is an open-source agent skill that teaches Claude Code, Codex, Cursor, OpenCode and other coding agents to create and edit images that look like a person shot them on a real camera. You ask in plain language — *"make a photo of…"*, *"replace the sky in this picture…"* — and the skill does the rest: it picks the best image model from blind-preference leaderboards, turns your sentence into a photographer's brief that specifies every body, hand, face and material, renders it once at the model's highest quality, checks the result like a photo editor and repairs only what it finds.
 
 It works with **any image-generation API** — vendors, gateways, self-hosted endpoints or MCP tools — and decides **by itself** which model to use.
 
@@ -96,9 +96,9 @@ The same image model often looks brilliant inside a chat app and flat through th
 - **Autonomous, benchmark-based model choice.** Reads the [Artificial Analysis](https://artificialanalysis.ai/image/leaderboard/text-to-image) blind-preference arenas, with [LMArena](https://arena.ai/leaderboard/text-to-image) as an optional second opinion, and switches only on a statistically clear lead: larger than both 95 % confidence intervals combined, or at least 25 Elo and confirmed by the second board. Generation and editing are decided separately. New models are added automatically. [How it decides →](docs/model-selection.md)
 - **Provider-agnostic.** OpenAI-protocol endpoints work out of the box; any other API — sync or async, JSON or multipart, base64 or URL results, separate edit endpoints — is a small JSON profile your agent writes from the provider's docs. [Providers →](docs/providers.md)
 - **Photographer-grade briefs.** Light with direction and colour temperature, optics that match the framing, real skin and wear, one to three capture artifacts, twenty genre recipes — and none of the "8k masterpiece" vocabulary that pulls images toward CGI. [Photorealism guide →](docs/photorealism.md)
-- **One-shot briefs built around what gives AI images away: limbs, pose, facial expression, texture and optics.** Risky compositions are designed out before writing; every person is placed, every visible hand gets a side, a task and a grip, expressions are written as eyes, brows, mouth and gaze, and the brief is checked for contradictions — in text, before the one render. No inspection pass afterwards unless you ask. [Photorealism guide →](docs/photorealism.md)
+- **One-shot briefs built around what gives AI images away: limbs, pose, facial expression, texture and optics.** Risky compositions are designed out before writing; every person is placed, every visible hand gets a side, a task and a grip, expressions are written as eyes, brows, mouth and gaze, and the brief is checked for contradictions — in text, before the one render. The brief is built so that the check afterwards finds little. [Photorealism guide →](docs/photorealism.md)
 - **Highest quality, always.** Every render and edit is sent at the model's highest quality and complexity — never a gateway default.
-- **Checks and repairs on request.** Point out a flaw, or ask for a check: enlarged tiles of every region, a rubric for limbs, pose, expression, texture and optics, and targeted repair. [QA rubric →](docs/quality-assurance.md)
+- **Checked after every render.** The image is inspected as a whole and in enlarged, overlapping tiles — limbs, pose, facial expression, texture and optics, each with its own minimum score — and only what fails is repaired, with a masked edit or a corrected brief. [QA rubric →](docs/quality-assurance.md)
 - **Surgical edits.** Edit-specific model and endpoint; masks and invariants restated on every turn. [Editing →](docs/editing.md)
 - **Zero dependencies for the core.** Python 3.9+ standard library. Keys only from environment variables.
 
@@ -145,16 +145,18 @@ flowchart LR
     A[Request] --> B[Plan<br/>model + provider]
     B --> C[Brief<br/>every body, hand, face<br/>and material specified]
     C --> D[Render once<br/>highest quality]
-    D --> E[Deliver]
-    E -. on request .-> F[Check & repair]
+    D --> E[Check<br/>whole frame + enlarged tiles]
+    E -- pass --> G[Deliver]
+    E -- flaw --> F[Repair only that]
+    F --> E
 ```
 
 1. **Plan** — `model_select.py plan` picks the benchmark-best model that one of your providers actually serves.
 2. **Brief** — the request becomes a photographer's brief: risky compositions designed out, every person placed, every hand assigned, expressions, materials, lens and light written out, checked for contradictions in text.
 3. **Render once** — at the model's highest quality and complexity, with a sidecar file that records the full request.
-4. **Deliver** — the image, with model, settings and the brief.
-
-Ask for a check, or point out a flaw, and the skill inspects the image in enlarged tiles and repairs it with a targeted edit or a corrected brief.
+4. **Check** — the image inspected as a whole and in enlarged tiles, edge to edge: limbs, pose, expression, texture, optics, text. A good brief leaves this little to find.
+5. **Repair** — only if the check found something: a masked edit for a single hand or face, a corrected brief for a wrong limb or pose.
+6. **Deliver** — the image, with model, settings, brief and check result.
 
 [Full walkthrough →](docs/how-it-works.md)
 
@@ -196,7 +198,7 @@ Avoid: airbrushed skin, glossy commercial look, cinematic grade, watermark.
 | [Providers](docs/providers.md) | Connect any image API or agent tool |
 | [Photorealism guide](docs/photorealism.md) | How to make AI images look like real photos |
 | [Editing](docs/editing.md) | The edit track, briefs, masks and common edits |
-| [Quality assurance](docs/quality-assurance.md) | Checks and repairs on request: rubric and repair map |
+| [Quality assurance](docs/quality-assurance.md) | The check after the render: rubric and repair map |
 | [CLI reference](docs/cli-reference.md) | Every script, option and exit code |
 | [Configuration](docs/configuration.md) | Registry, snapshots, provider-profile schema |
 | [FAQ](docs/faq.md) | Common questions |

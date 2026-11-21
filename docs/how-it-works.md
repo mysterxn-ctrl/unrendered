@@ -10,7 +10,7 @@ The same image model often produces noticeably better pictures inside a consumer
 | Optional planning ("thinking"), sometimes several candidates and a self-check | One shot, no review |
 | Quality and size chosen for you | Gateway defaults — often `low` or `medium` quality |
 
-Unrendered does that rewriting explicitly — and far more precisely than a generic prompt expander: it designs out the compositions models get wrong, writes every person, hand, face, material, lens and light into the brief, checks the brief for contradictions in text, renders once at the highest quality, and picks the model from blind-preference benchmarks. Because the brief carries the quality, there is no inspection pass after the render unless you ask for one.
+Unrendered does that rewriting explicitly — and far more precisely than a generic prompt expander: it designs out the compositions models get wrong, writes every person, hand, face, material, lens and light into the brief, checks the brief for contradictions in text, renders once at the highest quality, and picks the model from blind-preference benchmarks. The image is then checked region by region; because the brief carries the quality, that check rarely finds anything to repair.
 
 ## The pipeline
 
@@ -19,8 +19,10 @@ flowchart LR
     A[Request] --> B[Plan<br/>model + provider]
     B --> C[Brief<br/>risk design, bodies, faces,<br/>materials, optics]
     C --> D[Render once<br/>highest quality]
-    D --> E[Deliver]
-    E -. on request .-> F[Check & repair]
+    D --> E[Check<br/>whole frame + enlarged tiles]
+    E -- pass --> G[Deliver]
+    E -- flaw --> F[Repair only that]
+    F --> E
 ```
 
 ### 0 · Connect
@@ -51,18 +53,25 @@ Before the render the brief is read once against a pre-flight checklist: people 
 
 One image at the model's highest quality and complexity — for GPT Image 2.6 Sunburst `quality=max`, `complexity=high` — at a native size. The runner never falls back to a gateway default. Every image gets a sidecar JSON with the full request, so the same call can be repeated.
 
-### 4 · Deliver
+### 4 · Check
 
-The agent reports the file path, model, provider, settings and brief. An optional finishing pass adds subtle grain, lens vignetting and highlight roll-off when you want a less clean look.
+Right after the render the agent checks the image like a photo editor hunting for fakes, in two passes: the whole frame — counting people and tracing every arm and hand to one body — and enlarged, overlapping tiles from `qa_tiles.py` that cover the image edge to edge, so a wrong finger, a stray arm at the border or garbled small text is seen at full detail. Limbs, pose, facial expression, texture and optics come first, then light, colour, text and composition. An image passes only with no hard fail, **8.5 / 10 overall and at least 8 in each of limbs, pose, expression, texture and optics**. → [Quality assurance](quality-assurance.md)
 
-### On request — check and repair
+### 5 · Repair — only what the check found
 
-Point out a flaw, or ask for a check, and the agent inspects the image in enlarged, overlapping tiles against a rubric for limbs, pose, facial expression, texture and optics. A wrong limb or pose is fixed in the brief and rendered again; a single hand, expression, skin area or sign is repaired with a masked edit that restates everything else. → [Quality assurance](quality-assurance.md)
+- a wrong or extra limb, a stiff or impossible pose → the brief is corrected (fewer visible hands, every hand assigned, a simpler pose) and rendered again,
+- a single hand, expression, skin area or sign → a masked edit that restates everything else.
+
+At most three rounds, each checked again. Whatever the brief missed is noted, so the next brief prevents it.
+
+### 6 · Deliver
+
+The agent reports the file path, model, provider, settings, brief and check result. An optional finishing pass adds subtle grain, lens vignetting and highlight roll-off if an image still looks too clean.
 
 ## Design principles
 
 1. **Evidence over opinion.** Models are chosen by blind-preference benchmarks with confidence intervals, not by hype.
 2. **No vendor lock-in.** Providers are data (JSON profiles), not code.
-3. **Right the first time.** The brief carries the quality; every render uses the model's top level. Checks cost tokens, so they run only when you ask.
+3. **Right the first time, checked anyway.** The brief carries the quality and every render uses the model's top level; the check afterwards confirms it and repairs only what it finds.
 4. **One change per iteration.** Repairs stay controllable and reproducible.
 5. **Realism is an aesthetic, not a disguise.** Provenance data is never stripped or forged.

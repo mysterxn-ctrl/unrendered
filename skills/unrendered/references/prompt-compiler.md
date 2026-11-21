@@ -5,7 +5,7 @@ An image model renders the brief literally and fills every gap with its own aver
 1. **Choose a composition the model renders reliably** (section 1).
 2. **Leave no gap** in which an error can grow: every person placed, every visible hand assigned, every face, material, lens and light written out, nothing contradictory (sections 2–4).
 
-There is no inspection afterwards by default, so the brief carries the whole quality.
+The image is checked after the render (SKILL.md Step 4); the brief's job is to leave that check nothing to find.
 
 ## 0. Inputs to extract (silently, from the request + context)
 
@@ -80,7 +80,7 @@ Avoid: airbrushed or smoothed skin, plastic sheen, CGI/3D-render look, HDR glow,
 
 Length: 120–250 words; up to ~300 with several people or exact text. Every sentence must change pixels.
 
-## 4. Pre-flight (text only — before the one render)
+## 4. Pre-flight (text only — before the render)
 
 Read the brief once against this list and fix it before sending:
 
