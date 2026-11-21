@@ -4,43 +4,523 @@
   "category": "overall",
   "rank": "primary",
   "url": "https://artificialanalysis.ai/image/leaderboard/editing",
-  "fetched": "2026-11-18",
+  "fetched": "2026-11-21",
   "rows": [
     {
       "name": "MAI-Image-2.7",
-      "elo": 1215,
-      "ci": 14,
-      "vendor": "Microsoft AI"
+      "elo": 1214.92,
+      "ci": null,
+      "vendor": null
     },
     {
       "name": "GPT Image 2.6 Sunburst (max)",
-      "elo": 1211,
-      "ci": 13,
-      "vendor": "OpenAI"
+      "elo": 1211.08,
+      "ci": null,
+      "vendor": null
     },
     {
       "name": "GPT Image 2.6 Flare (max)",
-      "elo": 1205,
-      "ci": 13,
-      "vendor": "OpenAI"
+      "elo": 1204.54,
+      "ci": null,
+      "vendor": null
     },
     {
       "name": "GPT Image 2.5 Sunburst (max)",
-      "elo": 1202,
-      "ci": 11,
-      "vendor": "OpenAI"
+      "elo": 1200.75,
+      "ci": null,
+      "vendor": null
     },
     {
       "name": "GPT Image 2.5 Flare (max)",
-      "elo": 1185,
-      "ci": 11,
-      "vendor": "OpenAI"
+      "elo": 1185.13,
+      "ci": null,
+      "vendor": null
     },
     {
       "name": "Kling Image 4.0",
-      "elo": 1183,
-      "ci": 14,
-      "vendor": "KlingAI"
+      "elo": 1182.7,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "MAI-Image-2.7-Flash",
+      "elo": 1178.86,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Seedream 5.5",
+      "elo": 1159.21,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Krea 3 (Ultra)",
+      "elo": 1152.63,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Nano Banana 2.1",
+      "elo": 1151.7,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "MAI-Image-2.6",
+      "elo": 1151.46,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "MAI-Image-2.6-Flash",
+      "elo": 1145.19,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "GPT Image 2 (high)",
+      "elo": 1138.56,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "H3-Image",
+      "elo": 1135.86,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "H3-Image Highspeed",
+      "elo": 1133.05,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Seedream 5.0 Pro",
+      "elo": 1132.25,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Muse Image",
+      "elo": 1128.19,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Nano Banana 2 (Gemini 3.1 Flash Image)",
+      "elo": 1125.01,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "MAI-Image-2.5-Pro",
+      "elo": 1123.36,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "MAI-Image-2.5",
+      "elo": 1123.35,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Krea 3 (Fast)",
+      "elo": 1121.89,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX 3 Image",
+      "elo": 1119.54,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "GPT Image 1.5 (high)",
+      "elo": 1117.91,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Grok Imagine Image 2.0",
+      "elo": 1116.68,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Nano Banana Pro (Gemini 3 Pro Image)",
+      "elo": 1109.85,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "HiDream-O1-Edit-2.0",
+      "elo": 1108.09,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "grok-imagine-image-quality",
+      "elo": 1096.17,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Qwen-Image-3.0-Pro",
+      "elo": 1091.66,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "HunyuanImage 3.5 (Preview)",
+      "elo": 1091.13,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "MAI-Image-2.5-Flash",
+      "elo": 1090.41,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Fibo 2.0",
+      "elo": 1086.29,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Qwen-Image-2.1",
+      "elo": 1082.12,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Luma UNI 1 Max",
+      "elo": 1077.31,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "grok-imagine-image",
+      "elo": 1074.46,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Qwen-Image-3.0",
+      "elo": 1069.71,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX 3 Image Klein",
+      "elo": 1067.64,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Qwen-Image-2.1-Pro",
+      "elo": 1067.14,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Ideogram 4.5 (High)",
+      "elo": 1064.29,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "HunyuanImage 3.0 Instruct",
+      "elo": 1062.83,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Seedream 5.0 Lite",
+      "elo": 1061.99,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Qwen-Image-2.1-Turbo",
+      "elo": 1061.82,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Qwen Image 2.0 Pro (2026-04-22)",
+      "elo": 1053.54,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+      "elo": 1052.36,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Wan 2.7 Pro",
+      "elo": 1048.21,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "DreamImage 2.0",
+      "elo": 1047.97,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Luma UNI 1",
+      "elo": 1042.28,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Wan 2.6 Image",
+      "elo": 1042.19,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Wan 2.7",
+      "elo": 1039.25,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "ADM 3 Cloud (Image)",
+      "elo": 1038.95,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Seedream 4.5",
+      "elo": 1037.94,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "HunyuanImage 3.0 (Tencent Cloud)",
+      "elo": 1028.22,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX.2 [dev] Turbo",
+      "elo": 1013.28,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX.2 [klein] 9B",
+      "elo": 1011.92,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX.2 [pro]",
+      "elo": 1009.44,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX.2 [dev] Flash",
+      "elo": 1008.47,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Step Image Edit 2",
+      "elo": 1007.46,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX.2 [dev]",
+      "elo": 1000.0,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX.2 [max]",
+      "elo": 997.86,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "GPT Image 1 (high)",
+      "elo": 997.83,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Qwen Image Edit Plus 2511",
+      "elo": 996.42,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX.2 [flex]",
+      "elo": 995.5,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Reve V1 (December)",
+      "elo": 983.87,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Nano Banana (Gemini 2.5 Flash Image)",
+      "elo": 983.57,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Qwen Image Edit Max 2601",
+      "elo": 980.2,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "P-Image-Edit",
+      "elo": 980.14,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Qwen Image 2.0 (2026-03-03)",
+      "elo": 963.88,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Qwen Image Edit Plus 2509",
+      "elo": 961.86,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Kling Image 3.0 Omni",
+      "elo": 953.91,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Vidu Q2",
+      "elo": 951.96,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "HiDream-O1-Image",
+      "elo": 951.17,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Kling Image O1",
+      "elo": 944.79,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX.2 [klein] 4B",
+      "elo": 940.95,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "GPT Image 1 Mini (medium)",
+      "elo": 939.63,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX.1 Kontext [max]",
+      "elo": 929.37,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FIBO Edit",
+      "elo": 916.9,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX.1 Kontext [pro]",
+      "elo": 913.85,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "SeedEdit 3.0",
+      "elo": 900.06,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "LongCat Image",
+      "elo": 895.13,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Qwen Image Edit",
+      "elo": 885.63,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "FLUX.1 Kontext [dev]",
+      "elo": 882.39,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "HiDream-O1-Image-Dev",
+      "elo": 878.52,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "GLM-Image",
+      "elo": 826.01,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Bagel",
+      "elo": 781.18,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "OmniGen V2",
+      "elo": 778.77,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "HiDream-E1.1",
+      "elo": 762.56,
+      "ci": null,
+      "vendor": null
+    },
+    {
+      "name": "Step1X-Edit",
+      "elo": 610.17,
+      "ci": null,
+      "vendor": null
     }
   ]
 }

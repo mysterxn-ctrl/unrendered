@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "last_checked": "2026-11-18",
+  "last_checked": "2026-11-21",
   "refresh_interval_days": 14,
   "default": {
     "generate": "gpt-image-2.6-sunburst",
@@ -23,7 +23,20 @@
       "mai-image-2-6",
       "grok-imagine-image-2-0",
       "mai-image-2-7-flash",
-      "canva-craft"
+      "canva-craft",
+      "nano-banana-2",
+      "seedream-5-5",
+      "muse-image",
+      "gpt-image-1-5",
+      "mai-image-2-6-flash",
+      "mai-image-2-5",
+      "nano-banana-pro",
+      "mai-image-2-5-pro",
+      "flux-3-image",
+      "nano-banana-2-lite",
+      "seedream-5-0-pro",
+      "qwen-image-3-0-pro",
+      "qwen-image-3-0"
     ],
     "edit": [
       "gpt-image-2.6-sunburst",
@@ -31,7 +44,26 @@
       "gpt-image-2.6-flare",
       "gpt-image-2.5-sunburst",
       "gpt-image-2.5-flare",
-      "kling-image-4.0"
+      "kling-image-4.0",
+      "mai-image-2-7-flash",
+      "seedream-5-5",
+      "krea-3",
+      "nano-banana-2.1",
+      "mai-image-2-6",
+      "mai-image-2-6-flash",
+      "gpt-image-2",
+      "h3-image",
+      "h3-image-highspeed",
+      "seedream-5-0-pro",
+      "muse-image",
+      "nano-banana-2",
+      "mai-image-2-5-pro",
+      "mai-image-2-5",
+      "flux-3-image",
+      "gpt-image-1-5",
+      "grok-imagine-image-2-0",
+      "nano-banana-pro",
+      "hidream-o1-edit-2-0"
     ]
   },
   "selection_policy": "Automated by scripts/model_select.py. Separate tracks for generate and edit. Primary: Artificial Analysis arena (most photo-specific category available, else Overall). Secondary: LMArena/arena.ai. Switch only on a statistically separated lead (margin > combined 95% CI), or margin >= 25 Elo with secondary agreement, or a local photoreal duel when tied. Then use the highest-ranked model that a configured provider actually serves.",
@@ -53,11 +85,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1261,
-          "ci95": 14,
+          "elo": 1261.71,
+          "ci95": null,
           "config": "max",
           "rank": 1,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         },
         "lmarena_generate_overall": {
           "elo": 1409,
@@ -67,11 +99,11 @@
           "date": "2026-11-02"
         },
         "artificial_analysis_edit_overall": {
-          "elo": 1211,
-          "ci95": 13,
+          "elo": 1211.08,
+          "ci95": null,
           "config": "max",
           "rank": 2,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         }
       },
       "capabilities": {
@@ -149,11 +181,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1229,
-          "ci95": 10,
+          "elo": 1229.06,
+          "ci95": null,
           "config": "max",
           "rank": 2,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         },
         "lmarena_generate_overall": {
           "elo": 1427,
@@ -163,11 +195,11 @@
           "date": "2026-11-02"
         },
         "artificial_analysis_edit_overall": {
-          "elo": 1202,
-          "ci95": 11,
+          "elo": 1200.75,
+          "ci95": null,
           "config": "max",
           "rank": 4,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         }
       },
       "settings": {
@@ -199,11 +231,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1227,
-          "ci95": 12,
+          "elo": 1226.11,
+          "ci95": null,
           "config": "max",
           "rank": 3,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         },
         "lmarena_generate_overall": {
           "elo": 1384,
@@ -213,11 +245,11 @@
           "date": "2026-11-02"
         },
         "artificial_analysis_edit_overall": {
-          "elo": 1205,
-          "ci95": 13,
+          "elo": 1204.54,
+          "ci95": null,
           "config": "max",
           "rank": 3,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         }
       },
       "settings": {
@@ -250,11 +282,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1210,
-          "ci95": 10,
+          "elo": 1209.89,
+          "ci95": null,
           "config": "max",
           "rank": 5,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         },
         "lmarena_generate_overall": {
           "elo": 1399,
@@ -264,11 +296,11 @@
           "date": "2026-11-02"
         },
         "artificial_analysis_edit_overall": {
-          "elo": 1185,
-          "ci95": 11,
+          "elo": 1185.13,
+          "ci95": null,
           "config": "max",
           "rank": 5,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         }
       },
       "settings": {
@@ -296,11 +328,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1192,
-          "ci95": 11,
+          "elo": 1194.19,
+          "ci95": null,
           "config": "high",
           "rank": 6,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         },
         "lmarena_generate_overall": {
           "elo": 1382,
@@ -308,6 +340,13 @@
           "config": "medium",
           "rank": 5,
           "date": "2026-11-02"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1138.56,
+          "ci95": null,
+          "config": "high",
+          "rank": 13,
+          "date": "2026-11-21"
         }
       },
       "settings": {
@@ -340,18 +379,18 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1214,
-          "ci95": 14,
+          "elo": 1216.04,
+          "ci95": null,
           "config": "",
           "rank": 4,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         },
         "artificial_analysis_edit_overall": {
-          "elo": 1215,
-          "ci95": 14,
+          "elo": 1214.92,
+          "ci95": null,
           "config": "",
           "rank": 1,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         }
       },
       "prompt_dialect": "natural language (verify in vendor docs during onboarding)"
@@ -367,18 +406,18 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1180,
-          "ci95": 13,
+          "elo": 1180.79,
+          "ci95": null,
           "config": "",
           "rank": 7,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         },
         "artificial_analysis_edit_overall": {
-          "elo": 1183,
-          "ci95": 14,
+          "elo": 1182.7,
+          "ci95": null,
           "config": "",
           "rank": 6,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         }
       }
     },
@@ -394,11 +433,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1176,
-          "ci95": 12,
+          "elo": 1175.83,
+          "ci95": null,
           "config": "",
           "rank": 8,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         },
         "lmarena_generate_overall": {
           "elo": 1325,
@@ -406,6 +445,13 @@
           "config": "",
           "rank": 7,
           "date": "2026-11-02"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1151.7,
+          "ci95": null,
+          "config": "",
+          "rank": 10,
+          "date": "2026-11-21"
         }
       }
     },
@@ -418,11 +464,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1168,
-          "ci95": 12,
+          "elo": 1168.58,
+          "ci95": null,
           "config": "",
           "rank": 9,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         },
         "lmarena_generate_overall": {
           "elo": 1331,
@@ -430,6 +476,13 @@
           "config": "",
           "rank": 6,
           "date": "2026-11-02"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1151.46,
+          "ci95": null,
+          "config": "",
+          "rank": 11,
+          "date": "2026-11-21"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -443,11 +496,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1167,
-          "ci95": 12,
+          "elo": 1166.03,
+          "ci95": null,
           "config": "",
           "rank": 10,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
         },
         "lmarena_generate_overall": {
           "elo": 1317,
@@ -455,6 +508,13 @@
           "config": "",
           "rank": 8,
           "date": "2026-11-02"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1116.68,
+          "ci95": null,
+          "config": "",
+          "rank": 23,
+          "date": "2026-11-21"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -468,11 +528,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1158,
-          "ci95": 12,
+          "elo": 1158.95,
+          "ci95": null,
           "config": "",
           "rank": 11,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1178.86,
+          "ci95": null,
+          "config": "",
+          "rank": 7,
+          "date": "2026-11-21"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -486,16 +553,2438 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1158,
-          "ci95": 13,
+          "elo": 1157.89,
+          "ci95": null,
           "config": "",
           "rank": 12,
-          "date": "2026-11-18"
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "nano-banana-2",
+      "aliases": [
+        "Nano Banana 2"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1143.92,
+          "ci95": null,
+          "config": "gemini 3.1 flash image",
+          "rank": 13,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1125.01,
+          "ci95": null,
+          "config": "gemini 3.1 flash image",
+          "rank": 18,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "seedream-5-5",
+      "aliases": [
+        "Seedream 5.5"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1133.94,
+          "ci95": null,
+          "config": "",
+          "rank": 14,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1159.21,
+          "ci95": null,
+          "config": "",
+          "rank": 8,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "muse-image",
+      "aliases": [
+        "Muse Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1126.47,
+          "ci95": null,
+          "config": "",
+          "rank": 15,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1128.19,
+          "ci95": null,
+          "config": "",
+          "rank": 17,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "gpt-image-1-5",
+      "aliases": [
+        "GPT Image 1.5"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1125.37,
+          "ci95": null,
+          "config": "high",
+          "rank": 16,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1117.91,
+          "ci95": null,
+          "config": "high",
+          "rank": 22,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "mai-image-2-6-flash",
+      "aliases": [
+        "MAI-Image-2.6-Flash"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1124.23,
+          "ci95": null,
+          "config": "",
+          "rank": 17,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1145.19,
+          "ci95": null,
+          "config": "",
+          "rank": 12,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "mai-image-2-5",
+      "aliases": [
+        "MAI-Image-2.5"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1118.31,
+          "ci95": null,
+          "config": "",
+          "rank": 18,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1123.35,
+          "ci95": null,
+          "config": "",
+          "rank": 20,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "nano-banana-pro",
+      "aliases": [
+        "Nano Banana Pro"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1117.95,
+          "ci95": null,
+          "config": "gemini 3 pro image",
+          "rank": 19,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1109.85,
+          "ci95": null,
+          "config": "gemini 3 pro image",
+          "rank": 24,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "mai-image-2-5-pro",
+      "aliases": [
+        "MAI-Image-2.5-Pro"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1115.62,
+          "ci95": null,
+          "config": "",
+          "rank": 20,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1123.36,
+          "ci95": null,
+          "config": "",
+          "rank": 19,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-3-image",
+      "aliases": [
+        "FLUX 3 Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1115.05,
+          "ci95": null,
+          "config": "",
+          "rank": 21,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1119.54,
+          "ci95": null,
+          "config": "",
+          "rank": 21,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "nano-banana-2-lite",
+      "aliases": [
+        "Nano Banana 2 Lite"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1110.18,
+          "ci95": null,
+          "config": "gemini 3.1 flash lite image",
+          "rank": 22,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1052.36,
+          "ci95": null,
+          "config": "gemini 3.1 flash lite image",
+          "rank": 42,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "seedream-5-0-pro",
+      "aliases": [
+        "Seedream 5.0 Pro"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1104.15,
+          "ci95": null,
+          "config": "",
+          "rank": 23,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1132.25,
+          "ci95": null,
+          "config": "",
+          "rank": 16,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-3-0-pro",
+      "aliases": [
+        "Qwen-Image-3.0-Pro"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1095.24,
+          "ci95": null,
+          "config": "",
+          "rank": 24,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1091.66,
+          "ci95": null,
+          "config": "",
+          "rank": 27,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-3-0",
+      "aliases": [
+        "Qwen-Image-3.0"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1075.57,
+          "ci95": null,
+          "config": "",
+          "rank": 25,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1069.71,
+          "ci95": null,
+          "config": "",
+          "rank": 34,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "h3-image-highspeed",
+      "aliases": [
+        "H3-Image Highspeed"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1071.44,
+          "ci95": null,
+          "config": "",
+          "rank": 26,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1133.05,
+          "ci95": null,
+          "config": "",
+          "rank": 15,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "h3-image",
+      "aliases": [
+        "H3-Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1065.65,
+          "ci95": null,
+          "config": "",
+          "rank": 27,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1135.86,
+          "ci95": null,
+          "config": "",
+          "rank": 14,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-2-1-pro",
+      "aliases": [
+        "Qwen-Image-2.1-Pro"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1058.32,
+          "ci95": null,
+          "config": "",
+          "rank": 28,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1067.14,
+          "ci95": null,
+          "config": "",
+          "rank": 36,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "grok-imagine-image-quality",
+      "aliases": [
+        "grok-imagine-image-quality"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1049.73,
+          "ci95": null,
+          "config": "",
+          "rank": 29,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1096.17,
+          "ci95": null,
+          "config": "",
+          "rank": 26,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-2-1",
+      "aliases": [
+        "Qwen-Image-2.1"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1048.07,
+          "ci95": null,
+          "config": "",
+          "rank": 30,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1082.12,
+          "ci95": null,
+          "config": "",
+          "rank": 31,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-3-image-klein",
+      "aliases": [
+        "FLUX 3 Image Klein"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1040.95,
+          "ci95": null,
+          "config": "",
+          "rank": 31,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1067.64,
+          "ci95": null,
+          "config": "",
+          "rank": 35,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "fibo-2-0",
+      "aliases": [
+        "Fibo 2.0"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1036.52,
+          "ci95": null,
+          "config": "",
+          "rank": 32,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1086.29,
+          "ci95": null,
+          "config": "",
+          "rank": 30,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "krea-2-large",
+      "aliases": [
+        "Krea 2 Large"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1035.14,
+          "ci95": null,
+          "config": "",
+          "rank": 33,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "mai-image-2-5-flash",
+      "aliases": [
+        "MAI-Image-2.5-Flash"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1033.99,
+          "ci95": null,
+          "config": "",
+          "rank": 34,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1090.41,
+          "ci95": null,
+          "config": "",
+          "rank": 29,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-2-0-pro",
+      "aliases": [
+        "Qwen Image 2.0 Pro"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1033.85,
+          "ci95": null,
+          "config": "2026-04-22",
+          "rank": 35,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1053.54,
+          "ci95": null,
+          "config": "2026-04-22",
+          "rank": 41,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "seedream-4-5",
+      "aliases": [
+        "Seedream 4.5"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1029.38,
+          "ci95": null,
+          "config": "",
+          "rank": 36,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1037.94,
+          "ci95": null,
+          "config": "",
+          "rank": 49,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-2-flex",
+      "aliases": [
+        "FLUX.2 [flex]"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1027.56,
+          "ci95": null,
+          "config": "",
+          "rank": 37,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 995.5,
+          "ci95": null,
+          "config": "",
+          "rank": 60,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "ideogram-4-0",
+      "aliases": [
+        "Ideogram 4.0"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1026.78,
+          "ci95": null,
+          "config": "quality",
+          "rank": 38,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "recraft-v4-1-utility",
+      "aliases": [
+        "Recraft V4.1 Utility"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1025.88,
+          "ci95": null,
+          "config": "",
+          "rank": 39,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "luma-uni-1-max",
+      "aliases": [
+        "Luma UNI 1 Max"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1025.47,
+          "ci95": null,
+          "config": "",
+          "rank": 40,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1077.31,
+          "ci95": null,
+          "config": "",
+          "rank": 32,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-2-1-turbo",
+      "aliases": [
+        "Qwen-Image-2.1-Turbo"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1025.23,
+          "ci95": null,
+          "config": "",
+          "rank": 41,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1061.82,
+          "ci95": null,
+          "config": "",
+          "rank": 40,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "grok-imagine-image",
+      "aliases": [
+        "grok-imagine-image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1025.18,
+          "ci95": null,
+          "config": "",
+          "rank": 42,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1074.46,
+          "ci95": null,
+          "config": "",
+          "rank": 33,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "wan-2-6-image",
+      "aliases": [
+        "Wan 2.6 Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1025.15,
+          "ci95": null,
+          "config": "",
+          "rank": 43,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1042.19,
+          "ci95": null,
+          "config": "",
+          "rank": 46,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-2-max",
+      "aliases": [
+        "FLUX.2 [max]"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1021.01,
+          "ci95": null,
+          "config": "",
+          "rank": 44,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 997.86,
+          "ci95": null,
+          "config": "",
+          "rank": 57,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "hidream-o1-image-1-5",
+      "aliases": [
+        "HiDream-O1-Image-1.5"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1019.93,
+          "ci95": null,
+          "config": "",
+          "rank": 45,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "recraft-v4-1-utility-pro",
+      "aliases": [
+        "Recraft V4.1 Utility Pro"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1019.9,
+          "ci95": null,
+          "config": "",
+          "rank": 46,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "krea-2-medium-turbo",
+      "aliases": [
+        "Krea 2 Medium Turbo"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1019.77,
+          "ci95": null,
+          "config": "",
+          "rank": 47,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "seedream-5-0-lite",
+      "aliases": [
+        "Seedream 5.0 Lite"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1019.21,
+          "ci95": null,
+          "config": "",
+          "rank": 48,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1061.99,
+          "ci95": null,
+          "config": "",
+          "rank": 39,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "gpt-image-1",
+      "aliases": [
+        "GPT Image 1"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1018.79,
+          "ci95": null,
+          "config": "high",
+          "rank": 49,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 997.83,
+          "ci95": null,
+          "config": "high",
+          "rank": 58,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "wan2-6-text-to-image",
+      "aliases": [
+        "Wan2.6 Text to Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1017.06,
+          "ci95": null,
+          "config": "",
+          "rank": 50,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "ideogram-4-5",
+      "aliases": [
+        "Ideogram 4.5"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1016.45,
+          "ci95": null,
+          "config": "high",
+          "rank": 51,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1064.29,
+          "ci95": null,
+          "config": "high",
+          "rank": 37,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "krea-2-medium",
+      "aliases": [
+        "Krea 2 Medium"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1014.22,
+          "ci95": null,
+          "config": "",
+          "rank": 52,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-2-pro",
+      "aliases": [
+        "FLUX.2 [pro]"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1004.57,
+          "ci95": null,
+          "config": "",
+          "rank": 53,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1009.44,
+          "ci95": null,
+          "config": "",
+          "rank": 53,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "ming-image-0-1-design",
+      "aliases": [
+        "Ming-Image-0.1-Design"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1000.9,
+          "ci95": null,
+          "config": "",
+          "rank": 54,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-2-dev",
+      "aliases": [
+        "FLUX.2 [dev]"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 1000.0,
+          "ci95": null,
+          "config": "",
+          "rank": 55,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1000.0,
+          "ci95": null,
+          "config": "",
+          "rank": 56,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "p-image-ideogram",
+      "aliases": [
+        "P-Image-Ideogram"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 998.24,
+          "ci95": null,
+          "config": "high",
+          "rank": 56,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "luma-uni-1",
+      "aliases": [
+        "Luma UNI 1"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 997.65,
+          "ci95": null,
+          "config": "",
+          "rank": 57,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1042.28,
+          "ci95": null,
+          "config": "",
+          "rank": 45,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-2-dev-turbo",
+      "aliases": [
+        "FLUX.2 [dev] Turbo"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 996.61,
+          "ci95": null,
+          "config": "",
+          "rank": 58,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1013.28,
+          "ci95": null,
+          "config": "",
+          "rank": 51,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "cosmos3-super-text2image",
+      "aliases": [
+        "Cosmos3-Super-Text2Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 995.64,
+          "ci95": null,
+          "config": "agentic",
+          "rank": 59,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "hunyuanimage-3-0",
+      "aliases": [
+        "HunyuanImage 3.0"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 992.41,
+          "ci95": null,
+          "config": "tencent cloud",
+          "rank": 60,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1028.22,
+          "ci95": null,
+          "config": "tencent cloud",
+          "rank": 50,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-2-0",
+      "aliases": [
+        "Qwen Image 2.0"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 990.95,
+          "ci95": null,
+          "config": "2026-03-03",
+          "rank": 61,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 963.88,
+          "ci95": null,
+          "config": "2026-03-03",
+          "rank": 65,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "wan-2-7",
+      "aliases": [
+        "Wan 2.7"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 988.53,
+          "ci95": null,
+          "config": "",
+          "rank": 62,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1039.25,
+          "ci95": null,
+          "config": "",
+          "rank": 47,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "nano-banana",
+      "aliases": [
+        "Nano Banana"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 987.8,
+          "ci95": null,
+          "config": "gemini 2.5 flash image",
+          "rank": 63,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 983.57,
+          "ci95": null,
+          "config": "gemini 2.5 flash image",
+          "rank": 62,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-2-dev-flash",
+      "aliases": [
+        "FLUX.2 [dev] Flash"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 985.92,
+          "ci95": null,
+          "config": "",
+          "rank": 64,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1008.47,
+          "ci95": null,
+          "config": "",
+          "rank": 54,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "hunyuanimage-3-0-instruct",
+      "aliases": [
+        "HunyuanImage 3.0 Instruct"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 985.56,
+          "ci95": null,
+          "config": "",
+          "rank": 65,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1062.83,
+          "ci95": null,
+          "config": "",
+          "rank": 38,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "ideogram-4-0-instant",
+      "aliases": [
+        "Ideogram 4.0 Instant"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 984.72,
+          "ci95": null,
+          "config": "",
+          "rank": 66,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "ideogram-4-0-fast",
+      "aliases": [
+        "Ideogram 4.0 Fast"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 982.74,
+          "ci95": null,
+          "config": "quality",
+          "rank": 67,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "wan-2-7-pro",
+      "aliases": [
+        "Wan 2.7 Pro"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 981.96,
+          "ci95": null,
+          "config": "",
+          "rank": 68,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1048.21,
+          "ci95": null,
+          "config": "",
+          "rank": 43,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "hidream-o1-image",
+      "aliases": [
+        "HiDream-O1-Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 978.18,
+          "ci95": null,
+          "config": "",
+          "rank": 69,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 951.17,
+          "ci95": null,
+          "config": "",
+          "rank": 69,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "cosmos3-super-text2image-4step",
+      "aliases": [
+        "Cosmos3-Super-Text2Image-4Step"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 972.72,
+          "ci95": null,
+          "config": "",
+          "rank": 70,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "hunyuanimage-3-5",
+      "aliases": [
+        "HunyuanImage 3.5"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 972.42,
+          "ci95": null,
+          "config": "preview",
+          "rank": 71,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1091.13,
+          "ci95": null,
+          "config": "preview",
+          "rank": 28,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-plus-2601",
+      "aliases": [
+        "Qwen Image Plus 2601"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 957.54,
+          "ci95": null,
+          "config": "",
+          "rank": 72,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "recraft-v4-1-flash",
+      "aliases": [
+        "Recraft V4.1 Flash"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 949.31,
+          "ci95": null,
+          "config": "",
+          "rank": 73,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "gpt-image-1-mini",
+      "aliases": [
+        "GPT Image 1 Mini"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 939.22,
+          "ci95": null,
+          "config": "medium",
+          "rank": 74,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 939.63,
+          "ci95": null,
+          "config": "medium",
+          "rank": 72,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "z-image-turbo",
+      "aliases": [
+        "Z-Image Turbo"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 937.66,
+          "ci95": null,
+          "config": "",
+          "rank": 75,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-2-klein-9b",
+      "aliases": [
+        "FLUX.2 [klein] 9B"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 931.16,
+          "ci95": null,
+          "config": "",
+          "rank": 76,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1011.92,
+          "ci95": null,
+          "config": "",
+          "rank": 52,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-1-kontext-max",
+      "aliases": [
+        "FLUX.1 Kontext [max]"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 930.34,
+          "ci95": null,
+          "config": "",
+          "rank": 77,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 929.37,
+          "ci95": null,
+          "config": "",
+          "rank": 73,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "dreamina-3-1",
+      "aliases": [
+        "Dreamina 3.1"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 929.35,
+          "ci95": null,
+          "config": "",
+          "rank": 78,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-1-kontext-pro",
+      "aliases": [
+        "FLUX.1 Kontext [pro]"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 926.42,
+          "ci95": null,
+          "config": "",
+          "rank": 79,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 913.85,
+          "ci95": null,
+          "config": "",
+          "rank": 75,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "kling-image-3-0-omni",
+      "aliases": [
+        "Kling Image 3.0 Omni"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 926.14,
+          "ci95": null,
+          "config": "",
+          "rank": 80,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 953.91,
+          "ci95": null,
+          "config": "",
+          "rank": 67,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "ernie-image-turbo",
+      "aliases": [
+        "ERNIE Image Turbo"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 915.62,
+          "ci95": null,
+          "config": "",
+          "rank": 81,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image",
+      "aliases": [
+        "Qwen Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 909.68,
+          "ci95": null,
+          "config": "",
+          "rank": 82,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "ernie-image",
+      "aliases": [
+        "ERNIE Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 909.14,
+          "ci95": null,
+          "config": "",
+          "rank": 83,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "adm-3-cloud",
+      "aliases": [
+        "ADM 3 Cloud"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 909.09,
+          "ci95": null,
+          "config": "image",
+          "rank": 84,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 1038.95,
+          "ci95": null,
+          "config": "image",
+          "rank": 48,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "ideogram-3-0",
+      "aliases": [
+        "Ideogram 3.0"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 907.1,
+          "ci95": null,
+          "config": "",
+          "rank": 85,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "vidu-q2",
+      "aliases": [
+        "Vidu Q2"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 898.18,
+          "ci95": null,
+          "config": "",
+          "rank": 86,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 951.96,
+          "ci95": null,
+          "config": "",
+          "rank": 68,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "z-image-base",
+      "aliases": [
+        "Z-Image Base"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 897.73,
+          "ci95": null,
+          "config": "",
+          "rank": 87,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "p-image",
+      "aliases": [
+        "P-Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 892.7,
+          "ci95": null,
+          "config": "",
+          "rank": 88,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "glm-image",
+      "aliases": [
+        "GLM-Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 891.25,
+          "ci95": null,
+          "config": "",
+          "rank": 89,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 826.01,
+          "ci95": null,
+          "config": "",
+          "rank": 81,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "lucid-origin-ultra",
+      "aliases": [
+        "Lucid Origin Ultra"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 877.79,
+          "ci95": null,
+          "config": "",
+          "rank": 90,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux1-1-pro",
+      "aliases": [
+        "FLUX1.1 [pro]"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 873.05,
+          "ci95": null,
+          "config": "",
+          "rank": 91,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-1-krea-dev",
+      "aliases": [
+        "FLUX.1 Krea [dev]"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 868.35,
+          "ci95": null,
+          "config": "",
+          "rank": 92,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "lucid-origin-fast",
+      "aliases": [
+        "Lucid Origin Fast"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 866.01,
+          "ci95": null,
+          "config": "",
+          "rank": 93,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "longcat-image",
+      "aliases": [
+        "LongCat Image"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 861.74,
+          "ci95": null,
+          "config": "",
+          "rank": 94,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 895.13,
+          "ci95": null,
+          "config": "",
+          "rank": 77,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "fibo",
+      "aliases": [
+        "FIBO"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 855.5,
+          "ci95": null,
+          "config": "",
+          "rank": 95,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux1-1-pro-ultra",
+      "aliases": [
+        "FLUX1.1 [pro] Ultra"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 854.64,
+          "ci95": null,
+          "config": "",
+          "rank": 96,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-2-klein-4b",
+      "aliases": [
+        "FLUX.2 [klein] 4B"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 839.87,
+          "ci95": null,
+          "config": "",
+          "rank": 97,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 940.95,
+          "ci95": null,
+          "config": "",
+          "rank": 71,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "luma-photon",
+      "aliases": [
+        "Luma Photon"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 839.01,
+          "ci95": null,
+          "config": "",
+          "rank": 98,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "phoenix-0-9-ultra",
+      "aliases": [
+        "Phoenix 0.9 Ultra"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 838.23,
+          "ci95": null,
+          "config": "",
+          "rank": 99,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "srpo",
+      "aliases": [
+        "SRPO"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 836.27,
+          "ci95": null,
+          "config": "",
+          "rank": 100,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "phoenix-1-0-fast",
+      "aliases": [
+        "Phoenix 1.0 Fast"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 825.07,
+          "ci95": null,
+          "config": "",
+          "rank": 101,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "fibo-lite",
+      "aliases": [
+        "FIBO Lite"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 817.38,
+          "ci95": null,
+          "config": "",
+          "rank": 102,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-1-dev",
+      "aliases": [
+        "FLUX.1 [dev]"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 812.45,
+          "ci95": null,
+          "config": "",
+          "rank": 103,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "hidream-o1-image-dev",
+      "aliases": [
+        "HiDream-O1-Image-Dev"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 806.91,
+          "ci95": null,
+          "config": "",
+          "rank": 104,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 878.52,
+          "ci95": null,
+          "config": "",
+          "rank": 80,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "luma-photon-flash",
+      "aliases": [
+        "Luma Photon Flash"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 775.25,
+          "ci95": null,
+          "config": "",
+          "rank": 105,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-1-schnell",
+      "aliases": [
+        "FLUX.1 [schnell]"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 741.83,
+          "ci95": null,
+          "config": "",
+          "rank": 106,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "omnigen-v2",
+      "aliases": [
+        "OmniGen V2"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 698.52,
+          "ci95": null,
+          "config": "",
+          "rank": 107,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 778.77,
+          "ci95": null,
+          "config": "",
+          "rank": 83,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "bagel",
+      "aliases": [
+        "Bagel"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_generate_overall": {
+          "elo": 606.61,
+          "ci95": null,
+          "config": "",
+          "rank": 108,
+          "date": "2026-11-21"
+        },
+        "artificial_analysis_edit_overall": {
+          "elo": 781.18,
+          "ci95": null,
+          "config": "",
+          "rank": 82,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "krea-3",
+      "aliases": [
+        "Krea 3"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 1152.63,
+          "ci95": null,
+          "config": "ultra",
+          "rank": 9,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "hidream-o1-edit-2-0",
+      "aliases": [
+        "HiDream-O1-Edit-2.0"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 1108.09,
+          "ci95": null,
+          "config": "",
+          "rank": 25,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "dreamimage-2-0",
+      "aliases": [
+        "DreamImage 2.0"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 1047.97,
+          "ci95": null,
+          "config": "",
+          "rank": 44,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "step-image-edit-2",
+      "aliases": [
+        "Step Image Edit 2"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 1007.46,
+          "ci95": null,
+          "config": "",
+          "rank": 55,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-edit-plus-2511",
+      "aliases": [
+        "Qwen Image Edit Plus 2511"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 996.42,
+          "ci95": null,
+          "config": "",
+          "rank": 59,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "reve-v1",
+      "aliases": [
+        "Reve V1"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 983.87,
+          "ci95": null,
+          "config": "december",
+          "rank": 61,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-edit-max-2601",
+      "aliases": [
+        "Qwen Image Edit Max 2601"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 980.2,
+          "ci95": null,
+          "config": "",
+          "rank": 63,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "p-image-edit",
+      "aliases": [
+        "P-Image-Edit"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 980.14,
+          "ci95": null,
+          "config": "",
+          "rank": 64,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-edit-plus-2509",
+      "aliases": [
+        "Qwen Image Edit Plus 2509"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 961.86,
+          "ci95": null,
+          "config": "",
+          "rank": 66,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "kling-image-o1",
+      "aliases": [
+        "Kling Image O1"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 944.79,
+          "ci95": null,
+          "config": "",
+          "rank": 70,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "fibo-edit",
+      "aliases": [
+        "FIBO Edit"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 916.9,
+          "ci95": null,
+          "config": "",
+          "rank": 74,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "seededit-3-0",
+      "aliases": [
+        "SeedEdit 3.0"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 900.06,
+          "ci95": null,
+          "config": "",
+          "rank": 76,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "qwen-image-edit",
+      "aliases": [
+        "Qwen Image Edit"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 885.63,
+          "ci95": null,
+          "config": "",
+          "rank": 78,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "flux-1-kontext-dev",
+      "aliases": [
+        "FLUX.1 Kontext [dev]"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 882.39,
+          "ci95": null,
+          "config": "",
+          "rank": 79,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "hidream-e1-1",
+      "aliases": [
+        "HiDream-E1.1"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 762.56,
+          "ci95": null,
+          "config": "",
+          "rank": 84,
+          "date": "2026-11-21"
+        }
+      },
+      "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
+    },
+    {
+      "id": "step1x-edit",
+      "aliases": [
+        "Step1X-Edit"
+      ],
+      "vendor": null,
+      "onboarded": false,
+      "benchmarks": {
+        "artificial_analysis_edit_overall": {
+          "elo": 610.17,
+          "ci95": null,
+          "config": "",
+          "rank": 85,
+          "date": "2026-11-21"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
     }
   ],
   "history": [],
-  "last_decided": "2026-11-18"
+  "last_decided": "2026-11-21"
 }
