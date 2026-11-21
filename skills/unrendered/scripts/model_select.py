@@ -142,6 +142,10 @@ ROW_RES = [
     re.compile(r"(?P<name>[A-Za-z][A-Za-z0-9 .:+_/\-]{2,60}(?:\([^)\n]{1,20}\))?)\s*\n+\s*(?P<elo>\d{3,4})\s*±\s*(?P<ci>\d{1,2})(?!\d)"),
     # markdown/HTML table: "| 1 | Name | Vendor | 1261 | ..."  or with "±14"
     re.compile(r"\|\s*\d+\s*\|\s*(?P<name>[^|\n]{3,60}?)\s*\|\s*(?P<vendor>[^|\n]{1,40}?)\s*\|\s*(?P<elo>\d{3,4})(?:\s*±\s*(?P<ci>\d{1,2}))?\s*\|"),
+    # Embedded page data (Artificial Analysis): "name":"X",...,"elo":1261.7,... nested objects ...,"ciDelta":14
+    # The interval may follow nested objects, so scan up to the next row ("formatted") instead of the next brace.
+    re.compile(r'"name"\s*:\s*"(?P<name>[^"]{3,80})"[^{}]{0,200}?"elo"\s*:\s*(?P<elo>\d{3,4}(?:\.\d+)?)'
+               r'(?:(?:(?!"formatted"\s*:).){0,4000}?"ciDelta"\s*:\s*(?P<ci>\d{1,3}(?:\.\d+)?))?', re.S),
     # JSON-ish: "name":"X", ... "elo":1261 ... "ci":14
     re.compile(r'"(?:name|model|model_name|modelName)"\s*:\s*"(?P<name>[^"]{3,80})"[^{}]{0,600}?"(?:elo|score|rating)"\s*:\s*(?P<elo>\d{3,4}(?:\.\d+)?)(?:[^{}]{0,200}?"(?:ci|ci95|confidence_interval|ciWidth)"\s*:\s*(?P<ci>\d{1,2}(?:\.\d+)?))?'),
 ]
@@ -170,7 +174,8 @@ def parse_rows(raw: str):
                 continue
             seen.add(name)
             rows.append({"name": name, "elo": elo, "ci": ci, "vendor": (gd.get("vendor") or "").strip() or None})
-        if len(rows) > len(best):
+        # most rows wins; on a tie, the pattern that also captured confidence intervals
+        if (len(rows), sum(r["ci"] is not None for r in rows)) > (len(best), sum(r["ci"] is not None for r in best)):
             best = rows
     return best
 

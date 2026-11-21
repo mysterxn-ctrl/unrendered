@@ -72,6 +72,17 @@ class TestParsing(Isolated):
         self.assertEqual(len(rows), 6)
         self.assertEqual(rows[0]["ci"], 9)
 
+    def test_embedded_page_data_with_nested_objects(self):
+        # Interval follows nested objects (creator) and belongs to its own row only.
+        row = ('{\\"formatted\\":{\\"elo\\":\\"%d\\"},\\"values\\":{\\"name\\":\\"Model %d\\",\\"url\\":null,'
+               '\\"rank\\":%d,\\"elo\\":%d.5,\\"creator\\":{\\"name\\":\\"Lab\\",\\"color\\":\\"#000\\"},'
+               '\\"ciDelta\\":%d,\\"ciLower\\":1,\\"ciUpper\\":2}}')
+        js = '<script>self.__next_f.push([1,"[' + ",".join(row % (1300 - i, i, i, 1300 - i, 10 + i) for i in range(6)) + ']"])</script>'
+        rows = ms.parse_rows(js)
+        self.assertEqual([r["name"] for r in rows], [f"Model {i}" for i in range(6)])
+        self.assertEqual([r["ci"] for r in rows], [10 + i for i in range(6)])
+        self.assertEqual(rows[0]["elo"], 1300.5)
+
     def test_slug_normalisation(self):
         for name in ("GPT Image 2.6 Sunburst (max)", "openai/gpt-image-2.6-sunburst", "GPT-Image-2.6 Sunburst (Medium)"):
             self.assertEqual(ms.slug(name), "gpt-image-2-6-sunburst")
