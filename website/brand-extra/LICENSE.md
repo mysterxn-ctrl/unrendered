@@ -1,5 +1,3 @@
-# Website images — all rights reserved
+# Website images: not part of the open-source license
 
-Copyright © 2026 Ruben Ferraro. All rights reserved.
-
-The images in this folder (hero art, example images, favicons, app icons, social images) are not covered by the Apache License 2.0. See [assets/brand/LICENSE.md](../../assets/brand/LICENSE.md) and [TRADEMARKS.md](../../TRADEMARKS.md).
+The images in this folder (hero art, example images, favicons, app icons, social images) are not covered by the Apache License 2.0. The same terms as [assets/brand/LICENSE.md](../../assets/brand/LICENSE.md) apply.

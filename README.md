@@ -2,7 +2,13 @@
   <img src="assets/brand/hero.jpg" alt="Unrendered — Photos, not renders." width="100%">
 </p>
 
-<h3 align="center">Photorealistic AI images and edits for coding agents —<br>through any image API, with the model picked by benchmarks.</h3>
+<h3 align="center">Photorealistic AI images and edits for coding agents.<br>Any image API. The model picked by benchmarks.</h3>
+
+<p align="center"><strong>Stop shipping renders.</strong> Unrendered gives Claude Code, Codex and Cursor a photographer and a photo editor in one skill: it picks the strongest image model from blind-preference leaderboards, writes a camera-accurate brief, generates candidates through any image API and checks every image for waxy skin, broken hands and unreadable text before you ever see it.</p>
+
+<p align="center">
+  <a href="https://mysterxn-ctrl.github.io/unrendered/"><img alt="Visit the website: mysterxn-ctrl.github.io/unrendered" src="https://img.shields.io/badge/Website-mysterxn--ctrl.github.io%2Funrendered-FFC857?style=for-the-badge&labelColor=0A0D14"></a>
+</p>
 
 <p align="center">
   <a href="https://github.com/mysterxn-ctrl/unrendered/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/mysterxn-ctrl/unrendered/actions/workflows/ci.yml/badge.svg"></a>
@@ -36,6 +42,7 @@ It works with **any image-generation API** — vendors, gateways, self-hosted en
 <details>
 <summary><strong>Contents</strong></summary>
 
+- [Render vs. photo](#render-vs-photo)
 - [Why API images look rendered](#why-api-images-look-rendered)
 - [Features](#features)
 - [Quick start](#quick-start)
@@ -48,6 +55,27 @@ It works with **any image-generation API** — vendors, gateways, self-hosted en
 - [License and credit](#license-and-credit)
 
 </details>
+
+## Render vs. photo
+
+Same scene, same checklist. Only one of them can be read.
+
+<table>
+<tr>
+<th width="50%">Render</th>
+<th width="50%">Photo</th>
+</tr>
+<tr>
+<td><img src="website/brand-extra/example-render.webp" alt="Render: hands ticking a checklist at a dark desk; the checklist lines are grey bars without words" width="100%"></td>
+<td><img src="website/brand-extra/example-photo.webp" alt="Photo: the same meeting at a window over the mountains; the checklist reads Strategische Analyse with six labelled points" width="100%"></td>
+</tr>
+<tr>
+<td>Grey bars instead of words, a chart with nothing to read, one cinematic grade on every surface.</td>
+<td>A readable checklist: <em>Strategische Analyse</em>, Marktpotenziale, Wettbewerbsanalyse, Wachstumsstrategie, Risikobewertung, Investitionsbedarf, Umsetzungsplan.</td>
+</tr>
+</table>
+
+<p align="center"><sub>Both images were generated with GPT Image 2.6. Compare them with the slider on the <a href="https://mysterxn-ctrl.github.io/unrendered/#finish">website</a>.</sub></p>
 
 ## Why API images look rendered
 
@@ -185,7 +213,7 @@ docs/                    documentation
 website/                 website on GitHub Pages (landing page + docs)
 tools/                   Markdown link checker
 tests/                   offline test suite
-assets/brand/            logos, icons, social images (all rights reserved)
+assets/brand/            logos, icons, social images (not open-source licensed)
 ```
 
 ## Responsible use
@@ -203,8 +231,8 @@ If Unrendered saves you from one more plastic-looking render, a ⭐ helps others
 Unrendered is created and maintained by **Ruben Ferraro**.
 
 - Code and documentation: [Apache License 2.0](LICENSE). Redistributions must keep the [NOTICE](NOTICE) file.
-- The name "Unrendered", the logo and the ribbon mark are trademarks of Ruben Ferraro — see the [trademark policy](TRADEMARKS.md).
-- Brand assets in [`assets/brand/`](assets/brand): © Ruben Ferraro, all rights reserved — see [LICENSE.md](assets/brand/LICENSE.md).
+- The license does not cover the name "Unrendered", the logo or the ribbon mark (Apache License, Section 6).
+- Brand assets in [`assets/brand/`](assets/brand) are not open-source licensed: see [LICENSE.md](assets/brand/LICENSE.md).
 
 When you build on Unrendered, please credit it as:
 

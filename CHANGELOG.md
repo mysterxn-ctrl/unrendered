@@ -17,7 +17,7 @@ First public release by Ruben Ferraro.
 - `contact_sheet.py` and `photo_finish.py` helpers.
 - Claude Code plugin and marketplace manifests; compatible with the skills CLI.
 - Documentation, offline test suite, CI, Markdown link check and a scheduled benchmark refresh.
-- Apache License 2.0 with NOTICE, trademark policy and reserved brand assets.
+- Apache License 2.0 with NOTICE; brand assets kept outside the open-source license.
 - Website on GitHub Pages: live-surface landing page and the full documentation, built from `docs/`.
 
 [1.0.0]: https://github.com/mysterxn-ctrl/unrendered/releases/tag/v1.0.0

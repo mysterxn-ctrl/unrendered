@@ -109,7 +109,7 @@ python3 photo_finish.py in.png -o out.png [--grain 0.25] [--vignette 0.15] [--ca
 | `--rolloff` | soft highlight shoulder against harsh digital whites (0–1) |
 | `--jpeg Q` | save as JPEG at quality Q |
 
-Requires Pillow and NumPy. Existing metadata is kept; nothing is invented.
+Requires Pillow and NumPy. ICC profile, EXIF, XMP and DPI are kept; no camera data is invented. Input files that carry C2PA provenance data are refused with exit code 3, because writing new pixels would remove the manifest.
 
 ## Environment variables
 

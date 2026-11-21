@@ -118,7 +118,7 @@ Score each candidate with `references/qa-rubric.md` (10 criteria, hard-fail list
 ## Step 6 — Final render + finishing + delivery
 
 1. If candidates were at `high`: re-render the winning brief once with `--final` (the model's top setting, e.g. `quality=max`), QA it, keep the better one. For edits use the `edit_final` settings if defined.
-2. Optional `scripts/photo_finish.py` (grain, subtle vignette, lateral chromatic aberration, highlight roll-off) — only if the image still looks too clean; keep it subtle; compare before/after.
+2. Optional `scripts/photo_finish.py` (grain, subtle vignette, lateral chromatic aberration, highlight roll-off) — only if the image still looks too clean; keep it subtle; compare before/after. It refuses files that carry C2PA provenance data (exit 3); then deliver the image as generated.
 3. Save to the user's requested location (or `./images/<slug>-vN.<ext>`); never overwrite without being asked.
 4. Report: file path(s), model + provider + settings, final brief (collapsed), QA score + any known flaw, cost estimate if known.
 

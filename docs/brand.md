@@ -4,7 +4,7 @@ Logos, colours and typography for articles, talks and "works with Unrendered" me
 
 ![Unrendered brand kit](../assets/brand/brand-kit.webp)
 
-> **Licensing.** The brand assets are **not** covered by the Apache License 2.0. They are © 2026 Ruben Ferraro, all rights reserved. Using them unchanged to refer to Unrendered is fine; anything else needs permission. See [assets/brand/LICENSE.md](../assets/brand/LICENSE.md) and the [trademark policy](../TRADEMARKS.md).
+> **Licensing.** The brand assets are **not** covered by the Apache License 2.0. No license is granted to reuse or modify them. Using them unchanged to refer to Unrendered is welcome; anything else needs permission from Ruben Ferraro. See [assets/brand/LICENSE.md](../assets/brand/LICENSE.md).
 
 ## Files
 

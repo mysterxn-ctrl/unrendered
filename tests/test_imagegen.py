@@ -147,3 +147,20 @@ class TestProfiles(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestPhotoFinishProvenance(unittest.TestCase):
+    def test_refuses_files_with_c2pa(self):
+        try:
+            import numpy  # noqa: F401
+            from PIL import Image  # noqa: F401
+        except ImportError:
+            self.skipTest("Pillow/numpy not installed")
+        state = temp_state()
+        src = state / "signed.png"
+        src.write_bytes(PNG + b"jumb....c2pa manifest")
+        r = subprocess.run([sys.executable, str(SCRIPTS / "photo_finish.py"), str(src), "-o", str(state / "out.png")],
+                           capture_output=True, text=True, timeout=60)
+        self.assertEqual(r.returncode, 3)
+        self.assertIn("C2PA", r.stderr)
+        self.assertFalse((state / "out.png").exists())

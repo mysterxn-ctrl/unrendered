@@ -56,7 +56,7 @@ One change per iteration, invariants restated every time, at most three rounds. 
 python3 scripts/contact_sheet.py images/*.png -o images/sheet.jpg --crops
 ```
 
-**Photo finish** — an optional, subtle optical pass for images that still look too clean: luminance grain, lens vignetting, lateral chromatic aberration and a soft highlight shoulder. Existing metadata is preserved; no camera data is invented.
+**Photo finish** — an optional, subtle optical pass for images that still look too clean: luminance grain, lens vignetting, lateral chromatic aberration and a soft highlight shoulder. ICC profile, EXIF, XMP and DPI are kept and no camera data is invented. Files that carry C2PA provenance data are refused, because new pixels would drop the manifest.
 
 ```bash
 python3 scripts/photo_finish.py in.png -o out.png --grain 0.25 --vignette 0.15 --ca 0.6 --rolloff 0.2

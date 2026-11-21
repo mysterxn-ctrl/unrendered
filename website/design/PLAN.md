@@ -13,7 +13,7 @@ Live-surface rules applied: app chrome instead of marketing nav (a session tab s
 
 ## Signature move
 
-**Scroll develops the render.** A WebGL pass applies the skill's finishing math (white balance, highlight roll-off, lens falloff, lateral chromatic aberration, sensor grain) to the brand's CGI render with strength driven by scroll, while a readout prints each live parameter. Not in the kit, not a parameter change.
+**The readable checklist.** The pointer drags a gradient line from the render to the photo of the same scene; beside it, the checklist the render could only paint as grey bars is set in real text.
 
 ## Fingerprint gate
 
@@ -27,10 +27,10 @@ Registry empty: no rows to clear. Row appended after verification.
 | 2 | Trust | Plan | `count` (flow) + real rule in JS | Real Elo numbers land, then the rule prints its verdict |
 | 3 | Recognition+ | Brief | `pin` (span 2.4) + bespoke field population | The frame holds while the brief fills line by line |
 | 4 | Unease | Inspect | pointer lens (WebViSE `trailing_glass_magnifier_cursor`, scoped to the image) + `reveal` of findings | The visitor's own pointer does the inspecting; a wipe is a change of state |
-| 5 | Awe, PEAK | Finish | `pin` (span 3.4, the largest) + signature move | The biggest change gets the most room |
+| 5 | Awe, PEAK | Finish | pointer slider (signature move), static checklist | The visitor's own hand makes the change |
 | 6 | Agency | Your turn | bespoke input console (WebViSE `bare_prompt_unfolds_into_growing_dual_view_console`) | The close is an input, not a button |
 
-Device families: flow/in, count, pin, pointer, reveal, bespoke input. Six. No family twice in a row (pin in 3 and 5, separated by 4). No scrub. Total length about 9 viewport-heights across 6 acts.
+Device families: flow/in, count, pin, pointer, reveal, bespoke input. One pinned act (brief). Acts 4 and 5 both answer the pointer (lens, then slider), which the user chose deliberately. No scrub. Total length about 7 viewport-heights across 6 acts.
 
 ## WebViSE visual skills used
 

@@ -78,7 +78,7 @@ Unrendered is licensed under the [Apache License 2.0](LICENSE). By submitting a 
 # Copyright 2026 Ruben Ferraro — Unrendered (https://github.com/mysterxn-ctrl/unrendered)
 ```
 
-The files in `assets/brand/` and the name "Unrendered" are not covered by the Apache License; see [TRADEMARKS.md](TRADEMARKS.md).
+The files in `assets/brand/` and `website/brand-extra/` and the name "Unrendered" are not covered by the Apache License; see [assets/brand/LICENSE.md](assets/brand/LICENSE.md).
 
 ## Pull requests
 

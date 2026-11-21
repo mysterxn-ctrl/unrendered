@@ -11,7 +11,8 @@ Subtle by default. Every effect is opt-in-strength and physically motivated:
   --jpeg Q     save as JPEG at quality Q (in-camera look) instead of PNG
 
 Usage: photo_finish.py in.png -o out.png [--grain 0.25 --vignette 0.15 --ca 0.6 --rolloff 0.2]
-Provenance: existing metadata (incl. C2PA) is copied where Pillow can; no camera EXIF is fabricated.
+Provenance: ICC profile, EXIF, XMP and DPI are kept; no camera EXIF is fabricated. Writing new pixels would
+drop a C2PA manifest, so files that carry one are refused (exit code 3) instead of being silently stripped.
 Requires Pillow + numpy.
 """
 import argparse
@@ -36,6 +37,12 @@ def main():
     ap.add_argument("--seed", type=int, default=7)
     a = ap.parse_args()
 
+    with open(a.src, "rb") as fh:
+        raw = fh.read()
+    if b"c2pa" in raw:  # C2PA manifests live in JUMBF boxes labelled "c2pa"
+        print("refused: this file carries C2PA provenance data, and a finishing pass would remove it. "
+              "Keep the image as delivered, or apply the edit with a C2PA-aware tool that records it.", file=sys.stderr)
+        sys.exit(3)
     src = Image.open(a.src)
     info = dict(src.info)
     im = np.asarray(src.convert("RGB")).astype(np.float32) / 255.0

@@ -6,12 +6,11 @@ This product includes software and documentation created by Ruben Ferraro
 
 Licensed under the Apache License, Version 2.0. See the LICENSE file.
 
-"Unrendered", the Unrendered logo and the ribbon mark are trademarks of
-Ruben Ferraro. The Apache License does not grant permission to use them
-(Section 6); see TRADEMARKS.md.
+The Apache License does not grant permission to use the name "Unrendered",
+its logo or the ribbon mark (Section 6).
 
-The files in assets/brand/ are not licensed under the Apache License.
-All rights reserved; see assets/brand/LICENSE.md.
+The files in assets/brand/ and website/brand-extra/ are not licensed under the
+Apache License; see assets/brand/LICENSE.md.
 
 Third-party components:
 
