@@ -67,11 +67,11 @@ Same scene, same checklist. Only one of them can be read.
 </tr>
 <tr>
 <td><img src="website/brand-extra/example-render.webp" alt="Render: hands ticking a checklist at a dark desk; arms and hands are duplicated and misplaced, the checklist lines are grey bars without words, surfaces look smooth and the colours are high-contrast" width="100%"></td>
-<td><img src="website/brand-extra/example-photo.webp" alt="Photo: the same meeting at a window over the mountains; the checklist reads Strategische Analyse with six labelled points" width="100%"></td>
+<td><img src="website/brand-extra/example-photo.webp" alt="Photo: the same meeting at a window over the mountains; anatomically correct people, natural daylight and colours, the checklist reads Strategische Analyse with six labelled points" width="100%"></td>
 </tr>
 <tr>
 <td>Duplicated and misplaced arms and hands in impossible positions, grey bars instead of words, a chart with nothing to read, smooth AI-sloppy surfaces and the typical AI high-contrast colour grade.</td>
-<td>A readable checklist: <em>Strategische Analyse</em>, Marktpotenziale, Wettbewerbsanalyse, Wachstumsstrategie, Risikobewertung, Investitionsbedarf, Umsetzungsplan.</td>
+<td>Every arm and hand belongs to a visible person in a natural pose, and the checklist is readable: <em>Strategische Analyse</em>, Marktpotenziale, Wettbewerbsanalyse, Wachstumsstrategie, Risikobewertung, Investitionsbedarf, Umsetzungsplan. Soft window daylight, natural colours with moderate contrast, real textures and everyday clutter: espresso cup, water glass, phone, laptop, watches.</td>
 </tr>
 </table>
 
