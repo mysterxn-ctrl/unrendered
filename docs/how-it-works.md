@@ -50,7 +50,7 @@ The request is compiled into a structured brief:
 
 ### 3 · Candidates
 
-Three candidates by default (one for quick drafts, up to six for hero work) at the model's candidate settings — for GPT Image 2.6 Sunburst `quality=high`, `complexity=high`, at a native size. Every image gets a sidecar JSON with the full request for reproducibility.
+Three candidates by default (one for quick drafts, up to six for hero work) at the model's candidate settings — for GPT Image 2.6 Sunburst `quality=high`, `complexity=high`, at a native size. Every image gets a sidecar JSON with the full request, so the same call can be repeated.
 
 ### 4 · Vision QA
 

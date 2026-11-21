@@ -145,9 +145,6 @@ class TestProfiles(unittest.TestCase):
                 json.loads(f.read_text())
 
 
-if __name__ == "__main__":
-    unittest.main()
-
 
 class TestPhotoFinishProvenance(unittest.TestCase):
     def test_refuses_files_with_c2pa(self):
@@ -164,3 +161,41 @@ class TestPhotoFinishProvenance(unittest.TestCase):
         self.assertEqual(r.returncode, 3)
         self.assertIn("C2PA", r.stderr)
         self.assertFalse((state / "out.png").exists())
+
+
+class TestUnknownModelSettings(unittest.TestCase):
+    """A model without tuned settings must not receive GPT-specific fields."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.api = MockAPI()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.api.close()
+
+    def test_no_quality_or_complexity_for_unknown_model(self):
+        state = temp_state()
+        env = env_with(UNRENDERED_HOME=state, IMAGE_API_BASE_URL=f"{self.api.base}/v1", IMAGE_API_KEY="dummy")
+        r = subprocess.run(RUNNER + ["generate", "--profile", "openai-images-protocol", "--model", "brand-new-model",
+                                     "--prompt", "p", "--out-dir", str(state / "o")],
+                           env=env, capture_output=True, text=True, timeout=60)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        body = json.loads(self.api.requests[-1]["body"])
+        self.assertNotIn("quality", body)
+        self.assertNotIn("complexity", body)
+        self.assertIn("no tuned settings", r.stderr)
+
+    def test_final_uses_registry_settings_with_explicit_model(self):
+        state = temp_state()
+        env = env_with(UNRENDERED_HOME=state, IMAGE_API_BASE_URL=f"{self.api.base}/v1", IMAGE_API_KEY="dummy")
+        r = subprocess.run(RUNNER + ["generate", "--profile", "openai-images-protocol", "--model", "gpt-image-2.6-sunburst",
+                                     "--final", "--prompt", "p", "--out-dir", str(state / "o")],
+                           env=env, capture_output=True, text=True, timeout=60)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        body = json.loads(self.api.requests[-1]["body"])
+        self.assertEqual((body["quality"], body["complexity"]), ("max", "high"))
+
+
+if __name__ == "__main__":
+    unittest.main()

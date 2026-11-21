@@ -57,7 +57,7 @@ Profiles whose API-key variable is not set are skipped. Agent tools (MCP servers
 | Action | Meaning | What happens |
 |---|---|---|
 | `AGENT_FETCH_LEADERBOARDS` | Scripted fetching was blocked in this environment | The agent reads the listed pages with its web tools, writes the rows in the [snapshot format](configuration.md#benchmark-snapshots) and runs `model_select.py ingest`. The decision is still made by the code. |
-| `ONBOARD_MODEL` | A newly winning model has no tuned settings yet | The agent reads the vendor's API reference and prompting guide and fills in capabilities, settings, prompt dialect and known weaknesses. Until then the provider's highest quality setting is used. |
+| `ONBOARD_MODEL` | A newly winning model has no tuned settings yet | The agent reads the vendor's API reference and prompting guide and fills in capabilities, settings, prompt dialect and known weaknesses. Until then the agent passes the provider's highest quality value itself; the runner sends no model-specific fields it cannot vouch for. |
 | `CONNECT_PROVIDER` | No configured provider serves any ranked model | The agent helps you connect one ([Providers](providers.md)). |
 
 ## Photoreal duels

@@ -19,11 +19,11 @@ python3 imagegen.py edit --image TARGET [--image REF ...] [--mask MASK] [options
 |---|---|---|
 | `--profile NAME\|PATH` | `auto` | Provider profile. `auto` asks `model_select.py plan` for the best available provider. |
 | `--model ID` | `auto` | Canonical model id from the registry. `auto` = benchmark-best available model for this track. |
-| `--final` | off | With automatic settings, use the model's final (highest) settings instead of candidate settings. |
+| `--final` | off | Use the model's final (highest) settings from the registry instead of its candidate settings. |
 | `--prompt TEXT` / `--prompt-file FILE` | — | The compiled brief. One of the two is required. |
 | `--size WxH` | `1536x1024` | Canonical size; profiles translate it to sizes, aspect ratios or resolution tiers. |
-| `--quality` | from model settings, else `high` | e.g. `low`, `medium`, `high`, `xhigh`, `max`, `auto` (model-dependent). |
-| `--complexity` | from model settings, else `high` (generate) / `low` (edit) | Planning effort for models that support it. |
+| `--quality` | the model's tuned settings | e.g. `low`, `medium`, `high`, `xhigh`, `max`, `auto` (model-dependent). For a model without tuned settings nothing is sent and a warning names the gap. |
+| `--complexity` | the model's tuned settings | Planning effort. Sent by default only to models whose registry entry lists `complexity_values`. |
 | `--n N` | `1` | Number of images. Looped client-side when the provider has no batch parameter. |
 | `--negative-prompt TEXT` | — | Sent as a field if the provider has one, otherwise appended to the prompt as "Avoid: …". |
 | `--output-format`, `--output-compression`, `--background`, `--moderation`, `--seed` | — | Passed through when the profile maps them. |

@@ -523,6 +523,38 @@ def auto_plan(task: str) -> dict:
     return plan
 
 
+def registry_model(model_id: str):
+    """The registry entry for a model id or alias, or None."""
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import model_select as ms
+        reg, _ = ms.load_registry()
+        return ms.find_model(reg, model_id)
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def apply_model_settings(a):
+    """Fill quality/complexity from the model's tuned settings.
+
+    Only parameters the model is known to accept are defaulted. For a model without tuned settings nothing is
+    added, because many APIs reject fields they do not know; the agent passes --quality from the provider's docs.
+    """
+    m = registry_model(a.model) or {}
+    s = m.get("settings") or {}
+    key = ("edit_final" if a.final else "edit") if a.cmd == "edit" else ("final" if a.final else "candidate")
+    st = s.get(key) or (s.get("edit") if key == "edit_final" else None) or {}
+    if a.quality is None:
+        a.quality = st.get("quality") or ("high" if "high" in s.get("quality_values", []) else None)
+    if a.complexity is None:
+        a.complexity = st.get("complexity") or (("low" if a.cmd == "edit" else "high")
+                                                if s.get("complexity_values") else None)
+    if a.quality is None:
+        warn(f"no tuned settings for model '{a.model}': quality is left to the provider's default. "
+             "Pass --quality with the provider's highest value (see the ONBOARD_MODEL action).")
+    print(f"settings: model={a.model} profile={a.profile} quality={a.quality} complexity={a.complexity}", file=sys.stderr)
+
+
 # ----------------------------------------------------------------------------- CLI
 def cmd_profiles(_):
     seen = set()
@@ -589,13 +621,13 @@ def main():
     for name in ("generate", "edit"):
         g = sub.add_parser(name)
         g.add_argument("--profile", default="auto", help="provider profile name/path, or 'auto'")
-        g.add_argument("--final", action="store_true", help="with auto settings: use the model's final settings (highest quality) for generate or edit")
+        g.add_argument("--final", action="store_true", help="use the model's final settings (highest quality) for generate or edit")
         g.add_argument("--model", default="auto", help="canonical model id, or 'auto' = benchmark-best available (model_select.py plan)")
         g.add_argument("--prompt")
         g.add_argument("--prompt-file")
         g.add_argument("--size", default="1536x1024")
-        g.add_argument("--quality", help="default: model settings (auto) or 'high'")
-        g.add_argument("--complexity", help="default: model settings (auto), 'low' for edit, 'high' for generate")
+        g.add_argument("--quality", help="default: the model's tuned settings; none for a model without tuned settings")
+        g.add_argument("--complexity", help="default: the model's tuned settings; only sent to models that support it")
         g.add_argument("--n", type=int, default=1)
         g.add_argument("--output-format")
         g.add_argument("--output-compression", type=int)
@@ -620,15 +652,9 @@ def main():
         plan = auto_plan(a.cmd)
         a.model = plan["model"] if a.model == "auto" else a.model
         a.profile = plan["provider_profile"] if a.profile == "auto" else a.profile
-        key = ("edit_final" if a.final else "edit") if a.cmd == "edit" else ("final" if a.final else "candidate")
-        st = (plan.get("settings") or {}).get(key) or {}
-        a.quality = a.quality or st.get("quality")
-        a.complexity = a.complexity or st.get("complexity")
-        print(f"auto: model={a.model} profile={a.profile} quality={a.quality} complexity={a.complexity}", file=sys.stderr)
         if plan.get("note"):
             warn(plan["note"])
-    a.quality = a.quality or "high"
-    a.complexity = a.complexity or ("low" if a.cmd == "edit" else "high")
+    apply_model_settings(a)
     prof = load_profile(a.profile)
     canon = gather_canon(a, a.cmd)
     files = run_op(prof, a.cmd, canon, Path(a.out_dir), re.sub(r"[^a-z0-9-]+", "-", a.slug.lower()), a.dry_run, a.verbose)

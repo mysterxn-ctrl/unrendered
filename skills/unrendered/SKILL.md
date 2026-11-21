@@ -65,7 +65,7 @@ The model is chosen by benchmarks; the provider is chosen by availability. Any p
    - `note` (benchmark-best not reachable, next-best used) → tell the user in one line.
    - `actions` → handle each before generating:
      - `AGENT_FETCH_LEADERBOARDS`: auto-fetch was blocked; read the listed leaderboard pages with your web tools, write the rows per `model_select.py schema`, `model_select.py ingest <file>`, re-run `plan`. If you have no web access, continue with the current selection and say so.
-     - `ONBOARD_MODEL`: a newly winning model lacks settings; read its official API + prompting docs, fill its entry in `models.json` (`settings`, `prompt_dialect`, `capabilities`, `known_weaknesses`, `onboarded: true`). Until then use the provider's highest quality value.
+     - `ONBOARD_MODEL`: a newly winning model lacks settings; read its official API + prompting docs, fill its entry in the user registry `~/.config/unrendered/models.json` (`settings` incl. `quality_values`/`complexity_values`, `prompt_dialect`, `capabilities`, `known_weaknesses`, `onboarded: true`). Until then pass the provider's highest quality value yourself with `--quality`: `imagegen.py` sends no quality or complexity field for a model without tuned settings, because many APIs reject unknown fields.
      - `CONNECT_PROVIDER`: no configured API/tool serves any ranked model → Step 0.
      - `provider_type: tool` → call that agent tool (MCP etc.) yourself with the canonical values mapped onto its arguments.
 3. `imagegen.py` accepts `--model auto --profile auto` (the defaults) and does steps 2's selection internally, applying the model's `candidate` / `final` (`--final`) / `edit` settings unless you pass explicit values.

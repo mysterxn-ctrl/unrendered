@@ -24,6 +24,10 @@ Yes. Every 14 days it re-reads the leaderboards (the repository also refreshes i
 
 Chat apps rewrite your prompt into a detailed one, may plan and generate several candidates, and pick quality settings for you. A raw API call sends your one-liner at whatever quality the gateway defaults to, sometimes `low` or `medium`. Unrendered does the rewriting, the candidates and the quality settings explicitly, plus photorealism-specific briefs and QA. See [How it works](how-it-works.md).
 
+## Does it catch every flaw?
+
+It catches the typical ones reliably, but not every subtle one. The checking is done by the vision of the agent that runs the skill, guided by a fixed rubric: it traces every arm and hand to one body, checks hands, faces, text, light, contrast and surfaces, and treats duplicated limbs, impossible poses and garbled text as hard fails. Fine defects at small scale can still slip through, and image models do not always fix a flaw on request. After three repair rounds the agent delivers the best image and names any flaw that remains, instead of calling it perfect.
+
 ## What does it cost?
 
 Unrendered is free. You pay your image provider. A typical job is three candidates at high quality plus one final render at the model's top setting; one or two repair rounds add more. Ask for "one quick draft" to use a single low-cost render.

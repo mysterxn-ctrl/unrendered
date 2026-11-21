@@ -4,7 +4,7 @@
 """Build a labelled contact sheet of candidate images for side-by-side QA.
 
   contact_sheet.py img1.png img2.png ... -o sheet.jpg [--cell 768] [--crops]
---crops adds a 2x centre crop row per image so fine texture (skin, hands, text) is inspectable.
+--crops adds a ~3x centre crop row per image so fine texture (skin, hands, text) is inspectable.
 Requires Pillow (pip install pillow).
 """
 import argparse

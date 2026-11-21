@@ -151,7 +151,7 @@ flowchart LR
 
 1. **Plan** — `model_select.py plan` picks the benchmark-best model that one of your providers actually serves, with its tuned settings.
 2. **Brief** — the request becomes a structured photographer's brief.
-3. **Candidates** — three renders at high quality, each with a reproducible sidecar.
+3. **Candidates** — three renders at high quality, each with a sidecar file that records the full request.
 4. **Vision QA** — every image inspected and scored; any hard fail disqualifies it.
 5. **Repair** — local defects edited, global ones re-briefed, one change at a time.
 6. **Deliver** — final render at the model's top setting, reported with model, settings and score.

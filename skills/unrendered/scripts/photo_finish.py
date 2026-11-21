@@ -20,7 +20,7 @@ import sys
 
 try:
     import numpy as np
-    from PIL import Image
+    from PIL import Image, PngImagePlugin
 except ImportError:
     sys.exit("needs: pip install pillow numpy")
 
@@ -89,11 +89,21 @@ def main():
         im += rng.normal(0, a.grain * 0.006, im.shape).astype(np.float32)  # faint chroma noise
 
     out = Image.fromarray((np.clip(im, 0, 1) * 255 + 0.5).astype(np.uint8))
-    keep = {k: v for k, v in info.items() if k in ("icc_profile", "exif", "xmp", "dpi")}
+    keep = {k: v for k, v in info.items() if k in ("icc_profile", "exif", "dpi")}
+    xmp = info.get("xmp") or info.get("XML:com.adobe.xmp")  # JPEG/WebP readers use "xmp", PNG uses the iTXt key
+    if isinstance(xmp, str):
+        xmp = xmp.encode("utf-8")
+    fmt = "JPEG" if a.jpeg else (Image.registered_extensions().get("." + a.out.rsplit(".", 1)[-1].lower()) or "PNG")
+    if xmp and fmt == "PNG":
+        meta = PngImagePlugin.PngInfo()
+        meta.add_itxt("XML:com.adobe.xmp", xmp.decode("utf-8", errors="replace"))
+        keep["pnginfo"] = meta
+    elif xmp:
+        keep["xmp"] = xmp
     if a.jpeg:
         out.save(a.out, "JPEG", quality=a.jpeg, subsampling=1, **keep)
     else:
-        out.save(a.out, **keep)
+        out.save(a.out, fmt, **keep)
     print(a.out)
 
 
