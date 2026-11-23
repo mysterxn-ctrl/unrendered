@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "last_checked": "2026-11-21",
+  "last_checked": "2026-11-23",
   "refresh_interval_days": 14,
   "default": {
     "generate": "gpt-image-2.6-sunburst",
@@ -29,8 +29,8 @@
       "muse-image",
       "gpt-image-1-5",
       "mai-image-2-6-flash",
-      "mai-image-2-5",
       "nano-banana-pro",
+      "mai-image-2-5",
       "mai-image-2-5-pro",
       "flux-3-image",
       "nano-banana-2-lite",
@@ -85,11 +85,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1261.71,
+          "elo": 1262.99,
           "ci95": 14.0,
           "config": "max",
           "rank": 1,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "lmarena_generate_overall": {
           "elo": 1409,
@@ -103,7 +103,7 @@
           "ci95": 13.0,
           "config": "max",
           "rank": 2,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "capabilities": {
@@ -181,11 +181,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1229.06,
+          "elo": 1229.9,
           "ci95": 10.0,
           "config": "max",
           "rank": 2,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "lmarena_generate_overall": {
           "elo": 1427,
@@ -199,7 +199,7 @@
           "ci95": 11.0,
           "config": "max",
           "rank": 4,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "settings": {
@@ -234,11 +234,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1226.11,
+          "elo": 1225.79,
           "ci95": 12.0,
           "config": "max",
           "rank": 3,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "lmarena_generate_overall": {
           "elo": 1384,
@@ -252,7 +252,7 @@
           "ci95": 13.0,
           "config": "max",
           "rank": 3,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "settings": {
@@ -289,11 +289,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1209.89,
+          "elo": 1209.37,
           "ci95": 10.0,
           "config": "max",
           "rank": 5,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "lmarena_generate_overall": {
           "elo": 1399,
@@ -307,7 +307,7 @@
           "ci95": 11.0,
           "config": "max",
           "rank": 5,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "settings": {
@@ -338,11 +338,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1194.19,
+          "elo": 1193.63,
           "ci95": 11.0,
           "config": "high",
           "rank": 6,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "lmarena_generate_overall": {
           "elo": 1382,
@@ -356,7 +356,7 @@
           "ci95": 12.0,
           "config": "high",
           "rank": 13,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "settings": {
@@ -392,18 +392,18 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1216.04,
+          "elo": 1214.77,
           "ci95": 14.0,
           "config": "",
           "rank": 4,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1214.92,
           "ci95": 14.0,
           "config": "",
           "rank": 1,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "prompt_dialect": "natural language (verify in vendor docs during onboarding)"
@@ -419,18 +419,18 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1180.79,
-          "ci95": 12.0,
+          "elo": 1180.97,
+          "ci95": 13.0,
           "config": "",
           "rank": 7,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1182.7,
           "ci95": 13.0,
           "config": "",
           "rank": 6,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       }
     },
@@ -446,11 +446,11 @@
       ],
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1175.83,
+          "elo": 1175.19,
           "ci95": 12.0,
           "config": "",
           "rank": 8,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "lmarena_generate_overall": {
           "elo": 1325,
@@ -464,7 +464,7 @@
           "ci95": 12.0,
           "config": "",
           "rank": 10,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       }
     },
@@ -477,11 +477,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1168.58,
+          "elo": 1167.79,
           "ci95": 11.0,
           "config": "",
           "rank": 9,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "lmarena_generate_overall": {
           "elo": 1331,
@@ -495,7 +495,7 @@
           "ci95": 12.0,
           "config": "",
           "rank": 11,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -509,11 +509,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1166.03,
+          "elo": 1166.9,
           "ci95": 12.0,
           "config": "",
           "rank": 10,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "lmarena_generate_overall": {
           "elo": 1317,
@@ -527,7 +527,7 @@
           "ci95": 12.0,
           "config": "",
           "rank": 23,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -541,18 +541,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1158.95,
+          "elo": 1158.5,
           "ci95": 12.0,
           "config": "",
           "rank": 11,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1178.86,
           "ci95": 13.0,
           "config": "",
           "rank": 7,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -566,11 +566,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1157.89,
+          "elo": 1157.4,
           "ci95": 12.0,
           "config": "",
           "rank": 12,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -584,18 +584,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1143.92,
+          "elo": 1144.05,
           "ci95": 10.0,
           "config": "gemini 3.1 flash image",
           "rank": 13,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1125.01,
           "ci95": 12.0,
           "config": "gemini 3.1 flash image",
           "rank": 18,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -609,18 +609,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1133.94,
+          "elo": 1134.73,
           "ci95": 12.0,
           "config": "",
           "rank": 14,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1159.21,
           "ci95": 14.0,
           "config": "",
           "rank": 8,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -634,18 +634,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1126.47,
+          "elo": 1126.06,
           "ci95": 11.0,
           "config": "",
           "rank": 15,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1128.19,
           "ci95": 11.0,
           "config": "",
           "rank": 17,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -659,18 +659,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1125.37,
+          "elo": 1125.75,
           "ci95": 11.0,
           "config": "high",
           "rank": 16,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1117.91,
           "ci95": 12.0,
           "config": "high",
           "rank": 22,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -684,18 +684,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1124.23,
+          "elo": 1125.24,
           "ci95": 12.0,
           "config": "",
           "rank": 17,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1145.19,
           "ci95": 12.0,
           "config": "",
           "rank": 12,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -709,18 +709,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1118.31,
+          "elo": 1118.13,
           "ci95": 11.0,
           "config": "",
-          "rank": 18,
-          "date": "2026-11-21"
+          "rank": 19,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1123.35,
           "ci95": 12.0,
           "config": "",
           "rank": 20,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -734,18 +734,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1117.95,
+          "elo": 1118.76,
           "ci95": 10.0,
           "config": "gemini 3 pro image",
-          "rank": 19,
-          "date": "2026-11-21"
+          "rank": 18,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1109.85,
           "ci95": 12.0,
           "config": "gemini 3 pro image",
           "rank": 24,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -759,18 +759,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1115.62,
+          "elo": 1115.43,
           "ci95": 9.0,
           "config": "",
           "rank": 20,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1123.36,
           "ci95": 12.0,
           "config": "",
           "rank": 19,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -784,18 +784,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1115.05,
+          "elo": 1113.84,
           "ci95": 12.0,
           "config": "",
           "rank": 21,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1119.54,
           "ci95": 13.0,
           "config": "",
           "rank": 21,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -809,18 +809,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1110.18,
+          "elo": 1109.4,
           "ci95": 10.0,
           "config": "gemini 3.1 flash lite image",
           "rank": 22,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1052.36,
           "ci95": 12.0,
           "config": "gemini 3.1 flash lite image",
           "rank": 42,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -834,18 +834,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1104.15,
+          "elo": 1103.94,
           "ci95": 10.0,
           "config": "",
           "rank": 23,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1132.25,
           "ci95": 12.0,
           "config": "",
           "rank": 16,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -859,18 +859,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1095.24,
-          "ci95": 11.0,
+          "elo": 1094.12,
+          "ci95": 12.0,
           "config": "",
           "rank": 24,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1091.66,
           "ci95": 12.0,
           "config": "",
           "rank": 27,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -884,18 +884,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1075.57,
+          "elo": 1075.02,
           "ci95": 12.0,
           "config": "",
           "rank": 25,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1069.71,
           "ci95": 12.0,
           "config": "",
           "rank": 34,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -909,18 +909,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1071.44,
+          "elo": 1070.03,
           "ci95": 14.0,
           "config": "",
           "rank": 26,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1133.05,
           "ci95": 16.0,
           "config": "",
           "rank": 15,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -934,18 +934,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1065.65,
+          "elo": 1065.66,
           "ci95": 14.0,
           "config": "",
           "rank": 27,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1135.86,
           "ci95": 16.0,
           "config": "",
           "rank": 14,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -959,18 +959,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1058.32,
+          "elo": 1058.65,
           "ci95": 12.0,
           "config": "",
           "rank": 28,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1067.14,
           "ci95": 13.0,
           "config": "",
           "rank": 36,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -984,18 +984,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1049.73,
+          "elo": 1049.62,
           "ci95": 9.0,
           "config": "",
           "rank": 29,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1096.17,
           "ci95": 12.0,
           "config": "",
           "rank": 26,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1009,18 +1009,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1048.07,
+          "elo": 1047.36,
           "ci95": 12.0,
           "config": "",
           "rank": 30,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1082.12,
           "ci95": 12.0,
           "config": "",
           "rank": 31,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1034,18 +1034,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1040.95,
+          "elo": 1040.12,
           "ci95": 11.0,
           "config": "",
           "rank": 31,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1067.64,
           "ci95": 13.0,
           "config": "",
           "rank": 35,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1059,18 +1059,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1036.52,
+          "elo": 1036.23,
           "ci95": 11.0,
           "config": "",
           "rank": 32,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1086.29,
           "ci95": 13.0,
           "config": "",
           "rank": 30,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1084,11 +1084,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1035.14,
+          "elo": 1034.49,
           "ci95": 9.0,
           "config": "",
           "rank": 33,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1102,18 +1102,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1033.99,
+          "elo": 1033.68,
           "ci95": 11.0,
           "config": "",
-          "rank": 34,
-          "date": "2026-11-21"
+          "rank": 35,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1090.41,
           "ci95": 12.0,
           "config": "",
           "rank": 29,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1127,18 +1127,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1033.85,
+          "elo": 1034.24,
           "ci95": 11.0,
           "config": "2026-04-22",
-          "rank": 35,
-          "date": "2026-11-21"
+          "rank": 34,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1053.54,
           "ci95": 15.0,
           "config": "2026-04-22",
           "rank": 41,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1152,18 +1152,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1029.38,
+          "elo": 1029.23,
           "ci95": 11.0,
           "config": "",
           "rank": 36,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1037.94,
           "ci95": 13.0,
           "config": "",
           "rank": 49,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1177,18 +1177,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1027.56,
+          "elo": 1027.61,
           "ci95": 11.0,
           "config": "",
           "rank": 37,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 995.5,
           "ci95": 16.0,
           "config": "",
           "rank": 60,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1202,11 +1202,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1026.78,
+          "elo": 1026.89,
           "ci95": 10.0,
           "config": "quality",
-          "rank": 38,
-          "date": "2026-11-21"
+          "rank": 39,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1220,11 +1220,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1025.88,
+          "elo": 1027.09,
           "ci95": 10.0,
           "config": "",
-          "rank": 39,
-          "date": "2026-11-21"
+          "rank": 38,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1238,18 +1238,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1025.47,
+          "elo": 1025.34,
           "ci95": 11.0,
           "config": "",
-          "rank": 40,
-          "date": "2026-11-21"
+          "rank": 42,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1077.31,
           "ci95": 12.0,
           "config": "",
           "rank": 32,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1263,18 +1263,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1025.23,
+          "elo": 1025.64,
           "ci95": 12.0,
           "config": "",
-          "rank": 41,
-          "date": "2026-11-21"
+          "rank": 40,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1061.82,
           "ci95": 13.0,
           "config": "",
           "rank": 40,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1288,18 +1288,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1025.18,
+          "elo": 1024.74,
           "ci95": 11.0,
           "config": "",
-          "rank": 42,
-          "date": "2026-11-21"
+          "rank": 43,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1074.46,
           "ci95": 12.0,
           "config": "",
           "rank": 33,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1313,18 +1313,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1025.15,
+          "elo": 1025.45,
           "ci95": 11.0,
           "config": "",
-          "rank": 43,
-          "date": "2026-11-21"
+          "rank": 41,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1042.19,
           "ci95": 12.0,
           "config": "",
           "rank": 46,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1338,18 +1338,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1021.01,
+          "elo": 1020.74,
           "ci95": 10.0,
           "config": "",
           "rank": 44,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 997.86,
           "ci95": 12.0,
           "config": "",
           "rank": 57,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1363,11 +1363,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1019.93,
+          "elo": 1019.41,
           "ci95": 10.0,
           "config": "",
-          "rank": 45,
-          "date": "2026-11-21"
+          "rank": 48,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1381,11 +1381,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1019.9,
+          "elo": 1019.75,
           "ci95": 9.0,
           "config": "",
-          "rank": 46,
-          "date": "2026-11-21"
+          "rank": 47,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1399,11 +1399,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1019.77,
+          "elo": 1019.93,
           "ci95": 11.0,
           "config": "",
-          "rank": 47,
-          "date": "2026-11-21"
+          "rank": 46,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1417,18 +1417,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1019.21,
+          "elo": 1020.01,
           "ci95": 11.0,
           "config": "",
-          "rank": 48,
-          "date": "2026-11-21"
+          "rank": 45,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1061.99,
           "ci95": 12.0,
           "config": "",
           "rank": 39,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1442,18 +1442,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1018.79,
+          "elo": 1018.9,
           "ci95": 11.0,
           "config": "high",
           "rank": 49,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 997.83,
           "ci95": 16.0,
           "config": "high",
           "rank": 58,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1467,11 +1467,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1017.06,
+          "elo": 1017.62,
           "ci95": 11.0,
           "config": "",
           "rank": 50,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1485,18 +1485,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1016.45,
+          "elo": 1017.48,
           "ci95": 14.0,
           "config": "high",
           "rank": 51,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1064.29,
           "ci95": 14.0,
           "config": "high",
           "rank": 37,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1510,11 +1510,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1014.22,
+          "elo": 1013.86,
           "ci95": 9.0,
           "config": "",
           "rank": 52,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1528,18 +1528,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1004.57,
+          "elo": 1004.61,
           "ci95": 10.0,
           "config": "",
           "rank": 53,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1009.44,
           "ci95": 14.0,
           "config": "",
           "rank": 53,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1553,11 +1553,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 1000.9,
+          "elo": 1000.83,
           "ci95": 9.0,
           "config": "",
           "rank": 54,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1575,14 +1575,14 @@
           "ci95": 0.0,
           "config": "",
           "rank": 55,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1000.0,
           "ci95": 0.0,
           "config": "",
           "rank": 56,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1596,11 +1596,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 998.24,
+          "elo": 997.44,
           "ci95": 13.0,
           "config": "high",
-          "rank": 56,
-          "date": "2026-11-21"
+          "rank": 57,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1614,18 +1614,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 997.65,
+          "elo": 997.61,
           "ci95": 11.0,
           "config": "",
-          "rank": 57,
-          "date": "2026-11-21"
+          "rank": 56,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1042.28,
           "ci95": 12.0,
           "config": "",
           "rank": 45,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1639,18 +1639,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 996.61,
+          "elo": 996.09,
           "ci95": 11.0,
           "config": "",
           "rank": 58,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1013.28,
           "ci95": 16.0,
           "config": "",
           "rank": 51,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1664,11 +1664,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 995.64,
+          "elo": 994.54,
           "ci95": 9.0,
           "config": "agentic",
           "rank": 59,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1682,18 +1682,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 992.41,
+          "elo": 992.02,
           "ci95": 14.0,
           "config": "tencent cloud",
           "rank": 60,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1028.22,
           "ci95": 15.0,
           "config": "tencent cloud",
           "rank": 50,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1707,18 +1707,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 990.95,
+          "elo": 991.08,
           "ci95": 15.0,
           "config": "2026-03-03",
           "rank": 61,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 963.88,
           "ci95": 16.0,
           "config": "2026-03-03",
           "rank": 65,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1732,18 +1732,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 988.53,
+          "elo": 987.59,
           "ci95": 11.0,
           "config": "",
-          "rank": 62,
-          "date": "2026-11-21"
+          "rank": 63,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1039.25,
           "ci95": 12.0,
           "config": "",
           "rank": 47,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1757,18 +1757,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 987.8,
+          "elo": 988.87,
           "ci95": 12.0,
           "config": "gemini 2.5 flash image",
-          "rank": 63,
-          "date": "2026-11-21"
+          "rank": 62,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 983.57,
           "ci95": 13.0,
           "config": "gemini 2.5 flash image",
           "rank": 62,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1782,18 +1782,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 985.92,
+          "elo": 985.41,
           "ci95": 12.0,
           "config": "",
-          "rank": 64,
-          "date": "2026-11-21"
+          "rank": 65,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1008.47,
           "ci95": 16.0,
           "config": "",
           "rank": 54,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1807,18 +1807,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 985.56,
+          "elo": 986.15,
           "ci95": 11.0,
           "config": "",
-          "rank": 65,
-          "date": "2026-11-21"
+          "rank": 64,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1062.83,
           "ci95": 12.0,
           "config": "",
           "rank": 38,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1832,11 +1832,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 984.72,
+          "elo": 983.73,
           "ci95": 11.0,
           "config": "",
           "rank": 66,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1850,11 +1850,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 982.74,
+          "elo": 982.39,
           "ci95": 11.0,
           "config": "quality",
           "rank": 67,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1868,18 +1868,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 981.96,
+          "elo": 982.29,
           "ci95": 11.0,
           "config": "",
           "rank": 68,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1048.21,
           "ci95": 12.0,
           "config": "",
           "rank": 43,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1893,18 +1893,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 978.18,
+          "elo": 979.07,
           "ci95": 10.0,
           "config": "",
           "rank": 69,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 951.17,
           "ci95": 13.0,
           "config": "",
           "rank": 69,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1918,11 +1918,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 972.72,
+          "elo": 972.61,
           "ci95": 10.0,
           "config": "",
           "rank": 70,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1936,18 +1936,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 972.42,
+          "elo": 971.61,
           "ci95": 11.0,
           "config": "preview",
           "rank": 71,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1091.13,
           "ci95": 13.0,
           "config": "preview",
           "rank": 28,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1961,11 +1961,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 957.54,
+          "elo": 956.41,
           "ci95": 15.0,
           "config": "",
           "rank": 72,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1979,11 +1979,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 949.31,
+          "elo": 948.73,
           "ci95": 11.0,
           "config": "",
           "rank": 73,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -1997,18 +1997,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 939.22,
+          "elo": 938.57,
           "ci95": 16.0,
           "config": "medium",
           "rank": 74,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 939.63,
           "ci95": 17.0,
           "config": "medium",
           "rank": 72,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2022,11 +2022,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 937.66,
+          "elo": 936.3,
           "ci95": 11.0,
           "config": "",
           "rank": 75,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2040,18 +2040,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 931.16,
+          "elo": 931.66,
           "ci95": 10.0,
           "config": "",
           "rank": 76,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1011.92,
           "ci95": 12.0,
           "config": "",
           "rank": 52,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2065,18 +2065,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 930.34,
+          "elo": 930.89,
           "ci95": 12.0,
           "config": "",
           "rank": 77,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 929.37,
           "ci95": 17.0,
           "config": "",
           "rank": 73,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2090,11 +2090,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 929.35,
+          "elo": 930.29,
           "ci95": 16.0,
           "config": "",
           "rank": 78,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2108,18 +2108,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 926.42,
+          "elo": 925.92,
           "ci95": 16.0,
           "config": "",
           "rank": 79,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 913.85,
           "ci95": 18.0,
           "config": "",
           "rank": 75,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2133,18 +2133,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 926.14,
+          "elo": 924.04,
           "ci95": 15.0,
           "config": "",
           "rank": 80,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 953.91,
           "ci95": 13.0,
           "config": "",
           "rank": 67,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2158,11 +2158,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 915.62,
+          "elo": 916.17,
           "ci95": 10.0,
           "config": "",
           "rank": 81,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2176,11 +2176,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 909.68,
+          "elo": 909.21,
           "ci95": 16.0,
           "config": "",
-          "rank": 82,
-          "date": "2026-11-21"
+          "rank": 83,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2194,11 +2194,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 909.14,
+          "elo": 907.89,
           "ci95": 10.0,
           "config": "",
-          "rank": 83,
-          "date": "2026-11-21"
+          "rank": 84,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2212,18 +2212,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 909.09,
+          "elo": 910.19,
           "ci95": 15.0,
           "config": "image",
-          "rank": 84,
-          "date": "2026-11-21"
+          "rank": 82,
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 1038.95,
           "ci95": 15.0,
           "config": "image",
           "rank": 48,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2237,11 +2237,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 907.1,
+          "elo": 907.66,
           "ci95": 16.0,
           "config": "",
           "rank": 85,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2255,18 +2255,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 898.18,
+          "elo": 896.57,
           "ci95": 16.0,
           "config": "",
           "rank": 86,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 951.96,
           "ci95": 17.0,
           "config": "",
           "rank": 68,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2280,11 +2280,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 897.73,
+          "elo": 896.09,
           "ci95": 16.0,
           "config": "",
           "rank": 87,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2298,11 +2298,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 892.7,
+          "elo": 893.31,
           "ci95": 16.0,
           "config": "",
           "rank": 88,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2316,18 +2316,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 891.25,
+          "elo": 890.48,
           "ci95": 16.0,
           "config": "",
           "rank": 89,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 826.01,
           "ci95": 20.0,
           "config": "",
           "rank": 81,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2341,11 +2341,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 877.79,
+          "elo": 876.79,
           "ci95": 16.0,
           "config": "",
           "rank": 90,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2359,11 +2359,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 873.05,
+          "elo": 876.34,
           "ci95": 17.0,
           "config": "",
           "rank": 91,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2377,11 +2377,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 868.35,
+          "elo": 867.72,
           "ci95": 28.0,
           "config": "",
           "rank": 92,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2395,11 +2395,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 866.01,
+          "elo": 866.55,
           "ci95": 16.0,
           "config": "",
           "rank": 93,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2413,18 +2413,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 861.74,
-          "ci95": 17.0,
+          "elo": 862.1,
+          "ci95": 18.0,
           "config": "",
           "rank": 94,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 895.13,
           "ci95": 18.0,
           "config": "",
           "rank": 77,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2438,11 +2438,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 855.5,
+          "elo": 854.14,
           "ci95": 17.0,
           "config": "",
-          "rank": 95,
-          "date": "2026-11-21"
+          "rank": 96,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2456,11 +2456,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 854.64,
+          "elo": 854.36,
           "ci95": 17.0,
           "config": "",
-          "rank": 96,
-          "date": "2026-11-21"
+          "rank": 95,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2474,18 +2474,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 839.87,
+          "elo": 840.2,
           "ci95": 12.0,
           "config": "",
           "rank": 97,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 940.95,
           "ci95": 15.0,
           "config": "",
           "rank": 71,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2499,11 +2499,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 839.01,
+          "elo": 838.27,
           "ci95": 18.0,
           "config": "",
-          "rank": 98,
-          "date": "2026-11-21"
+          "rank": 100,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2517,11 +2517,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 838.23,
+          "elo": 838.67,
           "ci95": 18.0,
           "config": "",
-          "rank": 99,
-          "date": "2026-11-21"
+          "rank": 98,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2535,11 +2535,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 836.27,
-          "ci95": 19.0,
+          "elo": 838.55,
+          "ci95": 18.0,
           "config": "",
-          "rank": 100,
-          "date": "2026-11-21"
+          "rank": 99,
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2553,11 +2553,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 825.07,
+          "elo": 828.01,
           "ci95": 19.0,
           "config": "",
           "rank": 101,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2571,11 +2571,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 817.38,
-          "ci95": 15.0,
+          "elo": 816.23,
+          "ci95": 16.0,
           "config": "",
           "rank": 102,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2589,11 +2589,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 812.45,
-          "ci95": 31.0,
+          "elo": 812.99,
+          "ci95": 32.0,
           "config": "",
           "rank": 103,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2607,18 +2607,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 806.91,
+          "elo": 808.09,
           "ci95": 19.0,
           "config": "",
           "rank": 104,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 878.52,
           "ci95": 14.0,
           "config": "",
           "rank": 80,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2632,11 +2632,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 775.25,
+          "elo": 772.77,
           "ci95": 21.0,
           "config": "",
           "rank": 105,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2650,11 +2650,11 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 741.83,
+          "elo": 741.77,
           "ci95": 18.0,
           "config": "",
           "rank": 106,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2668,18 +2668,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 698.52,
+          "elo": 699.79,
           "ci95": 25.0,
           "config": "",
           "rank": 107,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 778.77,
           "ci95": 21.0,
           "config": "",
           "rank": 83,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2693,18 +2693,18 @@
       "onboarded": false,
       "benchmarks": {
         "artificial_analysis_generate_overall": {
-          "elo": 606.61,
+          "elo": 604.81,
           "ci95": 32.0,
           "config": "",
           "rank": 108,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         },
         "artificial_analysis_edit_overall": {
           "elo": 781.18,
           "ci95": 23.0,
           "config": "",
           "rank": 82,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2722,7 +2722,7 @@
           "ci95": 13.0,
           "config": "ultra",
           "rank": 9,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2740,7 +2740,7 @@
           "ci95": 13.0,
           "config": "",
           "rank": 25,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2758,7 +2758,7 @@
           "ci95": 12.0,
           "config": "",
           "rank": 44,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2776,7 +2776,7 @@
           "ci95": 13.0,
           "config": "",
           "rank": 55,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2794,7 +2794,7 @@
           "ci95": 16.0,
           "config": "",
           "rank": 59,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2812,7 +2812,7 @@
           "ci95": 16.0,
           "config": "december",
           "rank": 61,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2830,7 +2830,7 @@
           "ci95": 16.0,
           "config": "",
           "rank": 63,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2848,7 +2848,7 @@
           "ci95": 13.0,
           "config": "",
           "rank": 64,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2866,7 +2866,7 @@
           "ci95": 17.0,
           "config": "",
           "rank": 66,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2884,7 +2884,7 @@
           "ci95": 13.0,
           "config": "",
           "rank": 70,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2902,7 +2902,7 @@
           "ci95": 17.0,
           "config": "",
           "rank": 74,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2920,7 +2920,7 @@
           "ci95": 18.0,
           "config": "",
           "rank": 76,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2938,7 +2938,7 @@
           "ci95": 18.0,
           "config": "",
           "rank": 78,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2956,7 +2956,7 @@
           "ci95": 19.0,
           "config": "",
           "rank": 79,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2974,7 +2974,7 @@
           "ci95": 24.0,
           "config": "",
           "rank": 84,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
@@ -2992,12 +2992,12 @@
           "ci95": 102.0,
           "config": "",
           "rank": 85,
-          "date": "2026-11-21"
+          "date": "2026-11-23"
         }
       },
       "note": "auto-added from leaderboard; needs onboarding (settings, dialect, capabilities) before first use"
     }
   ],
   "history": [],
-  "last_decided": "2026-11-21"
+  "last_decided": "2026-11-23"
 }

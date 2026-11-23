@@ -4,335 +4,335 @@
   "category": "overall",
   "rank": "primary",
   "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
-  "fetched": "2026-11-21",
+  "fetched": "2026-11-23",
   "rows": [
     {
       "name": "GPT Image 2.6 Sunburst (max)",
-      "elo": 1261.71,
+      "elo": 1262.99,
       "ci": 14.0,
       "vendor": null
     },
     {
       "name": "GPT Image 2.5 Sunburst (max)",
-      "elo": 1229.06,
+      "elo": 1229.9,
       "ci": 10.0,
       "vendor": null
     },
     {
       "name": "GPT Image 2.6 Flare (max)",
-      "elo": 1226.11,
+      "elo": 1225.79,
       "ci": 12.0,
       "vendor": null
     },
     {
       "name": "MAI-Image-2.7",
-      "elo": 1216.04,
+      "elo": 1214.77,
       "ci": 14.0,
       "vendor": null
     },
     {
       "name": "GPT Image 2.5 Flare (max)",
-      "elo": 1209.89,
+      "elo": 1209.37,
       "ci": 10.0,
       "vendor": null
     },
     {
       "name": "GPT Image 2 (high)",
-      "elo": 1194.19,
+      "elo": 1193.63,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "Kling Image 4.0",
-      "elo": 1180.79,
-      "ci": 12.0,
+      "elo": 1180.97,
+      "ci": 13.0,
       "vendor": null
     },
     {
       "name": "Nano Banana 2.1",
-      "elo": 1175.83,
+      "elo": 1175.19,
       "ci": 12.0,
       "vendor": null
     },
     {
       "name": "MAI-Image-2.6",
-      "elo": 1168.58,
+      "elo": 1167.79,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "Grok Imagine Image 2.0",
-      "elo": 1166.03,
+      "elo": 1166.9,
       "ci": 12.0,
       "vendor": null
     },
     {
       "name": "MAI-Image-2.7-Flash",
-      "elo": 1158.95,
+      "elo": 1158.5,
       "ci": 12.0,
       "vendor": null
     },
     {
       "name": "Canva Craft",
-      "elo": 1157.89,
+      "elo": 1157.4,
       "ci": 12.0,
       "vendor": null
     },
     {
       "name": "Nano Banana 2 (Gemini 3.1 Flash Image)",
-      "elo": 1143.92,
+      "elo": 1144.05,
       "ci": 10.0,
       "vendor": null
     },
     {
       "name": "Seedream 5.5",
-      "elo": 1133.94,
+      "elo": 1134.73,
       "ci": 12.0,
       "vendor": null
     },
     {
       "name": "Muse Image",
-      "elo": 1126.47,
+      "elo": 1126.06,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "GPT Image 1.5 (high)",
-      "elo": 1125.37,
+      "elo": 1125.75,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "MAI-Image-2.6-Flash",
-      "elo": 1124.23,
+      "elo": 1125.24,
       "ci": 12.0,
       "vendor": null
     },
     {
-      "name": "MAI-Image-2.5",
-      "elo": 1118.31,
-      "ci": 11.0,
-      "vendor": null
-    },
-    {
       "name": "Nano Banana Pro (Gemini 3 Pro Image)",
-      "elo": 1117.95,
+      "elo": 1118.76,
       "ci": 10.0,
       "vendor": null
     },
     {
+      "name": "MAI-Image-2.5",
+      "elo": 1118.13,
+      "ci": 11.0,
+      "vendor": null
+    },
+    {
       "name": "MAI-Image-2.5-Pro",
-      "elo": 1115.62,
+      "elo": 1115.43,
       "ci": 9.0,
       "vendor": null
     },
     {
       "name": "FLUX 3 Image",
-      "elo": 1115.05,
+      "elo": 1113.84,
       "ci": 12.0,
       "vendor": null
     },
     {
       "name": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
-      "elo": 1110.18,
+      "elo": 1109.4,
       "ci": 10.0,
       "vendor": null
     },
     {
       "name": "Seedream 5.0 Pro",
-      "elo": 1104.15,
+      "elo": 1103.94,
       "ci": 10.0,
       "vendor": null
     },
     {
       "name": "Qwen-Image-3.0-Pro",
-      "elo": 1095.24,
-      "ci": 11.0,
+      "elo": 1094.12,
+      "ci": 12.0,
       "vendor": null
     },
     {
       "name": "Qwen-Image-3.0",
-      "elo": 1075.57,
+      "elo": 1075.02,
       "ci": 12.0,
       "vendor": null
     },
     {
       "name": "H3-Image Highspeed",
-      "elo": 1071.44,
+      "elo": 1070.03,
       "ci": 14.0,
       "vendor": null
     },
     {
       "name": "H3-Image",
-      "elo": 1065.65,
+      "elo": 1065.66,
       "ci": 14.0,
       "vendor": null
     },
     {
       "name": "Qwen-Image-2.1-Pro",
-      "elo": 1058.32,
+      "elo": 1058.65,
       "ci": 12.0,
       "vendor": null
     },
     {
       "name": "grok-imagine-image-quality",
-      "elo": 1049.73,
+      "elo": 1049.62,
       "ci": 9.0,
       "vendor": null
     },
     {
       "name": "Qwen-Image-2.1",
-      "elo": 1048.07,
+      "elo": 1047.36,
       "ci": 12.0,
       "vendor": null
     },
     {
       "name": "FLUX 3 Image Klein",
-      "elo": 1040.95,
+      "elo": 1040.12,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "Fibo 2.0",
-      "elo": 1036.52,
+      "elo": 1036.23,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "Krea 2 Large",
-      "elo": 1035.14,
+      "elo": 1034.49,
       "ci": 9.0,
       "vendor": null
     },
     {
-      "name": "MAI-Image-2.5-Flash",
-      "elo": 1033.99,
+      "name": "Qwen Image 2.0 Pro (2026-04-22)",
+      "elo": 1034.24,
       "ci": 11.0,
       "vendor": null
     },
     {
-      "name": "Qwen Image 2.0 Pro (2026-04-22)",
-      "elo": 1033.85,
+      "name": "MAI-Image-2.5-Flash",
+      "elo": 1033.68,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "Seedream 4.5",
-      "elo": 1029.38,
+      "elo": 1029.23,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "FLUX.2 [flex]",
-      "elo": 1027.56,
+      "elo": 1027.61,
       "ci": 11.0,
-      "vendor": null
-    },
-    {
-      "name": "Ideogram 4.0 (Quality)",
-      "elo": 1026.78,
-      "ci": 10.0,
       "vendor": null
     },
     {
       "name": "Recraft V4.1 Utility",
-      "elo": 1025.88,
+      "elo": 1027.09,
       "ci": 10.0,
       "vendor": null
     },
     {
-      "name": "Luma UNI 1 Max",
-      "elo": 1025.47,
-      "ci": 11.0,
+      "name": "Ideogram 4.0 (Quality)",
+      "elo": 1026.89,
+      "ci": 10.0,
       "vendor": null
     },
     {
       "name": "Qwen-Image-2.1-Turbo",
-      "elo": 1025.23,
+      "elo": 1025.64,
       "ci": 12.0,
       "vendor": null
     },
     {
-      "name": "grok-imagine-image",
-      "elo": 1025.18,
+      "name": "Wan 2.6 Image",
+      "elo": 1025.45,
       "ci": 11.0,
       "vendor": null
     },
     {
-      "name": "Wan 2.6 Image",
-      "elo": 1025.15,
+      "name": "Luma UNI 1 Max",
+      "elo": 1025.34,
+      "ci": 11.0,
+      "vendor": null
+    },
+    {
+      "name": "grok-imagine-image",
+      "elo": 1024.74,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "FLUX.2 [max]",
-      "elo": 1021.01,
+      "elo": 1020.74,
       "ci": 10.0,
-      "vendor": null
-    },
-    {
-      "name": "HiDream-O1-Image-1.5",
-      "elo": 1019.93,
-      "ci": 10.0,
-      "vendor": null
-    },
-    {
-      "name": "Recraft V4.1 Utility Pro",
-      "elo": 1019.9,
-      "ci": 9.0,
-      "vendor": null
-    },
-    {
-      "name": "Krea 2 Medium Turbo",
-      "elo": 1019.77,
-      "ci": 11.0,
       "vendor": null
     },
     {
       "name": "Seedream 5.0 Lite",
-      "elo": 1019.21,
+      "elo": 1020.01,
       "ci": 11.0,
       "vendor": null
     },
     {
+      "name": "Krea 2 Medium Turbo",
+      "elo": 1019.93,
+      "ci": 11.0,
+      "vendor": null
+    },
+    {
+      "name": "Recraft V4.1 Utility Pro",
+      "elo": 1019.75,
+      "ci": 9.0,
+      "vendor": null
+    },
+    {
+      "name": "HiDream-O1-Image-1.5",
+      "elo": 1019.41,
+      "ci": 10.0,
+      "vendor": null
+    },
+    {
       "name": "GPT Image 1 (high)",
-      "elo": 1018.79,
+      "elo": 1018.9,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "Wan2.6 Text to Image",
-      "elo": 1017.06,
+      "elo": 1017.62,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "Ideogram 4.5 (High)",
-      "elo": 1016.45,
+      "elo": 1017.48,
       "ci": 14.0,
       "vendor": null
     },
     {
       "name": "Krea 2 Medium",
-      "elo": 1014.22,
+      "elo": 1013.86,
       "ci": 9.0,
       "vendor": null
     },
     {
       "name": "FLUX.2 [pro]",
-      "elo": 1004.57,
+      "elo": 1004.61,
       "ci": 10.0,
       "vendor": null
     },
     {
       "name": "Ideogram 4.0",
-      "elo": 1003.5,
+      "elo": 1003.01,
       "ci": 10.0,
       "vendor": null
     },
     {
       "name": "Ming-Image-0.1-Design",
-      "elo": 1000.9,
+      "elo": 1000.83,
       "ci": 9.0,
       "vendor": null
     },
@@ -343,362 +343,362 @@
       "vendor": null
     },
     {
+      "name": "Luma UNI 1",
+      "elo": 997.61,
+      "ci": 11.0,
+      "vendor": null
+    },
+    {
       "name": "P-Image-Ideogram (High)",
-      "elo": 998.24,
+      "elo": 997.44,
       "ci": 13.0,
       "vendor": null
     },
     {
-      "name": "Luma UNI 1",
-      "elo": 997.65,
-      "ci": 11.0,
-      "vendor": null
-    },
-    {
       "name": "FLUX.2 [dev] Turbo",
-      "elo": 996.61,
+      "elo": 996.09,
       "ci": 11.0,
-      "vendor": null
-    },
-    {
-      "name": "Cosmos3-Super-Text2Image (agentic)",
-      "elo": 995.64,
-      "ci": 9.0,
       "vendor": null
     },
     {
       "name": "P-Image-Ideogram (Very High)",
-      "elo": 994.99,
+      "elo": 995.09,
       "ci": 14.0,
       "vendor": null
     },
     {
+      "name": "Cosmos3-Super-Text2Image (agentic)",
+      "elo": 994.54,
+      "ci": 9.0,
+      "vendor": null
+    },
+    {
       "name": "HunyuanImage 3.0 (Tencent Cloud)",
-      "elo": 992.41,
+      "elo": 992.02,
       "ci": 14.0,
       "vendor": null
     },
     {
       "name": "Qwen Image 2.0 (2026-03-03)",
-      "elo": 990.95,
+      "elo": 991.08,
       "ci": 15.0,
       "vendor": null
     },
     {
-      "name": "Wan 2.7",
-      "elo": 988.53,
-      "ci": 11.0,
+      "name": "Nano Banana (Gemini 2.5 Flash Image)",
+      "elo": 988.87,
+      "ci": 12.0,
       "vendor": null
     },
     {
-      "name": "Nano Banana (Gemini 2.5 Flash Image)",
-      "elo": 987.8,
-      "ci": 12.0,
+      "name": "Wan 2.7",
+      "elo": 987.59,
+      "ci": 11.0,
       "vendor": null
     },
     {
       "name": "Cosmos3-Super-Text2Image",
-      "elo": 987.75,
+      "elo": 987.56,
       "ci": 10.0,
       "vendor": null
     },
     {
-      "name": "FLUX.2 [dev] Flash",
-      "elo": 985.92,
-      "ci": 12.0,
-      "vendor": null
-    },
-    {
       "name": "HunyuanImage 3.0 Instruct",
-      "elo": 985.56,
+      "elo": 986.15,
       "ci": 11.0,
       "vendor": null
     },
     {
+      "name": "FLUX.2 [dev] Flash",
+      "elo": 985.41,
+      "ci": 12.0,
+      "vendor": null
+    },
+    {
       "name": "Ideogram 4.0 Instant",
-      "elo": 984.72,
+      "elo": 983.73,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "Ideogram 4.0 Fast (Quality)",
-      "elo": 982.74,
+      "elo": 982.39,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "Wan 2.7 Pro",
-      "elo": 981.96,
+      "elo": 982.29,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "HiDream-O1-Image",
-      "elo": 978.18,
+      "elo": 979.07,
       "ci": 10.0,
       "vendor": null
     },
     {
       "name": "P-Image-Ideogram (Medium)",
-      "elo": 977.15,
+      "elo": 975.59,
       "ci": 13.0,
       "vendor": null
     },
     {
       "name": "Cosmos3-Super-Text2Image-4Step",
-      "elo": 972.72,
+      "elo": 972.61,
       "ci": 10.0,
       "vendor": null
     },
     {
       "name": "HunyuanImage 3.5 (Preview)",
-      "elo": 972.42,
+      "elo": 971.61,
       "ci": 11.0,
-      "vendor": null
-    },
-    {
-      "name": "P-Image-Ideogram (Low)",
-      "elo": 966.31,
-      "ci": 13.0,
       "vendor": null
     },
     {
       "name": "Ideogram 4.0 Fast",
-      "elo": 965.96,
-      "ci": 11.0,
+      "elo": 966.37,
+      "ci": 12.0,
+      "vendor": null
+    },
+    {
+      "name": "P-Image-Ideogram (Low)",
+      "elo": 965.44,
+      "ci": 13.0,
       "vendor": null
     },
     {
       "name": "Qwen Image Plus 2601",
-      "elo": 957.54,
+      "elo": 956.41,
       "ci": 15.0,
       "vendor": null
     },
     {
       "name": "Recraft V4.1 Flash",
-      "elo": 949.31,
+      "elo": 948.73,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "GPT Image 1 Mini (medium)",
-      "elo": 939.22,
+      "elo": 938.57,
       "ci": 16.0,
       "vendor": null
     },
     {
       "name": "Z-Image Turbo",
-      "elo": 937.66,
+      "elo": 936.3,
       "ci": 11.0,
       "vendor": null
     },
     {
       "name": "HunyuanImage 3.0",
-      "elo": 932.35,
+      "elo": 932.89,
       "ci": 15.0,
       "vendor": null
     },
     {
       "name": "FLUX.2 [klein] 9B",
-      "elo": 931.16,
+      "elo": 931.66,
       "ci": 10.0,
       "vendor": null
     },
     {
       "name": "FLUX.1 Kontext [max]",
-      "elo": 930.34,
+      "elo": 930.89,
       "ci": 12.0,
       "vendor": null
     },
     {
       "name": "Dreamina 3.1",
-      "elo": 929.35,
+      "elo": 930.29,
       "ci": 16.0,
       "vendor": null
     },
     {
       "name": "FLUX.1 Kontext [pro]",
-      "elo": 926.42,
+      "elo": 925.92,
       "ci": 16.0,
       "vendor": null
     },
     {
       "name": "Kling Image 3.0 Omni",
-      "elo": 926.14,
+      "elo": 924.04,
       "ci": 15.0,
       "vendor": null
     },
     {
       "name": "ERNIE Image Turbo",
-      "elo": 915.62,
+      "elo": 916.17,
       "ci": 10.0,
       "vendor": null
     },
     {
       "name": "P-Image-Ideogram (Very Low)",
-      "elo": 913.31,
+      "elo": 913.83,
       "ci": 14.0,
       "vendor": null
     },
     {
+      "name": "ADM 3 Cloud (Image)",
+      "elo": 910.19,
+      "ci": 15.0,
+      "vendor": null
+    },
+    {
       "name": "Qwen Image",
-      "elo": 909.68,
+      "elo": 909.21,
       "ci": 16.0,
       "vendor": null
     },
     {
       "name": "ERNIE Image",
-      "elo": 909.14,
+      "elo": 907.89,
       "ci": 10.0,
       "vendor": null
     },
     {
-      "name": "ADM 3 Cloud (Image)",
-      "elo": 909.09,
-      "ci": 15.0,
-      "vendor": null
-    },
-    {
       "name": "Ideogram 3.0",
-      "elo": 907.1,
+      "elo": 907.66,
       "ci": 16.0,
       "vendor": null
     },
     {
       "name": "Vidu Q2",
-      "elo": 898.18,
+      "elo": 896.57,
       "ci": 16.0,
       "vendor": null
     },
     {
       "name": "Z-Image Base",
-      "elo": 897.73,
+      "elo": 896.09,
       "ci": 16.0,
       "vendor": null
     },
     {
       "name": "P-Image",
-      "elo": 892.7,
+      "elo": 893.31,
       "ci": 16.0,
       "vendor": null
     },
     {
       "name": "GLM-Image",
-      "elo": 891.25,
+      "elo": 890.48,
       "ci": 16.0,
       "vendor": null
     },
     {
       "name": "Lucid Origin Ultra",
-      "elo": 877.79,
+      "elo": 876.79,
       "ci": 16.0,
       "vendor": null
     },
     {
       "name": "FLUX1.1 [pro]",
-      "elo": 873.05,
+      "elo": 876.34,
       "ci": 17.0,
       "vendor": null
     },
     {
       "name": "FLUX.1 Krea [dev]",
-      "elo": 868.35,
+      "elo": 867.72,
       "ci": 28.0,
       "vendor": null
     },
     {
       "name": "Lucid Origin Fast",
-      "elo": 866.01,
+      "elo": 866.55,
       "ci": 16.0,
       "vendor": null
     },
     {
       "name": "LongCat Image",
-      "elo": 861.74,
+      "elo": 862.1,
+      "ci": 18.0,
+      "vendor": null
+    },
+    {
+      "name": "FLUX1.1 [pro] Ultra",
+      "elo": 854.36,
       "ci": 17.0,
       "vendor": null
     },
     {
       "name": "FIBO",
-      "elo": 855.5,
-      "ci": 17.0,
-      "vendor": null
-    },
-    {
-      "name": "FLUX1.1 [pro] Ultra",
-      "elo": 854.64,
+      "elo": 854.14,
       "ci": 17.0,
       "vendor": null
     },
     {
       "name": "FLUX.2 [klein] 4B",
-      "elo": 839.87,
+      "elo": 840.2,
       "ci": 12.0,
       "vendor": null
     },
     {
-      "name": "Luma Photon",
-      "elo": 839.01,
-      "ci": 18.0,
-      "vendor": null
-    },
-    {
       "name": "Phoenix 0.9 Ultra",
-      "elo": 838.23,
+      "elo": 838.67,
       "ci": 18.0,
       "vendor": null
     },
     {
       "name": "SRPO",
-      "elo": 836.27,
-      "ci": 19.0,
+      "elo": 838.55,
+      "ci": 18.0,
+      "vendor": null
+    },
+    {
+      "name": "Luma Photon",
+      "elo": 838.27,
+      "ci": 18.0,
       "vendor": null
     },
     {
       "name": "Phoenix 1.0 Fast",
-      "elo": 825.07,
+      "elo": 828.01,
       "ci": 19.0,
       "vendor": null
     },
     {
       "name": "FIBO Lite",
-      "elo": 817.38,
-      "ci": 15.0,
+      "elo": 816.23,
+      "ci": 16.0,
       "vendor": null
     },
     {
       "name": "FLUX.1 [dev]",
-      "elo": 812.45,
-      "ci": 31.0,
+      "elo": 812.99,
+      "ci": 32.0,
       "vendor": null
     },
     {
       "name": "HiDream-O1-Image-Dev",
-      "elo": 806.91,
+      "elo": 808.09,
       "ci": 19.0,
       "vendor": null
     },
     {
       "name": "Luma Photon Flash",
-      "elo": 775.25,
+      "elo": 772.77,
       "ci": 21.0,
       "vendor": null
     },
     {
       "name": "FLUX.1 [schnell]",
-      "elo": 741.83,
+      "elo": 741.77,
       "ci": 18.0,
       "vendor": null
     },
     {
       "name": "OmniGen V2",
-      "elo": 698.52,
+      "elo": 699.79,
       "ci": 25.0,
       "vendor": null
     },
     {
       "name": "Bagel",
-      "elo": 606.61,
+      "elo": 604.81,
       "ci": 32.0,
       "vendor": null
     }
